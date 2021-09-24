@@ -128,18 +128,18 @@
 <div class="main-text">
 <h1 id="a0000000023">3.6 Embeddings and prime ideals</h1>
 <p>Lets now look at how embeddings interact with prime ideals. We begin with a definition you may have seen in your Galois theory course. </p>
-<p><div class="defn_thmwrapper" id="a0000000440">
-  <div class="defn_thmheading">
-    <span class="defn_thmcaption">
+<p><div class="definition_thmwrapper" id="a0000000440">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="defn_thmlabel">3.6.1</span>
+    <span class="definition_thmlabel">3.6.1</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0022.html#a0000000440">#</a>
 
   </div>
   </div>
-  <div class="defn_thmcontent">
+  <div class="definition_thmcontent">
   <p>Let \(K/F\) be an extension of number fields. We say \(K\) is <i class="itshape">normal</i> over \(F\) every embedding \(\sigma :K \to \mathbb {C}\) which fixes \(F\) has image again in \(K\). In other words the embedding \(\sigma \) is an automorphism \(\sigma :K \to K\) which fixes the elements of \(F\). </p>
 <p>In particular, if \(K=F(\alpha )\) and \(K\) contains all of the conjugates of \(\alpha \), then \(K\) is normal. </p>
 
@@ -396,7 +396,7 @@
   \[ \Delta (\alpha ,\alpha _2,\dots ,\alpha _n)=m_1^2 \Delta (\alpha _1,\dots ,\alpha _n)=m_1^2\Delta (\mathcal{O}_K). \]
 </div>
 <p> Since \(p \nmid m_1\) its enough to show that \(p \mid \Delta (\alpha ,\alpha _2,\dots ,\alpha _n)\). </p>
-<p>Now, let \(\sigma _1,\dots ,\sigma _n\) denote the embeddings of \(K\) into \(\mathbb {C}\). Let \(L\) be a finite extension of \(K\) such that \(L/\mathbb {Q}\) is normal (which we can do by Proposition <a href="sect0022.html#prop: fin ext makes normal">3.6.4</a>). Let \(G:=\operatorname{Gal}(L/\mathbb {Q})\). Then the elements of \(G\) are just the embeddings of \(L\) extending the embeddings of \(K\) (if you dont remember what this means go to Definition <a href="sect0007.html#defn: emb ext">1.5.5</a>) </p>
+<p>Now, let \(\sigma _1,\dots ,\sigma _n\) denote the embeddings of \(K\) into \(\mathbb {C}\). Let \(L\) be a finite extension of \(K\) such that \(L/\mathbb {Q}\) is normal (which we can do by Proposition <a href="sect0022.html#prop: fin ext makes normal">3.6.4</a>). Let \(G:=\operatorname{Gal}(L/\mathbb {Q})\). Then the elements of \(G\) are just the embeddings of \(L\) extending the embeddings of \(K\) (if you dont remember what this means go to Definition <a href="sect0007.html#definition: emb ext">1.5.5</a>) </p>
 <p>Since \(\alpha \) is contained in \(\mathfrak {a}\), its contained in every prime ideal in \(\mathcal{O}_K\) over \(p\). It follows that \(\alpha \) is also in every prime ideal \(\mathfrak {P}\) in \(\mathcal{O}_L\) containing \(p\), since each such prime contains \(p\) and \(\mathfrak {P}\cap \mathcal{O}_K=\mathfrak {p}\) is again a prime ideal which contains \(p\), hence \(\mathfrak {p}\) lies over \(p\) and therefore contains \(\alpha \). Fix \(\mathfrak {P}\) a prime ideal of \(\mathcal{O}_L\) over \(p\). Then we claim that for any \(\sigma \in G\), \(\sigma (\alpha ) \in \mathfrak {P}\). To see this note that \(\sigma ^{-1}(\mathfrak {P})\) is again a prime ideal in \(\mathcal{O}_L\) over \(p\) and thus contains \(\alpha \). In particular, \(\sigma _i(\alpha ) \in \mathfrak {P}\) for all \(i\). Therefore, by Proposition <a href="sect0013.html#prop: disc via embs">2.2.16</a> \(\Delta (\alpha ,\alpha _2,\dots ,\alpha _n) \in \mathfrak {P}\). But since the discriminant is an integer, we have \(\Delta (\alpha ,\alpha _2,\dots ,\alpha _n) \in \mathfrak {P}\cap \mathbb {Z}=p\mathbb {Z}\) and therefore \(p\) divides the discriminant. </p>
 
   </div>

@@ -128,18 +128,18 @@
 <div class="main-text">
 <h1 id="a0000000020">3.3 Dedekind domains</h1>
 <p> Next we will study properties of rings of integers. It turns out they are of a very special type, called Dedekind domains. </p>
-<p><div class="defn_thmwrapper" id="defn: ded dom">
-  <div class="defn_thmheading">
-    <span class="defn_thmcaption">
+<p><div class="definition_thmwrapper" id="definition: ded dom">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="defn_thmlabel">3.3.1</span>
+    <span class="definition_thmlabel">3.3.1</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0019.html#defn: ded dom">#</a>
+    <a class="icon proof" href="sect0019.html#definition: ded dom">#</a>
 
   </div>
   </div>
-  <div class="defn_thmcontent">
+  <div class="definition_thmcontent">
   <p> A Dedekind domain is an integral domain \(R\) such that: </p>
 <ol class="enumerate">
   <li><p>\(R\) is Noetherian. </p>
@@ -212,7 +212,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Assume for contradiction this is not the case. Let \(S\) denote the set of all ideals that do not contain a product of prime ideals. Then, since \(R\) is Noetherian, by Definition <a href="sect0018.html#defn: noeth ring">3.2.1</a>\((3)\), \(S\) must contain a maximal element \(\mathfrak {m}\) (not to be confused with maximal ideal, here maximal means with respect to the property of not containing a product of prime ideals). Now \(\mathfrak {m}\) cannot be prime (otherwise \(\mathfrak {m}\subseteq \mathfrak {m}\) gives a contradiction). Therefore we can find \(r,s \in R \backslash \mathfrak {m}\) such that \(rs \in \mathfrak {m}\). Now the ideals \((r)+\mathfrak {m}\) and \((s)+\mathfrak {m}\) are both larger then \(\mathfrak {m}\) so must contain a product of prime ideals, but then so does their product \(((r)+\mathfrak {m})((s)+\mathfrak {m})\). This product is contained in \(\mathfrak {m}\) (since \(rs \in \mathfrak {m}\)) so we have a contradiction. </p>
+  <p>Assume for contradiction this is not the case. Let \(S\) denote the set of all ideals that do not contain a product of prime ideals. Then, since \(R\) is Noetherian, by Definition <a href="sect0018.html#definition: noeth ring">3.2.1</a>\((3)\), \(S\) must contain a maximal element \(\mathfrak {m}\) (not to be confused with maximal ideal, here maximal means with respect to the property of not containing a product of prime ideals). Now \(\mathfrak {m}\) cannot be prime (otherwise \(\mathfrak {m}\subseteq \mathfrak {m}\) gives a contradiction). Therefore we can find \(r,s \in R \backslash \mathfrak {m}\) such that \(rs \in \mathfrak {m}\). Now the ideals \((r)+\mathfrak {m}\) and \((s)+\mathfrak {m}\) are both larger then \(\mathfrak {m}\) so must contain a product of prime ideals, but then so does their product \(((r)+\mathfrak {m})((s)+\mathfrak {m})\). This product is contained in \(\mathfrak {m}\) (since \(rs \in \mathfrak {m}\)) so we have a contradiction. </p>
 
   </div>
 </div>
@@ -243,7 +243,7 @@
   </div>
   <div class="proof_content">
   <p>Let \(a \in \mathfrak {a}\) be any non-zero element. By Lemma <a href="sect0019.html#lem: ded dom ideal has prim ideals">3.3.3</a> the ideal \((a)\) contains a product of prime ideals. So lets take prime ideals \(\mathfrak {p}_i\) such that \(\prod _{i=1}^m \mathfrak {p}_i \subset (a)\) with \(m\) as small as possible. Now, since every proper ideal is contained in a maximal ideal \(\mathfrak {p}\) (see Proposition <a href="sect0002.html#prop: prime and max ideals in rings">1.1.22</a>), which is also a prime ideal (as maximal ideals are always prime). Therefore \(\mathfrak {a}\subset \mathfrak {p}\), so \(\prod _i \mathfrak {p}_i \subset \mathfrak {p}\). </p>
-<p>Now \(\mathfrak {p}\) must contain some \(\mathfrak {p}_i\) since if not, we can take \(a_i \in \mathfrak {p}_i \backslash \mathfrak {p}\) then \(\mathfrak {p}\) contains \(\prod _i a_i\) but none of the \(a_i\) which contradicts \(\mathfrak {p}\) being a prime ideal. So after possibly relabelling we have \(\mathfrak {p}_1 \subset \mathfrak {p}\). But by Definition <a href="sect0019.html#defn: ded dom">3.3.1</a>, in a Dedekind domain all prime ideals are maximal, so \(\mathfrak {p}=\mathfrak {p}_1\). </p>
+<p>Now \(\mathfrak {p}\) must contain some \(\mathfrak {p}_i\) since if not, we can take \(a_i \in \mathfrak {p}_i \backslash \mathfrak {p}\) then \(\mathfrak {p}\) contains \(\prod _i a_i\) but none of the \(a_i\) which contradicts \(\mathfrak {p}\) being a prime ideal. So after possibly relabelling we have \(\mathfrak {p}_1 \subset \mathfrak {p}\). But by Definition <a href="sect0019.html#definition: ded dom">3.3.1</a>, in a Dedekind domain all prime ideals are maximal, so \(\mathfrak {p}=\mathfrak {p}_1\). </p>
 <p>Since \(m\) was taken as small as possible, \((a)\) can’t contain any smaller product of prime ideals, so we can find \(b \in (\prod _{i=2}^m \mathfrak {p}_i) \backslash (a)\). </p>
 <p>We claim that taking \(x=\frac{b}{a}\) gives the result: First note \(x \in K \backslash R\) since otherwise \(\frac{b}{a}=c \in R\) therefore \(b=ac \in (a)\) which contradicts our choice of \(b\). Moreover, we claim that \(x \mathfrak {a}\subset R\). To see this note that since \(b \mathfrak {p}\subset \prod _i \mathfrak {p}_i \subset (a)\) we have \(x \mathfrak {p}\subset R\) and therefore since \(\mathfrak {a}\subset \mathfrak {p}\) we have \(x\mathfrak {a}\subset x\mathfrak {p}\subset R\). </p>
 
@@ -315,18 +315,18 @@
 
   </div>
 </div> </p>
-<p><div class="defn_thmwrapper" id="a0000000312">
-  <div class="defn_thmheading">
-    <span class="defn_thmcaption">
+<p><div class="definition_thmwrapper" id="a0000000312">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="defn_thmlabel">3.3.7</span>
+    <span class="definition_thmlabel">3.3.7</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0019.html#a0000000312">#</a>
 
   </div>
   </div>
-  <div class="defn_thmcontent">
+  <div class="definition_thmcontent">
   <p>Let \(R\) be a Dedekind domain and \(K\) its field of fractions. A <i class="itshape">fractional ideal</i> is a subset \(\mathfrak {a}\subset K\) such that </p>
 <ol class="enumerate">
   <li><p>\(\mathfrak {a}\) is an abelian group under addition. </p>
@@ -376,18 +376,18 @@
   <p>If \(\mathfrak {a}\) is a fractional ideal and \(x,y \in \mathfrak {a}\) then it is not necessarily true that \(xy \in \mathfrak {a}\). </p>
 
   </div>
-</div> <div class="defn_thmwrapper" id="defn: princ frac ideal">
-  <div class="defn_thmheading">
-    <span class="defn_thmcaption">
+</div> <div class="definition_thmwrapper" id="definition: princ frac ideal">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="defn_thmlabel">3.3.10</span>
+    <span class="definition_thmlabel">3.3.10</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0019.html#defn: princ frac ideal">#</a>
+    <a class="icon proof" href="sect0019.html#definition: princ frac ideal">#</a>
 
   </div>
   </div>
-  <div class="defn_thmcontent">
+  <div class="definition_thmcontent">
   <p> Let \(R\) be a Dedekind ring and \(K\) its field of fractions. For each \(x \in K\) we call the fractional ideal </p>
 <div class="displaymath" id="a0000000317">
   \[ (x)=\{ xy\mid y \in R\}  \]
@@ -535,7 +535,7 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Lets begin by showing that every ideal can be written as a product of prime ideal. Assume for contradiction that this is not the case. Then the set of proper ideals which are not a product of prime ideals, must have a maximal element by Definition <a href="sect0018.html#defn: noeth ring">3.2.1</a> \((3)\). Let \(\mathfrak {b}\) be this maximal element. Then \(\mathfrak {b}\) must be contained in some maximal ideal \(\mathfrak {p}\) of \(R\) (which we recall is also prime). Then by Corollary <a href="sect0019.html#cor: ideal div">3.3.14</a> we have \(\mathfrak {b}=\mathfrak {p}\mathfrak {c}\). </p>
+  <p>Lets begin by showing that every ideal can be written as a product of prime ideal. Assume for contradiction that this is not the case. Then the set of proper ideals which are not a product of prime ideals, must have a maximal element by Definition <a href="sect0018.html#definition: noeth ring">3.2.1</a> \((3)\). Let \(\mathfrak {b}\) be this maximal element. Then \(\mathfrak {b}\) must be contained in some maximal ideal \(\mathfrak {p}\) of \(R\) (which we recall is also prime). Then by Corollary <a href="sect0019.html#cor: ideal div">3.3.14</a> we have \(\mathfrak {b}=\mathfrak {p}\mathfrak {c}\). </p>
 <p>This implies \(\mathfrak {b}\subset \mathfrak {c}\) and this must be a strict containment as otherwise if \(\mathfrak {c}=\mathfrak {b}\) then \(\mathfrak {b}=\mathfrak {b}\mathfrak {p}\) which by Corollary <a href="sect0019.html#cor: cancel of ideals">3.3.13</a> would mean \(\mathfrak {p}=R\), which cannot happen as \(\mathfrak {p}\) is a proper ideal. </p>
 <p>Now, since \(\mathfrak {c}\) is larger than \(\mathfrak {b}\) we must have \(\mathfrak {c}\) being a product of prime ideals. So then \(\mathfrak {p}\mathfrak {c}=\mathfrak {b}\) is also a product of prime ideals contradicting our assumption. </p>
 <p>Lets now prove that the representation as a product of prime ideals is unique. Suppose we have </p>
@@ -600,18 +600,18 @@
 
   </div>
 </div>
-<p><div class="defn_thmwrapper" id="defn: ideal gcd and lcm">
-  <div class="defn_thmheading">
-    <span class="defn_thmcaption">
+<p><div class="definition_thmwrapper" id="definition: ideal gcd and lcm">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="defn_thmlabel">3.3.18</span>
+    <span class="definition_thmlabel">3.3.18</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0019.html#defn: ideal gcd and lcm">#</a>
+    <a class="icon proof" href="sect0019.html#definition: ideal gcd and lcm">#</a>
 
   </div>
   </div>
-  <div class="defn_thmcontent">
+  <div class="definition_thmcontent">
   <p> Let \(R\) be a Dedekind domain and let \(\mathfrak {a},\mathfrak {b}\) be ideals. Then we define the greatest common divisor \(\gcd \) and least common multiple \(\operatorname{lcm}\) as follows: Let \(\mathfrak {a}=\prod _i \mathfrak {p}_i^{n_i}\) and \(\mathfrak {b}=\prod _i \mathfrak {p}_i^{m_i}\) then </p>
 <div class="displaymath" id="a0000000330">
   \[ \gcd (\mathfrak {a},\mathfrak {b})=\prod _i \mathfrak {p}_i^{\min (n_i,m_i)} \qquad \operatorname{lcm}(\mathfrak {a},\mathfrak {b})=\prod _i \mathfrak {p}_i^{\max (n_i,m_i)}. \]
@@ -772,8 +772,8 @@
 <div class="displaymath" id="a0000000343">
   \[ (\alpha )=\prod _i \mathfrak {p}_i^{n_i} \times \prod _j \mathfrak {q}_j. \]
 </div>
-<p>We construct \(\beta \) as follows. Take \(\beta _i \in \mathfrak {p}_i^{n_i} \backslash \mathfrak {p}_i^{n_i+1}\) and then use the Chinese remainder theorem <a href="sect0019.html#thm: chinese rem thm">3.3.21</a> to find \(\beta \in R\) such that \(\beta \equiv \beta _i \pmod{\mathfrak {p}_i^{n_i+1}}\) for \(i \in \{ 1,\dots ,r\} \) and \(\beta \equiv 1 \pmod{\mathfrak {q}_j}\) for \(j \in \{ 1,\dots ,s\} \). Note that we can do this, and the \(\mathfrak {p}_i,\mathfrak {q}_j\) are all pairwise distinct so \(\mathfrak {q}_j+\mathfrak {p}_i^{n_i}=(1)\) (as \(\mathfrak {q}_j\) is maximal) for all \(i,j\) and moreover, \(\mathfrak {p}_i^{n_i}+\mathfrak {p}_j^{n_j}=\gcd (\mathfrak {p}_i^{n_i},\mathfrak {p}_j^{n_j})\) which by Definition <a href="sect0019.html#defn: ideal gcd and lcm">3.3.18</a> is just \((1)\). </p>
-<p>So now, Definition <a href="sect0019.html#defn: ideal gcd and lcm">3.3.18</a> gives us \(\gcd ((\alpha ),(\beta ))=\prod _i \mathfrak {p}_i^{n_i}=\mathfrak {a}\) and therefore \(\beta \in \mathfrak {a}\) which finishes the proof. </p>
+<p>We construct \(\beta \) as follows. Take \(\beta _i \in \mathfrak {p}_i^{n_i} \backslash \mathfrak {p}_i^{n_i+1}\) and then use the Chinese remainder theorem <a href="sect0019.html#thm: chinese rem thm">3.3.21</a> to find \(\beta \in R\) such that \(\beta \equiv \beta _i \pmod{\mathfrak {p}_i^{n_i+1}}\) for \(i \in \{ 1,\dots ,r\} \) and \(\beta \equiv 1 \pmod{\mathfrak {q}_j}\) for \(j \in \{ 1,\dots ,s\} \). Note that we can do this, and the \(\mathfrak {p}_i,\mathfrak {q}_j\) are all pairwise distinct so \(\mathfrak {q}_j+\mathfrak {p}_i^{n_i}=(1)\) (as \(\mathfrak {q}_j\) is maximal) for all \(i,j\) and moreover, \(\mathfrak {p}_i^{n_i}+\mathfrak {p}_j^{n_j}=\gcd (\mathfrak {p}_i^{n_i},\mathfrak {p}_j^{n_j})\) which by Definition <a href="sect0019.html#definition: ideal gcd and lcm">3.3.18</a> is just \((1)\). </p>
+<p>So now, Definition <a href="sect0019.html#definition: ideal gcd and lcm">3.3.18</a> gives us \(\gcd ((\alpha ),(\beta ))=\prod _i \mathfrak {p}_i^{n_i}=\mathfrak {a}\) and therefore \(\beta \in \mathfrak {a}\) which finishes the proof. </p>
 
   </div>
 </div>
