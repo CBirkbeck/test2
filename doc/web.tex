@@ -685,6 +685,7 @@
 	
 	
 	\begin{prop}[Sh\"onemann's Irreducibility Criterion]\label{prop: shonemann}
+		\uses{prop: irred pol mod p} 
 		Let $f(x) \in \ZZ[x]$ be a monic polynomial of degree $n>0$. Assume that there is a prime $p$ and an integer $a$ such that \[f(x)=(x-a)^n+pg(x)\] for $g(x) \in \ZZ[x]$. If $g(a) \not \equiv 0 \bmod p$ then $f(x)$ is irreducible modulo $p^2$ and in $\ZZ[x]$.
 	\end{prop}
 	
@@ -715,7 +716,9 @@
 	
 	
 	
-	\begin{cor}[Eisenstein Criterion]\label{Eis crit}	Let \[f(x)=a_n x^n+a_{n-1}x^{n-1}+ \cdots, a_1x+a_0\] be a polynomial in $\ZZ[x]$ (with $n \geq 1)$ and let $p$ be a prime number. Suppose $a_n$ is not divisible by $p$, $a_{n-1},\dots,a_0$ are all divisible by $p$ and $a_0$ is not divisible by $p^2$. Then $f(x)$ is irreducible.
+	\begin{cor}[Eisenstein Criterion]\label{Eis crit}
+			\uses{prop: shonemann}
+			Let \[f(x)=a_n x^n+a_{n-1}x^{n-1}+ \cdots, a_1x+a_0\] be a polynomial in $\ZZ[x]$ (with $n \geq 1)$ and let $p$ be a prime number. Suppose $a_n$ is not divisible by $p$, $a_{n-1},\dots,a_0$ are all divisible by $p$ and $a_0$ is not divisible by $p^2$. Then $f(x)$ is irreducible.
 		
 		%\marginpar{%
 		%\includegraphics[scale=0.18]{clippy.png}
@@ -728,6 +731,7 @@
 	\end{proof}
 	
 	\begin{exmp}\label{exp: cyclo min pol}
+		\uses{Eis crit}
 		\begin{enumerate}
 			\item The polynomial $3x^4+10x+5$ is irreducible in $\ZZ[x]$ by Eisensteins criterion with $p=5$.
 			\item Let $p$ be a prime and let \[\Phi_p(x):=\frac{x^p-1}{x-1}=x^{p-1}+\cdots+x+1.\] Then this is irreducible. Lets prove this:
@@ -785,6 +789,7 @@
 	Now, here is an important result:
 	
 	\begin{thm}\label{thm: field iso}
+		\uses{defn: simple field ext}
 		Let $F$ be a field and $p(x)$ an irreducible polynomial in $F[x]$. Moreover, let $K/F$ be a field extension containing a root  $\a$ of $p(x)$. Then there is an isomorphism \[F[x]/(p(x)) \cong F(\a) \] given by sending $f(x)$ to $f(\a)$.\footnote{In other words, you evaluate a polynomial at $\a$}
 	\end{thm}
 	\begin{proof}
