@@ -95,10 +95,10 @@
 %
 %%==============================================================================
 \theoremstyle{plain}
-\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{theorem}[subsection]{Theorem}
 \newtheorem*{thm*}{Theorem}
-\newtheorem{lem}[subsection]{Lemma}
-\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
 \newtheorem{con}[subsection]{Conjecture}
 \newtheorem*{con*}{Conjecture}
 \newtheorem{prop}[subsection]{Proposition}
@@ -119,7 +119,7 @@
 \newtheorem{nota}[subsection]{Notation}
 \newtheorem{question}[subsection]{Exercise}
 \newtheorem{num}[subsection]{\unskip}
-\newtheorem{alg}[subsection]{Algorithm}
+\newtheorem{alg}[subsection]{Algoritheorem}
 
 
 
@@ -654,15 +654,15 @@
 	
 	
 	Ok, so how do we check if a polynomial is irreducible? Let look at the case we will most care about, which is $\QQ[x]$. Now, we have the following Lemmas which you may have seen in the Galois theory course or algebra course, so we wont prove them:
-	\begin{lem}[Gauss's Lemma]
+	\begin{lemma}[Gauss's Lemma]
 		A polynomial is irreducible in $\ZZ[x]$ if and only if it is irreducible in $\QQ[x]$.
-	\end{lem}	
+	\end{lemma}	
 	
 	Here is a slightly different version for monic polynomials
 	
-	\begin{lem}[Monic Gauss Lemma]\label{monic gauss}
+	\begin{lemma}[Monic Gauss Lemma]\label{monic gauss}
 		Let $f \in \ZZ[x]$ be monic and assume that $f=gh$ with $g,h \in \QQ[x]$ which are also monic. Then $g,h \in \ZZ[x]$. 
-	\end{lem}
+	\end{lemma}
 	
 	
 	
@@ -716,7 +716,7 @@
 	
 	
 	
-	\begin{cor}[Eisenstein Criterion]\label{Eis crit}
+	\begin{corollary}[Eisenstein Criterion]\label{Eis crit}
 		\uses{prop: shonemann}
 		Let \[f(x)=a_n x^n+a_{n-1}x^{n-1}+ \cdots, a_1x+a_0\] be a polynomial in $\ZZ[x]$ (with $n \geq 1)$ and let $p$ be a prime number. Suppose $a_n$ is not divisible by $p$, $a_{n-1},\dots,a_0$ are all divisible by $p$ and $a_0$ is not divisible by $p^2$. Then $f(x)$ is irreducible.
 		
@@ -724,7 +724,7 @@
 		%\includegraphics[scale=0.18]{clippy.png}
 		%}
 		
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		Since $a_n \not \equiv 0 \bmod p$, it is invertible. Now let $b$ be any integer such that $b \equiv a_n^{-1} \bmod p$, then $bf(x)=x^n+pg(x)$ for some $g(x) \in \ZZ[x]$. Moreover, $g(0) \not \equiv 0 \bmod p$ since $a_0$ is not divisible by $p^2$. Therefore, we satisfy Sh\"onemann's Irreducibility Criterion and therefore $bf(x)$ is irreducible and thus so is $f(x)$.
@@ -788,10 +788,10 @@
 	
 	Now, here is an important result:
 	
-	\begin{thm}\label{thm: field iso}
+	\begin{theorem}\label{thm: field iso}
 		\uses{definition: simple field ext}
 		Let $F$ be a field and $p(x)$ an irreducible polynomial in $F[x]$. Moreover, let $K/F$ be a field extension containing a root  $\a$ of $p(x)$. Then there is an isomorphism \[F[x]/(p(x)) \cong F(\a) \] given by sending $f(x)$ to $f(\a)$.\footnote{In other words, you evaluate a polynomial at $\a$}
-	\end{thm}
+	\end{theorem}
 	\begin{proof}
 		Let me denote by $\phi'$ the map $F[x] \to F(\a)$ sending $f(x)$ to $f(\a)$. First note that $p(x)$ is in the kernel of $\phi'$, since $p(\a)=0$ as $\a$ is taken to be a root of $p(x)$. Therefore, $\phi$ also induces a new map $F[x]/(p(x)) \to F(\a)$ which we  call $\phi$ (we say that $\phi'$ "factors through" $F[x]/(p(x))$). Now we want to show $\phi$ is an isomorphism. First note that  $\phi(x+(p(x)))=\a$ and if $a \in F$ then $\phi(a)=a$, so the image of $\phi$ has $F$ and $\a$ in its image. Moreover, $\phi$ is a field homomorphism, so the image is again a field. This means that $F(\a)$ is in the image of $\phi$ (since by Definition \ref{definition: simple field ext}, $F(\a)$ is defined to be the smallest such field). So we just need to check this map is injective. 
 		
@@ -851,10 +851,10 @@
 	
 	Now, from Theorem \ref{thm: field iso}, Proposition \ref{prop: dim of field ext} and Proposition \ref{prop: min pol} we have the following:
 	
-	\begin{cor}\label{cor: min pol simple ext}
+	\begin{corollary}\label{cor: min pol simple ext}
 		\uses{thm: field iso, prop: dim of field ext, prop: min pol}
 		Let $K/F$ be a field extension and $\a \in K$ algebraic over $F$. Then \[F[x]/(m_{\a,F}(x)) \cong F(\a)\] and moreover $[F(\a):F]=\deg(m_{\a,F}(x))$.
-	\end{cor}
+	\end{corollary}
 	
 	
 	\begin{definition}
@@ -880,10 +880,10 @@
 		Conversely, if $\a$ is in a finite extension $L/F$ of degree $n$. Then consider $1,\a,\a^2,\dots,\a^n$. These $n+1$ elements must be linearly dependent over $F$, so there exist $b_i$ such that \[b_0+b_1\a+\cdots+b_n\a^n=0\] which proves that $\a$ is algebraic over $F$ since its a root of $b_0+b_1x+\cdots+b_n x^n$.
 	\end{proof}
 	
-	\begin{cor}\label{cor: fin ext is alg}
+	\begin{corollary}\label{cor: fin ext is alg}
 		\uses{prop : alg_iff_fin}
 		If $K/F$ is a finite extension, then is it algebraic.
-	\end{cor}
+	\end{corollary}
 	\begin{question}
 		Is the converse of this statement true? In other words, if $K/F$ is an algebraic extension, then does it have to be finite?
 	\end{question}
@@ -904,14 +904,14 @@
 	
 	Proposition \ref{prop: tower law} and Corollary \ref{cor: fin ext is alg} gives us:
 	
-	\begin{thm}\label{thm: fin ext iff alg}
+	\begin{theorem}\label{thm: fin ext iff alg}
 		\uses{prop: tower law, cor: fin ext is alg}
 		A field extension $K/F$ is finite if and only if $K$ is generated by a finite number of algebraic elements over $F$.
-	\end{thm}
+	\end{theorem}
 	
-	\begin{cor}
+	\begin{corollary}
 		Let $\a,\beta \in K$ be non-zero and algebraic over $F$. Then $\a \pm \beta$, $\a\beta$, $\a/\beta$, $\a^{-1}$, $\beta^{-1}$,etc are also algebraic over $F$.
-	\end{cor}
+	\end{corollary}
 	\begin{proof}
 		Note that $\a, \beta \in F(\a,\beta)$. But from Proposition \ref{prop: tower law} we have  that $[F(\a,\beta):F]$ is finite. So by Corollary \ref{cor: fin ext is alg} $F(\a,\beta)$ is algebraic over $F$, meaning all of its elements are algebraic over $F$, which gives the result.
 	\end{proof}
@@ -1030,13 +1030,13 @@
 		Let $f(x)= a_0+a_1x+\cdots+a_nx^n$. Then since $\sigma$ fixes $F$, we see that since \[a_0+a_1\a+\cdots+a_n\a^n=0\] it follows that  \[a_0+a_1\sigma(\a)+\cdots+a_n\sigma(\a)^n=0\] and therefore, $\sigma(\a)$ also is a root of $f$, which gives the result.
 	\end{proof}
 	
-	\begin{lem}(Separability Lemma)\label{lem: sep lem} Let $K$ be a number field and let $f(x) \in K[x]$ be an irreducible polynomial of degree $n \geq 1$. Then $f(x)$ has $n$ distinct roots.
+	\begin{lemma}(Separability Lemma)\label{lem: sep lemma} Let $K$ be a number field and let $f(x) \in K[x]$ be an irreducible polynomial of degree $n \geq 1$. Then $f(x)$ has $n$ distinct roots.
 		
 		Moreover, if $\s:K \hookrightarrow \CC$ is any embedding and $f^\s(x)$ denotes the polynomial obtained by applying $\s$ to each coefficient, then $f^\s$ also has $n$ distinct roots.
 		
 		
 		
-	\end{lem}
+	\end{lemma}
 	\begin{proof}
 		By the fundamental theorem of algebra, $f(x)$ has $n$ roots in $\CC$, so we only need to show that there are no repeated roots. For this, consider the derivative $f'(x)$ of $f(x)$. $f'$ is also in $K[x]$ and is non-zero. If $f(x)$ has a repeated root, then $f$ and $f'$ would share a common factor, call it $h$. So let $g$ denote the greatest common divisor of $f$ and $f'$. Then $\deg(g) \leq n-1$ and divides $f$, but $f$ is irreducible, so $g$ must be a constant (i.e. $\deg(g)=0$), but then as $h|g$ this means $h$ is also a constant and thus, $f,f'$ do not share a common factor.
 		
@@ -1064,10 +1064,10 @@
 	
 	
 	
-	\begin{thm}[Primitive element theorem]\label{thm: prim elt thm}
+	\begin{theorem}[Primitive element theorem]\label{thm: prim elt theorem}
 		Let $K/F$ be a finite extension of number fields. Then there exists $\a \in K$ such that $K \cong F(\a)$.
 		
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		We prove this by induction on $[K:F]$. If $K=F$ there is nothing to prove. So assume that $K \neq F$ and let $\a \in K \backslash F$. Then by our inductive hypothesis we have $K=F(\a,\beta)$ for some $\beta$. We claim that there are infinitely many $c$ such that $K=F(\a+c\beta)$. To do this we will show that there can only be finitely many $c \in F$ such that $K \neq F(\a+c\beta)$. Assume this is the case, then lets think about how many conjugates $\a+c\beta$ has over $F$. If $K =F(\a+c\beta)$ then by Proposition \ref{prop: emb extns} there would be $[K:F]$ conjugates of $(\a+c\beta)$, but since we are assuming we aren't in this situation there must be fewer conjugates. In particular, we must have two distinct embeddings $\eta,\sigma: K \hookrightarrow \CC$ which extend $F$ and send $(\a+c\beta)$ to the same element. So \[\eta(\a)+c\eta(\beta)=\sigma(\a)+c\sigma(\beta).\] Now, note that $\sigma(\beta) \neq \eta(\beta)$ since otherwise, $\eta(\a)=\sigma(\a)$ and thus, since $K=F(\a,\beta)$ we'd have $\sigma=\eta$, which is a contradiction. Therefore \[c=\frac{\eta(\a)-\sigma(\a)}{\sigma(\beta)-\eta(\beta)},\] but by Proposition \ref{prop: conj roots emb}  there are only finitely many possibilities for $\eta(a)$, $\eta(\beta)$, $\sigma(\a)$, $\sigma(\beta)$.
@@ -1128,7 +1128,7 @@
 	\end{prop}
 	
 	\begin{proof}
-		By the Primitive Element Theorem \ref{thm: prim elt thm} we can write $K \cong \QQ(\a)$. Now, from Proposition \ref{prop: field pol min pol}, we know $C_\a=m_\a$ and by Proposition \ref{prop: conj roots emb} we know that $m_\a=\prod_{i}(x-\sigma_i(\a))$, therefore, $C_\a$ has $n:=[K:\QQ]$ distinct roots (by Lemma \ref{lem: sep lem}), therefore $A_\a$ is diagonalisable over $\CC$, with eigenvalues being the conjugates of $\a$. So we can find a matrix $P$ (over $\CC$) such that \[P^{-1}A_\a P= \left (\begin{matrix}\sigma_1(\a) && \\ & \ddots & \\ && \sigma_n(\a)
+		By the Primitive Element Theorem \ref{thm: prim elt theorem} we can write $K \cong \QQ(\a)$. Now, from Proposition \ref{prop: field pol min pol}, we know $C_\a=m_\a$ and by Proposition \ref{prop: conj roots emb} we know that $m_\a=\prod_{i}(x-\sigma_i(\a))$, therefore, $C_\a$ has $n:=[K:\QQ]$ distinct roots (by Lemma \ref{lem: sep lemma}), therefore $A_\a$ is diagonalisable over $\CC$, with eigenvalues being the conjugates of $\a$. So we can find a matrix $P$ (over $\CC$) such that \[P^{-1}A_\a P= \left (\begin{matrix}\sigma_1(\a) && \\ & \ddots & \\ && \sigma_n(\a)
 		\end{matrix} \right )\]
 		Now, $\beta \in K$ we can find $f(x) \in \QQ[x]$ such that $f(\a)=\beta$ and therefore 
 		
@@ -1141,9 +1141,9 @@
 		And since $P^{-1}A_\beta P$ and $A_\beta$ have the same characteristic polynomial, we get the result.
 	\end{proof}
 	
-	\begin{cor}\label{cor: field to min pol}
+	\begin{corollary}\label{cor: field to min pol}
 		Let $K$ be a number field and $\beta \in K$, then \[C_\beta(x)=m_\beta(x)^{[K:\QQ(\beta)]} \in \QQ[x]\]
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		By Proposition \ref{prop: field poly embs} we know all the roots of $C_\beta$ are of the form $\sigma_i(\beta)$. Now, let $\v_i$ be the embedding of $\QQ(\beta)$. Then  from Proposition \ref{prop: emb extns} we know that each $\v_i$ extends to $[K:\QQ(\beta)]$ embeddings of $K$ and by definition each of these embeddings keeps $\v_i(\beta)$ the same. So for each $\v_i(\beta)$ there are $[K:\QQ(\beta)]$ embeddings $\sigma_j$ such that $\sigma_j(\beta)=\v_i(\beta)$. Now, since $m_\beta(x)=\prod_i (x-\v_i(\beta))$ we see that \[C_\beta= \left [\prod_i (x-\v_i(\beta))\right ]^{[K:\QQ(\beta)]}\] giving the result.
@@ -1221,9 +1221,9 @@
 		Let $K$ be a field extension of $\QQ$ (not necessarily finite). An element $\a$ is called an algebraic integer if it is a root of a \textit{monic} polynomial with coefficients in $\ZZ$.
 	\end{definition}
 	
-	\begin{lem}\label{lem: roots of int matrix alg ints}
+	\begin{lemma}\label{lem: roots of int matrix alg ints}
 		If $A$ is a matrix with integer coefficients, then its eigenvalues are algebraic integers.
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		If the matrix is integral, its characteristic polynomial is monic with integer coefficients, and thus the eigenvalues are algebraic integers.
@@ -1268,9 +1268,9 @@
 	\end{proof}
 	
 	
-	\begin{cor}\label{cor: field pol of alg int has int coefs}
+	\begin{corollary}\label{cor: field pol of alg int has int coefs}
 		Let $K$ be a number field and $\a \in K$. Then $\a$ is an algebraic integer if and only if $C_\a$ has integer coefficients.
-	\end{cor}
+	\end{corollary}
 	
 	
 	
@@ -1278,9 +1278,9 @@
 		This follows from Corollary \ref{cor: field to min pol} and Proposition \ref{prop: min pol alg int}.
 	\end{proof}
 	
-	\begin{cor}
+	\begin{corollary}
 		Let $K$ be a number fields and $\a \in K$. Then there exists a $n \in \ZZ\backslash\{0\}$ such that $n \a$ is an algebraic integer.  
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		Let $A_\a$ be the standard representation of $\a$. Then this is a matrix with rational entries. So if we clear denominators by multiplying with a suitable integer $n$ we get that $n A_\a=A_{n\a}$ is an matrix with integer entries and therefore $n\a$ is an algebraic integer by Lemma \ref{lem: roots of int matrix alg ints}.
@@ -1288,7 +1288,7 @@
 	
 	
 	
-	\begin{thm}[Integers in quadratic fields]\label{thm: int quad field} Let $d$ be a square free integer and let $K=\QQ(\sqrt{d})$ then
+	\begin{theorem}[Integers in quadratic fields]\label{thm: int quad field} Let $d$ be a square free integer and let $K=\QQ(\sqrt{d})$ then
 		
 		\[\OO_K= \begin{cases}
 			\ZZ[\sqrt{d}] & \text{ if } d\equiv 2 \text{ or } 3 \pmod 4 \\
@@ -1297,7 +1297,7 @@
 		
 		
 		
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		Let $\a=a+b\sqrt{d}$ with $a,b \in \QQ$. If $b=0$ then we are just asking which rational numbers are algebraic integers, which we have seen are only the integers. So assume $b \neq 0$. Then the minimal polynomial of $\a$ over $\QQ$ is \[x^2-2ax+ (a^2-db^2).\] Therefore, $\a$ is an algebraic integer if and only if $2a$ and  $(a^2-db^2)$ are integers.
@@ -1325,7 +1325,7 @@
 	\end{definition}
 	
 	
-	\begin{thm}\label{thm: alg ints fin gen}
+	\begin{theorem}\label{thm: alg ints fin gen}
 		Let $\a \in \CC$. The following are equivalent:
 		
 		\begin{enumerate}[(1)]
@@ -1336,7 +1336,7 @@
 		\end{enumerate}
 		
 		
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		$(1) \implies (2)$ : Since $\a$ is an algebraic integer, it is the root of the monic polynomial $m_\a$ of degree $n$, say, which has integer coefficients. In this case we claim that $\{1,\a,\cdots,\a^{n-1}\}$ is generates $\ZZ[\a]$. For this we note that if $f(\a) \in \ZZ[\a]$, then by doing polynomial long division we have $f(x)=q(x)m_\a(x)+r(x)$ with $\deg(r)<n$. Now if evaluate at $\a$ we get $f(\a)=r(\a)$. But since $\deg(r)<n$ we see that $r(\a)$ is in the $\ZZ$ span of  $\{1,\a,\cdots,\a^{n-1}\}$. Thus giving the claim.
@@ -1359,17 +1359,17 @@
 	
 	Using this we can now prove that $\OO_K$ is actually a ring.
 	
-	\begin{cor}\label{cor: sum and mult of alg ints is alg ints}
+	\begin{corollary}\label{cor: sum and mult of alg ints is alg ints}
 		Let $\a,\beta$ be algebraic integers, then so are $\a+\beta$ and $\a \beta$.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		Since $\a,\beta$ are algebraic integers, then by Theorem \ref{thm: alg ints fin gen} $(2)$ we have $\ZZ[\a]$ and $\ZZ[\beta]$ are finitely generated (as additive groups). Moreover, the ring $\ZZ[\a,\beta]$ (take this to be defined as the smallest ring containing $\ZZ,\a,\beta$) is also finitely generated, since if $\{a_1,\dots,a_n\}$ generate $\ZZ[\a]$ and $\{b_1,\dots,b_m\}$ generates $\ZZ[\beta]$ then $\{a_ib_j\}_{i,j}$ generates $\ZZ[\a,\beta]$. Now, $\ZZ[\a,\beta]$ contains both $\a+\beta$ and $\a\beta$, then \ref{thm: alg ints fin gen} $(3)$ tells us that they must also be algebraic integers.
 	\end{proof}
 	
-	\begin{cor}
+	\begin{corollary}
 		If $K$ is a number field, then $\OO_K$ is a ring.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		This follows at once from the above, since if $\a,\beta$ are algebraic integers in $K$, then $\a+\beta \in K, \a \beta \in K$ and by the above, they are both algebraic integers.
@@ -1468,7 +1468,7 @@
 	\end{proof}
 	
 	
-	Now, by the Primitive element theorem \ref{thm: prim elt thm} we know that for a number field we can always find some $\a$ such that $K=\QQ(\a)$ and in this case $\{1,\a,\dots,\a^{n-1}\}$ is a basis of $K/\QQ$ where $n=[K:\QQ]$. But as we mentioned above, we cant do this for rings of integers. But, using the discriminant we can check if we have a basis for our ring of integers.
+	Now, by the Primitive element theorem \ref{thm: prim elt theorem} we know that for a number field we can always find some $\a$ such that $K=\QQ(\a)$ and in this case $\{1,\a,\dots,\a^{n-1}\}$ is a basis of $K/\QQ$ where $n=[K:\QQ]$. But as we mentioned above, we cant do this for rings of integers. But, using the discriminant we can check if we have a basis for our ring of integers.
 	
 	First note that:
 	
@@ -1487,9 +1487,9 @@
 		Just because we take a basis consisting of algebraic integers, it doesn't mean that it is an integral basis. To find an integral basis we need to be a bit more careful.
 	\end{warn}
 	
-	\begin{lem}\label{lem: disc int basis}
+	\begin{lemma}\label{lem: disc int basis}
 		Let $K$ be a number field and $B=\{b_1,\dots,b_n\}$ be a basis for $K/\QQ$ consisting of algebraic integers. If $B$ is not an integral basis then there exists an algebraic integer of the form \[\a=\frac{x_1b_1+\cdots+x_nb_n}{p}\] where $p$ is a prime and $x_i \in \{0,\dots,p-1\}$ with not all $x_i$ zero. Moreover, if $x_i \neq 0$ and we let $B'$ be the basis obtained by replacing $b_i$ with $\a$, then \[\Delta(B')= \frac{x_i^2}{p^2} \Delta(B).\] In particular $p^2 \mid \Delta(B)$.
-	\end{lem} 
+	\end{lemma} 
 	
 	\begin{proof}
 		If $B$ is not an integral basis then we can find some element $\phi \in \OO_K$ such that \[\phi=y_1b_1+\dots y_nb_n\] with not all the $y_i$ in $\ZZ$. So, let $N$ be the least common multiple of the denominators of the $y_i$ (meaning $Ny_i \in \ZZ$ for all $i$). Now, let $p$ be a prime factor of $N$. If we now consider $(N/p)\phi$ then all of the coefficients of $b_i$ are in $\frac{1}{p} \ZZ$ (so they have denominator $1$ or $p$.) and at least one of them has denominator $p$ (since not all the $y_i$ where in $\ZZ$). So by relabelling, wlog we can assume \[\phi=y_1b_1+\dots y_nb_n\] with $y_i \in  \frac{1}{p} \ZZ$
@@ -1508,9 +1508,9 @@
 		This matrix has determinant $\frac{x_i}{p}.$ Therefore, by 	Proposition \ref{prop: disc change of basis} we see that $\Delta(B')=\frac{x_i^2}{p^2}\Delta(B)$. But both $\Delta(B),\Delta(B')$ are  in $\ZZ$ by Proposition \ref{prop: int basis int disc}, therefore $p^2 \mid \Delta(B)$ giving the result.
 	\end{proof}
 	
-	\begin{cor}\label{cor: int basis exists}
+	\begin{corollary}\label{cor: int basis exists}
 		There exists a (finite) integral basis in $K$. 
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		The fact that it is finite follows from $K$ being a finite extension of $\QQ$.	
@@ -1518,9 +1518,9 @@
 	\end{proof}
 	
 	From this we also get:
-	\begin{cor}\label{cor: square free implies int basis}
+	\begin{corollary}\label{cor: square free implies int basis}
 		If $B$ is a basis consisting of integral elements and $\Delta(B)$ is square-free, then $B$ is an integral basis.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		This follows at once from Lemma \ref{lem: disc int basis}.
@@ -1573,7 +1573,7 @@
 		By Proposition \ref{prop: alt definition of norm and trace} we know that  $\Tr_{K/\QQ}(b_i b_j)= \sum_k \sigma_k(b_i)\sigma_k(b_j)$ which is the same as the $(i,j)$ entry of $M^t M$. Therefore \[\det(T_B)=\det(M^t M)=\det(M)^2.\]
 	\end{proof}
 	
-	Now, by the Primitive element theorem \ref{thm: prim elt thm}, for any number field $K$ we can find some $\a$ such that $K=\QQ(\a)$ and thus $\{1,\a,\a^2,\dots,\a^{n-1}\}$ is a basis for $K/\QQ$ where $n=[K:\QQ]$. In this case the discriminant is given by:
+	Now, by the Primitive element theorem \ref{thm: prim elt theorem}, for any number field $K$ we can find some $\a$ such that $K=\QQ(\a)$ and thus $\{1,\a,\a^2,\dots,\a^{n-1}\}$ is a basis for $K/\QQ$ where $n=[K:\QQ]$. In this case the discriminant is given by:
 	
 	\begin{prop}\label{prop: disc of prim elt basis}
 		Let $K$ be a number field and $B=\{1,\a,\a^2,\dots,\a^{n-1}\}$ for some $\a \in K$. Then \[\Delta(B)=\prod_{i < j} (\sigma_i(\a)-\sigma_j(\a))^2\] where $\sigma_i$ are the embeddings of $K $ into $\CC$.
@@ -1589,9 +1589,9 @@
 	
 	Lastly, we have probably the more useful formula for computing the discriminant in this case, but before we state it we need the following lemma.
 	
-	\begin{lem}\label{lem: diff of irr pol}
+	\begin{lemma}\label{lem: diff of irr pol}
 		Let $f$ be a monic irreducible polynomial over a number field $K$ and let $\a$ be one of its roots in $\CC$. Then \[f'(\a)=\prod_{\beta \neq \a} (\a-\beta),  \] where the product is over the roots of $f$ different from $\a$.
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		We first write $f(x)=(x-\a)g(x)$ which we can do (over $\CC$) as $\a$ is a root of $f$, where now $g(x)=\prod_{\beta \neq \a} (x-\beta)$. Differentiating we get \[f'(x)=g(x)+(x-\a)g'(x).\] If we now evaluate at $\a$ we get the result.
@@ -1620,9 +1620,9 @@
 	
 	In order to make this simpler, here is a simple trick.
 	
-	\begin{lem}\label{lem: eis crit and alg ints}
+	\begin{lemma}\label{lem: eis crit and alg ints}
 		Let $K=\QQ(\a)$and $\a$ be an algebraic integer such that $m_\a$ satisfies Eisensteins Criterion \ref{Eis crit} for a prime $p$. Then none of the elements \[\phi=\frac{1}{p}(x_0+x_1\a+\cdots+x_{n-1}\a^{n-1})\] is an algebraic integer, where $n=\deg(m_\a)$ and $x_i \in \{0,\dots,p-1\}.$
-	\end{lem} 
+	\end{lemma} 
 	
 	
 	\begin{proof}
@@ -1648,9 +1648,9 @@
 	
 	\subsection{Discriminants of trinomials}
 	
-	\begin{lem}\label{lem: min pol of lin trans}
+	\begin{lemma}\label{lem: min pol of lin trans}
 		Let $\a$ be an algebraic number with minimal polynomial $m_\a$ and let $\beta \in \QQ(\a)$ be such that $\a=\frac{a}{b\beta+c}$ with $a,b,c \in \QQ$ and $b \neq 0$. Then $\deg(m_\a)=\deg(m_\beta)$.
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		
@@ -1665,9 +1665,9 @@
 		
 	\end{proof}
 	
-	\begin{thm}\label{thm: disc of trinom}
+	\begin{theorem}\label{thm: disc of trinom}
 		Let $K=\QQ(\a)$ a number field with $m_\a(x)=x^n+ax+b$. Then \[\Delta(\{1,\a,\dots,\a^{n-1}\})=(-1)^{\frac{n(n-1)}{2}}(n^nb^{n-1}+(-1)^{n-1}(n-1)^{n-1}a^n)   .\]
-	\end{thm}
+	\end{theorem}
 	
 	
 	\begin{proof}
@@ -1681,9 +1681,9 @@
 		
 	\end{proof} 
 	
-	\begin{cor}\label{cor: disc of cubic field}
+	\begin{corollary}\label{cor: disc of cubic field}
 		Let $K=\QQ(\a)$ be a number field with $m_\a(x)=x^3+ax+b$. Then \[\Delta(\{1,\a,\a^2\})=-27b^2-4a^3.\]
-	\end{cor}
+	\end{corollary}
 	
 	Let $K=\QQ(\a)$ a number field with $[K:\QQ]=3$. Then $m_\a(x)=x^3+ax^2+bx+c$ for $a,b,c \in \QQ$. If we replace $\a$ with $\a':=\a+a/3$ then $\QQ(\a)=\QQ(\a')$ but this has the effect of removing the $x^2$ term in the minimal polynomial, so after relabelling if necessary, we have $K=\QQ(\a)$ with $m_{\a}(x)=x^3+ax+b$. Therefore Corollary \ref{cor: disc of cubic field} gives us a quick way to find the discriminant of a cubic field.
 	
@@ -1712,16 +1712,16 @@
 	
 	
 	More generally, here is a Lemma we will use without proof.
-	\begin{lem}\label{lem: cyclo poly}
+	\begin{lemma}\label{lem: cyclo poly}
 		For $n$ any integer, $\Phi_n$ is an irreducible polynomial of degree $\varphi(n)$ (where $\varphi$ is Euler's Totient function).
-	\end{lem}
+	\end{lemma}
 	
 	
 	
 	
-	\begin{thm}\label{thm: ring of ints of cyclo}
+	\begin{theorem}\label{thm: ring of ints of cyclo}
 		Let $\zeta_p$ be a $p$-th root of unity for $p$ an odd prime, let $\lam_p=1-\zeta_p$ and $K=\QQ(\zeta_p)$. Then $\OO_K=\ZZ[\zeta_p]=\ZZ[\lam_p]$ moreover \[\Delta(\{1,\zeta_p,\dots,\zeta_p^{p-2}\})=\Delta(\{1,\lam_p,\dots,\lam_p^{p-2}\})=(-1)^{\frac{(p-1)}{2}}p^{p-2}\]
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		First note $[K:\QQ]=p-1$.
@@ -1759,9 +1759,9 @@
 	
 	If one works harder, one can show (but we wont prove this):
 	
-	\begin{thm}\label{thm: ring of ints of cyclo field}
+	\begin{theorem}\label{thm: ring of ints of cyclo field}
 		Let $n$ be a positive integer and $\zeta_n$ a root of unity. If $K=\QQ(\zeta_n)$ then \[\OO_K=\ZZ[\zeta_n].\]
-	\end{thm}
+	\end{theorem}
 	
 	\begin{question}
 		Let $n$ be a positive integer and let $\zeta_n$ be an $n$-th root of unity. Show that if $k$ is coprime to $n$ then \[1+\zeta_n+\cdots+\zeta_n^{k-1}\] is a unity in $\ZZ[\zeta_n]$.
@@ -1801,16 +1801,16 @@
 	\end{exmp}
 	
 	Next we have a theorem which we will use but not prove.
-	\begin{thm}[Dirichlet's Unit theorem]\label{thm: dir unit thm}
+	\begin{theorem}[Dirichlet's Unit theorem]\label{thm: dir unit theorem}
 		Let $K$ be a number field and let \[\mu_K=\{x \in K^\times \mid x^n=1 \text{ for some } n  \in \ZZ_{> 0}\}.\] This is the set of roots of unity in $K$. Let $r_1$ denote the number of real embeddings of $K$ and $r_2$ the number of complex conjugate pairs of embeddings. Then \[\OO_K^{\times} \cong \mu_K \times \ZZ^{r_1+r_2-1}\]
-	\end{thm}
+	\end{theorem}
 	
-	\begin{cor}
+	\begin{corollary}
 		If $K=\QQ(\sqrt{-d})$ with $d \in \ZZ_{> 0}$ a square-free integer, then $\OO_K^\times$ is  $\mu_K$.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
-		In this case $r_1=0$ and $r_2=1$ therefore Theorem \ref{thm: dir unit thm} gives the result.
+		In this case $r_1=0$ and $r_2=1$ therefore Theorem \ref{thm: dir unit theorem} gives the result.
 	\end{proof}
 	
 	
@@ -1823,12 +1823,12 @@
 		where $\zeta=e^{2\pi/6}=\frac{1+\sqrt{-3}}{2}$.
 	\end{question}
 	
-	\begin{cor}
+	\begin{corollary}
 		Let $K=\QQ(\sqrt{d})$ with $d$ a positive square-free integer. Then \[\OO_K^{\times} \cong \{\pm 1\} \times \ZZ.\] In this case there is a unique unit in $u \in \OO_K^{\times}$ which generates $\OO_K^\times/ \{\pm 1\}$ and under the standard embedding we have $u \geq 1$. This unit $u$ is called the fundamental unit.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
-		Note that in this case $\mu_K=\{\pm 1\}$. So the structure of the group of units follows from Theorem \ref{thm: dir unit thm}. Now, $\OO_{K}^{\times}/\{\pm 1\} \cong \ZZ$ so take any unit $v$ mapping to a generator of  $\OO_{K}^{\times}/\{\pm 1\}$. Then one of $\{\pm v, \pm v^{-1}\}$  is in the set $(1,\infty)$. So let $u$ be this unit.
+		Note that in this case $\mu_K=\{\pm 1\}$. So the structure of the group of units follows from Theorem \ref{thm: dir unit theorem}. Now, $\OO_{K}^{\times}/\{\pm 1\} \cong \ZZ$ so take any unit $v$ mapping to a generator of  $\OO_{K}^{\times}/\{\pm 1\}$. Then one of $\{\pm v, \pm v^{-1}\}$  is in the set $(1,\infty)$. So let $u$ be this unit.
 	\end{proof}
 	
 	
@@ -1919,18 +1919,18 @@
 	
 	
 	
-	\begin{lem}\label{lem: fin int dom is field}
+	\begin{lemma}\label{lem: fin int dom is field}
 		A finite integral domain is a field.
-	\end{lem}
+	\end{lemma}
 	
 	
 	\begin{proof}
 		Let $R$ be a finite, non-trivial integral domain. Let $r \in R\backslash 0$. We need to show that $r$ has an inverse. Here is the trick: consider the sequence $r,r^2,r^3,\dots.$ Since $R$ is finite at some point we must have $r^n=r^m$ for some $m<n$. Then $r^m(r^{n-m}-1)=0$, but this is where being an integral domain comes in, since this means either $r^m=0$ or $r^{n-m}-1=0$. Since $r \neq 0$ and $R$ is an integral domain $r^m \neq 0$. Therefore $r^{n-m}=1$. This means $r^{-1}=r^{n-m-1}$ and therefore $r$ has an inverse.
 	\end{proof}
 	
-	\begin{cor}\label{cor: prim ideal is maximal}
+	\begin{corollary}\label{cor: prim ideal is maximal}
 		Let $K$ be a number field. Then every non-zero prime ideal in $\OO_K$ is maximal.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		By Proposition \ref{prop: prime and max ideals in rings} we know that if $\gothp \subset \OO_K$ is a prime ideal then $\OO_K/\gothp$ is an integral domain. Now, by Proposition \ref{prop: quot of ideal is finite} $\OO_K /\gothp$ is finite. But by Lemma \ref{lem: fin int dom is field} this is then a field. Now, using Proposition \ref{prop: prime and max ideals in rings} again, $\gothp$ is maximal.
@@ -1963,9 +1963,9 @@
 	\end{definition}
 	
 	
-	\begin{thm}
+	\begin{theorem}
 		Let $K$ be a number field with ring of integers $\OO_K$. Then $\OO_K$ is a Dedekind domain.
-	\end{thm}
+	\end{theorem}
 	
 	
 	\begin{proof}
@@ -1991,17 +1991,17 @@
 	Dedekind domains are great. Lets look at some of their properties.
 	
 	
-	\begin{lem}\label{lem: ded dom ideal has prim ideals}
+	\begin{lemma}\label{lem: ded dom ideal has prim ideals}
 		Let $R$ be a Dedekind domain. Then every ideal contains a product of prime ideals.
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		Assume for contradiction this is not the case. Let $S$ denote the set of all ideals that do not contain a product of prime ideals. Then, since $R$ is Noetherian, by Definition \ref{definition: noeth ring}$(3)$, $S$ must contain a maximal element $\gothm$ (not to be confused with maximal ideal, here maximal means with respect to the property of not containing a product of prime ideals). Now $\gothm$ cannot be prime (otherwise $\gothm \subseteq \gothm$ gives a contradiction). Therefore we can find $r,s \in R \backslash \gothm$ such that $rs \in \gothm$. Now the ideals $(r)+\gothm$ and $(s)+\gothm$ are both larger then $\gothm$ so must contain a product of prime ideals, but then so does their product $((r)+\gothm)((s)+\gothm)$. This product is contained in $\gothm$ (since $rs \in \gothm$) so we have a contradiction.
 	\end{proof}
 	
-	\begin{lem}\label{lem: proper ideal mult by frac is still int}
+	\begin{lemma}\label{lem: proper ideal mult by frac is still int}
 		Let $R$ be a Dedekind domain with field of fractions $K$ and $\gotha$ a proper ideal . Then there is an element $x \in K \backslash R$ such that $x \gotha \subset R$.
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		Let $a \in \gotha$ be any non-zero element. By Lemma \ref{lem: ded dom ideal has prim ideals} the ideal $(a)$ contains a product of prime ideals. So lets take prime ideals $\gothp_i$ such that  $\prod_{i=1}^m \gothp_i \subset (a)$ with $m$ as small as possible. Now, since every proper ideal is contained in a maximal ideal $\gothp$ (see Proposition \ref{prop: prime and max ideals in rings}), which is also a prime ideal (as maximal ideals are always prime). Therefore $\gotha \subset \gothp$, so $\prod_i \gothp_i \subset \gothp$. 
@@ -2017,9 +2017,9 @@
 	\end{proof}
 	
 	
-	\begin{thm}\label{thm: ideals are invertible}
+	\begin{theorem}\label{thm: ideals are invertible}
 		Let $R$ be a Dedekind domain and $\gotha$ an ideal in $R$. Then there is an ideal $\gothb$ such that $\gotha \gothb$ is principal.
-	\end{thm}
+	\end{theorem}
 	
 	
 	\begin{proof}
@@ -2074,17 +2074,17 @@
 	\end{rmrk}
 	
 	
-	\begin{cor}\label{cor: cancel of ideals}
+	\begin{corollary}\label{cor: cancel of ideals}
 		If $\gotha,\gothb,\gothc$ are non-zero ideals in a Dedekind domain and $\gotha\gothb=\gotha\gothc$ then $\gothb=\gothc$.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		Multiplying on the left by $\gotha^{-1}$ gives the result.
 	\end{proof}
 	
-	\begin{cor}\label{cor: ideal div}
+	\begin{corollary}\label{cor: ideal div}
 		Let $\gotha,\gothb$ be ideals in a Dedekind domain. Then $\gotha \mid \gothb$ if and only if\/ $\gothb \subset \gotha$.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		If $\gotha \mid \gothb$ then by definition we have $\gothb=\gothc \gotha$, which means $\gothb \subset \gotha$. Conversely, assume that $\gothb \subset \gotha$. Then by Theorem \ref{thm: ideals are invertible} we can find an ideal $\gothm$ such that $\gotha\gothm=(\a)$. Now, $\gothm \gothb \subset \gotha\gothm=(\a)$ therefore	 $\gothc=\frac{1}{\a}\gothm \gothb$ is again in $R$ and moreover  it is an ideal (since, for example it is the product of two fractional ideals). The result follows from then noting that $\gotha \gothc=\gothb$.
@@ -2094,9 +2094,9 @@
 	
 	We can now use this as a fix to our problem of not being able to factor uniquely.
 	
-	\begin{thm}\label{thm: ded dom ideal is prod of prim} Let $R$ be a Dedekind domain, then every ideal $\gotha$ can be written uniquely as a product of prime ideals, i.e, \[\gotha=\gothp_1\gothp_2\dots\gothp_n,\] with $\gothp_i$ prime ideals (not necessarily distinct).
+	\begin{theorem}\label{thm: ded dom ideal is prod of prim} Let $R$ be a Dedekind domain, then every ideal $\gotha$ can be written uniquely as a product of prime ideals, i.e, \[\gotha=\gothp_1\gothp_2\dots\gothp_n,\] with $\gothp_i$ prime ideals (not necessarily distinct).
 		
-	\end{thm}
+	\end{theorem}
 	
 	
 	
@@ -2118,9 +2118,9 @@
 		Since ideal multiplication commutes, we usually write the factorization of a an ideal as \[\gotha=\gothp_1^{e_1}\gothp_2^{e_1}\dots\gothp_r^{e_r}\] with $\gothp_i$ distinct prime ideals. 
 	\end{nota}
 	
-	\begin{cor}
+	\begin{corollary}
 		Let $K$ be a number field. Then every ideal in $\OO_K$ can factored uniquely into a product of prime ideals.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		We know $\OO_K$ is a Dedekind domain, so the result follows.
@@ -2147,8 +2147,8 @@
 	\end{question}
 	
 	
-	\begin{thm}[Chinese remainder theorem]\label{thm: chinese rem thm} Let $R$ be a commutative ring and let $\gotha,\gothb$ be coprime ideals (i.e., $\gotha+\gothb=(1)$) then \[R/\gotha\gothb \cong R/\gotha \times R/\gothb\]
-	\end{thm}
+	\begin{theorem}[Chinese remainder theorem]\label{thm: chinese rem theorem} Let $R$ be a commutative ring and let $\gotha,\gothb$ be coprime ideals (i.e., $\gotha+\gothb=(1)$) then \[R/\gotha\gothb \cong R/\gotha \times R/\gothb\]
+	\end{theorem}
 	
 	\begin{proof}
 		Consider the ring homomorphism \[\phi: R \to R/\gotha \times R/\gothb\] given by $\phi(x)=(x \pmod \gotha, x \pmod \gothb)$. Then the kernel is given by $\gotha \cap \gothb$.
@@ -2162,9 +2162,9 @@
 		By induction one can extend this to the case where we have several pairwise coprime ideals.
 	\end{rmrk}
 	
-	\begin{thm}
+	\begin{theorem}
 		Let $R$ be a Dedekind domain and let $\gotha$ be an ideal. Then for any $\a \in \gotha$ with $\a$ non-zero we can find $\beta \in \gotha$ such that $\gotha=(\a,\beta)$.
-	\end{thm}
+	\end{theorem}
 	
 	
 	\begin{proof}
@@ -2172,7 +2172,7 @@
 		
 		Let \[\gotha=\gothp_1^{n_1}\gothp_2^{n_2}\cdots\gothp_r^{n_r}\] with $\gothp_i$ distinct prime ideals. Then since $(\a) \subset \gotha$ we have $(\a) \subset \gothp_i^{n_i}$ for all $i$, in other words $\a$ is divisible by the $\gothp_i^{n_i}$. Now, let $\gothq_1,\dots,\gothq_s$ be any other prime ideals dividing $(\a)$ (if any exist). So we have \[(\a)=\prod_i \gothp_i^{n_i} \times \prod_j \gothq_j.\]
 		
-		We construct $\beta$ as follows. Take $\beta_i \in \gothp_i^{n_i} \backslash \gothp_i^{n_i+1}$ and then use the Chinese remainder theorem \ref{thm: chinese rem thm} to find $\beta \in R$ such that $\beta \equiv \beta_i \pmod {\gothp_i^{n_i+1}}$ for $i \in \{1,\dots,r\}$ and $\beta \equiv 1 \pmod {\gothq_j}$ for $j \in \{1,\dots,s\}$. Note that we can do this, and the $\gothp_i,\gothq_j$ are all pairwise distinct so $\gothq_j+\gothp_i^{n_i}=(1)$ (as $\gothq_j$ is maximal) for all $i,j$ and moreover, $\gothp_i^{n_i}+\gothp_j^{n_j}=\gcd(\gothp_i^{n_i},\gothp_j^{n_j})$ which by Definition \ref{definition: ideal gcd and lcm} is just $(1)$.
+		We construct $\beta$ as follows. Take $\beta_i \in \gothp_i^{n_i} \backslash \gothp_i^{n_i+1}$ and then use the Chinese remainder theorem \ref{thm: chinese rem theorem} to find $\beta \in R$ such that $\beta \equiv \beta_i \pmod {\gothp_i^{n_i+1}}$ for $i \in \{1,\dots,r\}$ and $\beta \equiv 1 \pmod {\gothq_j}$ for $j \in \{1,\dots,s\}$. Note that we can do this, and the $\gothp_i,\gothq_j$ are all pairwise distinct so $\gothq_j+\gothp_i^{n_i}=(1)$ (as $\gothq_j$ is maximal) for all $i,j$ and moreover, $\gothp_i^{n_i}+\gothp_j^{n_j}=\gcd(\gothp_i^{n_i},\gothp_j^{n_j})$ which by Definition \ref{definition: ideal gcd and lcm} is just $(1)$.
 		
 		So now,  Definition \ref{definition: ideal gcd and lcm} gives us $\gcd((\a),(\beta))=\prod_i \gothp_i^{n_i}=\gotha$ and therefore $\beta \in \gotha$ which finishes the proof.
 		
@@ -2180,9 +2180,9 @@
 	\end{proof}
 	
 	
-	\begin{thm}
+	\begin{theorem}
 		A Dedekind domain is a UFD if and only if it is a PID.
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		If $R$ is a Dedekind domain that is a PID, then by Proposition \ref{prop: background ring theory} it is a UFD. 
@@ -2219,9 +2219,9 @@
 		
 	\end{proof}
 	
-	\begin{lem}\label{lem: containment of ideals equal if norm equal}
+	\begin{lemma}\label{lem: containment of ideals equal if norm equal}
 		Let $K$ be a number field and $\gotha \subset \gothb \subset \OO_K$ non-zero ideals. Then $\gotha=\gothb$ if and only if $N(\gotha)=N(\gothb)$
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		Clearly, if $\gotha=\gothb$ they have the same norm. So lets check the other direction.	
@@ -2272,17 +2272,17 @@
 		Let $p$ be a odd prime, $\zeta_p$ a $p$-th root of unity and $\lam_p=1-\zeta_p$. Let $K=\QQ(\zeta_p)$. Then  from the proof of Theorem \ref{thm: ring of ints of cyclo} we know $N_{K/\QQ}(\lam_p)=p$ and therefore  $N((\lam_p))=p$ which by the above means, $(\lam_p)$ must be a prime ideal.
 	\end{exmp}
 	
-	\begin{cor}
+	\begin{corollary}
 		Let $K$ be a number field, $\gotha \subset \OO_K$ an ideal and $\a \in \gotha$. Then $\gotha=(\a)$ if and only if $|N_{K/\QQ}(\a)|=N(\gotha)$.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		Since $\a \in \gotha$ we have $(\a) \subset \gotha$. Then by Lemma \ref{lem: containment of ideals equal if norm equal} and Proposition \ref{prop: ideal norm coincides with other norm} gives the result.
 	\end{proof}
 	
-	\begin{lem}\label{lem: ideal contains its norm}
+	\begin{lemma}\label{lem: ideal contains its norm}
 		Let $K$ be a number field and $\gotha \subset \OO_K$ a non-zero ideal. Let $a=N(\gotha)$. Then $a \in \gotha$.
-	\end{lem}
+	\end{lemma}
 	\begin{proof}
 		Recall that by Lagrange's Theorem, every element in $\OO_K/\gotha$ has order at most $a$. Therefore, if we look at the element $1+\gotha \in \OO_K/\gotha$ we have $a\cdot (1+\gotha)=0 +\gotha$ therefore $a \in \gotha$. 
 	\end{proof}
@@ -2292,9 +2292,9 @@
 	\end{rmrk}
 	
 	
-	\begin{cor}\label{cor: fin many ideals of given norm}
+	\begin{corollary}\label{cor: fin many ideals of given norm}
 		Let $K$ be a number field. Then there are only finitely many ideals with a given norm.
-	\end{cor}
+	\end{corollary}
 	\begin{proof}
 		If $\gotha$ is an ideal with $N(\gotha)=a$ then by Lemma \ref{lem: ideal contains its norm} we have $a \in \gotha$ which means $\gotha \mid (a)$. But by uniqueness of factorization, $a$ only has finitely many factors, which gives the result.
 	\end{proof}
@@ -2336,11 +2336,11 @@
 	\end{exmp}
 	
 	
-	\begin{thm}
+	\begin{theorem}
 		Let $K/F$ be a finite extension of number fields with rings of integers $\OO_K$ and $\OO_F$. Then every non-zero prime ideal $\gothP \subset \OO_K$ lies over a unique non-zero prime ideal $\gothp \subset \OO_F$. 
 		
 		Conversely, every non-zero prime ideal $\gothp \subset \OO_F$ lies under at least one non-zero prime ideal $\gothP \subset \OO_K$.
-	\end{thm}
+	\end{theorem}
 	
 	
 	\begin{proof}
@@ -2365,9 +2365,9 @@
 		For the $f$'s this follows easily from the Tower Law \ref{prop: tower law}. For the $e$'s the result is clear.
 	\end{proof}
 	
-	\begin{thm}\label{thm: ram-rel}
+	\begin{theorem}\label{thm: ram-rel}
 		Let $K$ be a number field with $[K:\QQ]=n$ and $p$ a prime number. If $\gothp_i$ are the prime ideals in $\OO_K$ dividing $p\OO_K$, then \[\sum_i e_{\gothp_i|p}f_{\gothp_i|p}=n\] with notation as in Definition \ref{definition: ram index and inert deg}.
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		Let $e_i:=e_{\gothp_i|p}$ and $f_i:=f_{\gothp_i|p}$. By definition we have \[p\OO_K=\gothp_1^{e_1}\gothp_2^{e_2}\dots\gothp_r^{e_r}.\] Now, lets take norms on both sides: By Proposition \ref{prop: ideal norm coincides with other norm} we have $N(p\OO_K)=|N_{K/\QQ}(p)|=p^n$.
@@ -2394,7 +2394,7 @@
 		Using Proposition \ref{prop: ideal norm in tower} prove \ref{eqn: ram rel}.
 	\end{question}
 	
-	\begin{thm}[Dedekind--Kummer]\label{thm: ded-kum}
+	\begin{theorem}[Dedekind--Kummer]\label{thm: ded-kum}
 		Let $K/F$ be an extension of number fields and $\a \in \OO_K$ a primitive element so that $K \cong F(\a)$. 
 		
 		Let $\gothp \subset \OO_F$ be a prime ideal and $p$ the prime number such that $(p)=\gothp \cap \Z$. Assume that $p$ does  not divide the index\footnote{Note that here I am thinking of $\OO_F[\a]$ as a subgroup of $\OO_K$ and then $[\OO_K:\OO_F[\a]]$ denotes the size of the quotient group $\OO_K/\OO_F[\a]$. } \[[\OO_K:\OO_F[\a]].\]
@@ -2406,7 +2406,7 @@
 			\item The $\gothP_i$ are distinct prime ideals and they are precisely the prime ideals of $\OO_K$ lying over $\gothp$. Therefore \[\gothp \OO_K=\gothP_1^{e_1}\dots\gothP_r^{e_r}\]
 			\item $f_{\gothP_i|\gothp}=\deg(\ov{m}_i)$ and  $e_i=e_{\gothP_i|\gothp}$
 		\end{enumerate}
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		The result will  follow from the following three claims:
@@ -2457,11 +2457,11 @@
 	
 	This theorem is really useful for us. It will make it really easy to understand how prime ideals change as we extend our field. For clarity, lets just see what this theorem says when our bottom field ($F$) is simply $\QQ$.
 	
-	\begin{cor}\label{cor: ded-kum for K/Q}
+	\begin{corollary}\label{cor: ded-kum for K/Q}
 		Let $K$ be a number field of degree $n$ over $\QQ$ and let $\a \in \OO_K$ be a primitive element so that $K\cong\QQ(\a)$. 
 		
 		Let $p$ be a prime number not dividing $[\OO_K:\ZZ[\a]]$ and let \[\ov{m}_\a(x)=\ov{m}_1(x)^{e_1}\dots \ov{m}_r(x)^{e_r}\] be the reduction modulo $p$ of the minimal polynomial $m_\a$ of $\a$. Then in $\OO_K$ the ideal $(p)$ factorizes as \[(p)=\prod_{i=1}^r \gothp_i^{e_i}\] where $\gothp_i=(p,m_i(\a))$ and $f_{\gothp_i|p}=\deg(\ov{m}_i)$ and $e_i=e_{\gothp_i|p}$.
-	\end{cor}
+	\end{corollary}
 	
 	
 	\begin{definition}
@@ -2591,7 +2591,7 @@
 	
 	
 	
-	\begin{thm}\label{thm: splitting in quad ext}
+	\begin{theorem}\label{thm: splitting in quad ext}
 		Let $n$ be a square-free integer, $K:=\QQ(\sqrt{n})$ and $p$ a prime number. 
 		\begin{enumerate}
 			\item[(1)] If $p\mid n$ then $(p)=(p,\sqrt{n})^2$.
@@ -2615,7 +2615,7 @@
 		\end{enumerate}
 		
 		Moreover, in (3.4) and (3.6) the ideals appearing are distinct.	
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		
@@ -2681,24 +2681,24 @@
 	
 	
 	
-	\begin{thm}\label{thm: ideals and embs}
+	\begin{theorem}\label{thm: ideals and embs}
 		Let $K/F$ be a normal extension of number fields. Let $\gothp$ be a prime ideal in $\OO_F$ and $\gothP,\gothP'$ be two prime ideals of $\OO_K$ above $\gothp$. Then $\s(\gothP)$ is again a prime ideal lying over $\gothp$, moreover there is some element $\s \in \Gal(K/F)$, such that $\s(\gothP)=\gothP'$.
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		Let $G:=\Gal(K/F)$. Note that since $\gothP$ is a prime ideal $\OO_K/\gothP$ is a integral domain. Now, apply $\s$ to this quotient. Since $\s(\OO_K)=\OO_K$ (as $K/F$ is normal) we get \[\OO_K/\gothP \cong \OO_K /\s(\gothP)\] and therefore $\s(\gothP)$ is again a prime ideal. Moreover, since $\gothP \cap \OO_F=\gothp$ (this is what lying above means) and $\s$ fixes $F$ we see that $\s(\gothP) \cap \OO_F=\gothp$. 
 		
 		
-		Now, suppose that $\s(\gothP) \neq \gothP'$ for all $\s \in G$. Then we can use the Chinese remainder theorem \ref{thm: chinese rem thm} to find some $\a \in \OO_K$ such that \[\a \equiv 0 \mod \gothP'\] and \[\a \equiv 1 \mod \s(\gothP)\] for all $\s \in G$.
+		Now, suppose that $\s(\gothP) \neq \gothP'$ for all $\s \in G$. Then we can use the Chinese remainder theorem \ref{thm: chinese rem theorem} to find some $\a \in \OO_K$ such that \[\a \equiv 0 \mod \gothP'\] and \[\a \equiv 1 \mod \s(\gothP)\] for all $\s \in G$.
 		
 		Now, \[N_{K/F}(\a)=\prod_{\s \in G} \s(\a) \in \gothP' \cap \OO_F=\gothp.\] On the other hand $\a \not \in \s(\gothP)$ by construction, and therefore $\s^{-1}(\a) \not \in \gothP$. But we have \[N_{K/F}(\a)=\prod_{\s \in G} \s(\a)=\prod_{\s^{-1} \in G} \s^{-1}(\a).\] This gives us a contradiction, since we have just seen that the left hand side is in $\gothp$. But the right hand  is not contained in $\gothP$ since  $\s^{-1}(\a) \not \in \gothP$, but $\gothp \subset \gothP$. 
 		
 		
 	\end{proof}
 	
-	\begin{cor}\label{cor: ram and inert in gal ext}
+	\begin{corollary}\label{cor: ram and inert in gal ext}
 		Let $K/F$ be a normal extension of number fields and let $\gothP$ and $\gothP'$ be two primes lying above the prime $\gothp$. Then \[e_{\gothP|\gothp}=e_{\gothP'|\gothp} \qquad f_{\gothP|\gothp}=e_{\gothP'|\gothp}\]
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		Lets start by factoring $\gothp$ in $\OO_K$.  We have \[\gothp \OO_K=\prod_i \gothP_i^{e_{\gothP_i|\gothp}}.\] Now, by Theorem \ref{thm: ideals and embs}, if we apply $\s$ to this equation we get \[\gothp\OO_K=\s(\gothp)\OO_K=\prod_i \s(\gothP_i)^{e_{\gothP_i|\gothp}}\] but then by the fact that for any $i,j$ we can find $\s$ such that $\gothP_i=\s(\gothP_j)$ and uniqueness of factorization, we get that \[e_{\gothP_i|\gothp}=e_{\gothP_j|\gothp}\] which gives the first part of the result. 
@@ -2707,9 +2707,9 @@
 	\end{proof}
 	
 	
-	\begin{cor}
+	\begin{corollary}
 		Let $n$ be an integer and $\zeta_n$ an $n$-th root of unity. Let $K=\QQ(\zeta_n)$ and $p$ a prime number. Then \[(p)=(\gothp_1 \gothp_2\cdots \gothp_r)^e\] where $\gothp_i$ are the primes of $\OO_K$ over $p$, which moreover all have the same inertial degree.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		This follows from Corollary \ref{cor: ram and inert in gal ext} by noting that $K$ is a normal extension.
@@ -2717,9 +2717,9 @@
 	
 	Next we have a theorem that tells us about which primes will ramify in an extension.
 	
-	\begin{thm}\label{thm: ram primes div disc}
+	\begin{theorem}\label{thm: ram primes div disc}
 		Let $p$ be a prime number and $K$ a number field. If $p$ is ramified in $\OO_K$ then $p \mid \Delta(\OO_K)$.
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		Let $\gothp$ be a prime ideal in $\OO_K$ over $p$ such that $e_{\gothp|p}>1$. Then we can write $(p)=\gothp \gotha$ where $\gotha$ is an ideal divisible by all prime ideals in $\OO_K$ which are above $p$. 
@@ -2732,21 +2732,21 @@
 		
 	\end{proof}
 	
-	\begin{cor}\label{cor: p unram if norm of blah}
+	\begin{corollary}\label{cor: p unram if norm of blah}
 		Let $K$ be a number field with $K=\QQ(\a)$ for $\a$ a primitive element and let $f \in \ZZ[x]$ be any monic polynomial such that $f(\a)=0$. If $p$ is a prime number such that $p \nmid N_{K/\QQ}(f'(\a))$ then $p$ is unramified.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		Since every monic polynomial with $\a$ as a root is divisible by $m_\a$ (see Proposition \ref{prop: min pol}), its enough to check this for $m_\a$. But then Proposition \ref{prop: num field disc in terms of norm} gives the result.
 	\end{proof}
 	
-	\begin{cor}
+	\begin{corollary}
 		There are only finitely many primes of\/ $\ZZ$ which ramify in  a number field $K$.
-	\end{cor}
+	\end{corollary}
 	
-	\begin{cor}\label{cor: ids are disc}
+	\begin{corollary}\label{cor: ids are disc}
 		In (3.4) and (3.6) of Theorem \ref{thm: splitting in quad ext}   the ideals appearing are distinct.
-	\end{cor}
+	\end{corollary}
 	
 	\begin{proof}
 		Using Exercise \ref{ques: disc of quad} and Theorem \ref{thm: ram primes div disc} we see that since in each case the prime does not divide the discriminant, the prime cannot be ramified and therefore the ideals are distinct.
@@ -2756,18 +2756,18 @@
 	
 	Going back to the cyclotomic example, one can determine the ramification and the inertial degree completely in this case.
 	
-	\begin{thm}[Decomposition theorem for cyclotomic fields]
+	\begin{theorem}[Decomposition theorem for cyclotomic fields]
 		Let $n$ be a positive integer and $\zeta_n$ an $n$-th root of unity. Let $K=\QQ(\zeta_n)$ and $p$ a prime number. Write $n=p^km$ with $p \nmid m$ and set $e=\varphi(p^k)$ (where $\varphi$ is Euler's Totient function). Lastly, let $f$ be the (multiplicative) order of $p$ modulo $m$. 
 		
 		Then \[(p)=(\gothp_1 \gothp_2\cdots \gothp_r)^e\] (so $e=e_{\gothp_i|p}$) and moreover $f=f_{\gothp_i|p}$.
-	\end{thm}
+	\end{theorem}
 	
 	\begin{proof}
 		We start by letting $\a=\zeta^m$ and $\beta=\zeta^{p^k}$. So $\a$  is a $p^k$-th root of unity and $\beta$ is a $m$-th root of unity. We will prove the theorem by seeing how $(p)$ factorizes in $\QQ(\a)$ and in $\QQ(\beta)$ and then combining the result.
 		
-		\begin{lem}\label{lem: lem1}
+		\begin{lemma}\label{lem: lem1}
 			With the above notation. In $\QQ(\a)$ we have \[(p)=(1-\a)^{\varphi(p^k)}\] with $(1-\a)$ a prime ideal.
-		\end{lem}
+		\end{lemma}
 		
 		\begin{proof}
 			First note that $[\QQ(\a):\QQ]=\varphi(p^k)$ since this is the degree of the $p^k$ cyclotomic polynomial (See Lemma \ref{lem: cyclo poly}).
@@ -2776,9 +2776,9 @@
 			
 		\end{proof}
 		
-		\begin{lem}\label{lem: lem2}
+		\begin{lemma}\label{lem: lem2}
 			In $\QQ(\beta)$, $p$ is unramified and for each $\gothp$ over $p$, we have $f_{\gothp|p}=f$.
-		\end{lem}
+		\end{lemma}
 		
 		\begin{proof}
 			Using Corollary \ref{cor: p unram if norm of blah} with $f(x)=x^m-1$, we need to check if $p$ divides \[m^{[\QQ(\beta):\QQ]}N_{\QQ(\beta)/\QQ}(\beta^{m-1}).\] But $p \nmid m$ and $\beta$ is a unit, so its norm is $\{\pm 1\}$ therefore $p$ is unramified.
@@ -2884,15 +2884,15 @@
 	
 	Note that,  $\OO_K$ is a PID if and only if  $\Cl_K$ is trivial. Moreover, since a Dedekind domain is a PID if and only if its a UFD, this means that $\OO_K$ is a UFD if and only if $\Cl_K$ is trivial. So $\Cl_K$ can be thought of measuring how far $\OO_K$ is from being a UFD. 
 	
-	\begin{thm}\label{thm: cls grp fin}
+	\begin{theorem}\label{thm: cls grp fin}
 		Let $K$ be a number field. Then $\Cl_K$ is finite.
-	\end{thm}
+	\end{theorem}
 	
 	To prove this theorem we will make use of the following result, which we will prove later.
 	
-	\begin{thm}\label{thm: mink bound}
+	\begin{theorem}\label{thm: mink bound}
 		Let $K$ be a number field with $r_1$ real embeddings and $r_2$ conjugate pairs of complex embeddings. Let $[K:\QQ]=n$ and let $\gotha$ be an ideal of $\OO_K$. Then there is an element $a \in \gotha$ such that \[|N_{K/\QQ}(a)| \leq  \frac{n!}{n^n} \left( \frac{4}{\pi} \right)^{r_2} |\Delta(\OO_K)|^{1/2} N(\gotha) \]
-	\end{thm} 
+	\end{theorem} 
 	
 	\begin{definition}
 		The quantity $ \frac{n!}{n^n} \left( \frac{4}{\pi} \right)^{r_2} |\Delta(\OO_K)|^{1/2}$ is known as the Minkowski bound and we will denote it by $M_K$.
@@ -3063,15 +3063,15 @@
 	
 	In order to go further, lets recall the following results form the problem sheets:
 	
-	\begin{lem}\label{lem: princ ideals being eq}
+	\begin{lemma}\label{lem: princ ideals being eq}
 		Let $K$ be a number field and $\a,\beta \in \OO_K$. If $(\a)=(\beta)$ then there is  $u \in \OO_K^\times$ such that $\a=u\beta$.
-	\end{lem}
+	\end{lemma}
 	
 	
 	
-	\begin{lem}\label{lem: ideals mult to power}
+	\begin{lemma}\label{lem: ideals mult to power}
 		Let $R$ be a Dedekind domain and $\gotha,\gothb,\gothc$ ideals such that \[\gotha\gothb=\gothc^3\] and suppose $\gotha,\gothb$ are coprime. Then there exist ideals $\mathfrak{e},\mathfrak{d}$ such that \[\gotha=\mathfrak{e}^3 \qquad \gothb=\mathfrak{d}^3 \qquad \mathfrak{e}\mathfrak{d}=\gothc\] 
-	\end{lem}
+	\end{lemma}
 	
 	
 	
@@ -3147,19 +3147,19 @@
 	
 	Note that if we $\lam \in \Lambda$  and let $P(\Lambda)+\lambda=\{x+ \lam \mid x \in P(\Lambda)\}$ then \[\RR^n= \bigcup_{\lam \in \Lambda} P(\Lambda) +\lam. \]
 	
-	\begin{lem}
+	\begin{lemma}
 		Let $\Lambda \subset \RR^n$ be a lattice. Then the volume of $P(\Lambda)$ does not depend on the choice of basis of $\Lambda$. Moreover, if $\{e_i\}$ is the basis, then \[\Vol(P(\Lambda))=|\det(e_1,e_2,\dots,e_n)| \] (here the right hand side is the determinant of the matrix whose columns are given by the $e_i$).
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		The second statement is just linear algebra, so we will only prove the first. Let $f_i$ denote a second basis of $\Lambda$ and let $M(e_i), M(f_i)$ denote the matrices whose columns are given by $e_i$ and $f_i$ respectively.  Then \[M(e_i)=M(f_i)A\] where $A$ is a $n \times n$ matrix with entries in $\ZZ$. Similarly , \[M(f_i)=M(e_i)B.\] Therefore, \[M(e_i)=M(e_i)BA\]  Now, since $M(e_i),M(f_i)$ are non-degenerate we have $BA=I$ and therefore $\det(A)=\pm 1$.
 	\end{proof}
 	
-	\begin{lem}\label{lem: subset of Rn diff lem}
+	\begin{lemma}\label{lem: subset of Rn diff lemma}
 		Let $S \subset \RR^n$ be a measurable set (i.e. $\Vol(S)=|\idotsint_S dx_1\cdots dx_n|$ exists) and $\Lambda$ is a lattice. Then if\/ $\Vol(S) > \Vol(P(\Lambda))$ then there exist $x,y \in S$ with $x \neq y$ such that $x-y \in \Lambda$.
 		
 		Furthermore, if $S$ is compact, then the same conclusion holds if $\Vol(S) \geq \Vol(P(\Lambda))$.
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		We begin by writing \[\RR^n = \bigcup_{\lam \in \Lambda}  \left (P(\Lambda)+\lam \right )\qquad \text{(as a disjoint union)}\] therefore \[S= \RR^n \cap S= \bigcup_{\lam \in \Lambda}  \left (P(\Lambda)+\lam \right ) \cap S \qquad \text{(as a disjoint union)}. \] From this it follows that \[\Vol(S)=\sum_{\lam \in \Lambda}  \Vol \left ((P(\Lambda)+\lam \right ) \cap S) =\sum_{\lam \in \Lambda}  \Vol  \left ((P(\Lambda) \right ) \cap (S-\lam) ).  \]
@@ -3181,12 +3181,12 @@
 		\end{enumerate}
 	\end{definition}
 	
-	\begin{lem}[Minkowski's convex body lemma]\label{lem: mink conv bod}
+	\begin{lemma}[Minkowski's convex body lemma]\label{lem: mink conv bod}
 		Let $S$ be a compact, convex and centrally symmetric subset of $\RR^n$ and $\Lambda$ a lattice. If \[\Vol(S) \geq 2^n \Vol(P(\Lambda))\] then $S$ contains a point of $\Lambda$. 
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
-		Consider the set \[\frac{1}{2}S=\{\frac{1}{2} x \mid x \in S\}.\] Then $\Vol(\frac{1}{2}S) \geq \Vol(P(\Lambda))$. So by Lemma \ref{lem: subset of Rn diff lem} there exist $x,y \in \frac{1}{2}S$ such that $x-y \in \Lambda$. We claim that $x-y \in S$. 
+		Consider the set \[\frac{1}{2}S=\{\frac{1}{2} x \mid x \in S\}.\] Then $\Vol(\frac{1}{2}S) \geq \Vol(P(\Lambda))$. So by Lemma \ref{lem: subset of Rn diff lemma} there exist $x,y \in \frac{1}{2}S$ such that $x-y \in \Lambda$. We claim that $x-y \in S$. 
 		
 		Note that $2x,2y \in S$. Now, since $S$ is centrally symmetric, we have $-2y \in S$. Furthermore, since $S$ is convex, \[\frac{1}{2} (2x-2y) \in S.\] Thus $x-y \in S$.
 	\end{proof}
@@ -3222,9 +3222,9 @@
 		Lets now look at the sublattice $\Lambda_\gotha$. Note that as additive abelian groups we have $\OO_K \cong \ZZ^n$ and $\gotha$ is a subgroup of index $N(\gotha)$. Since $\Theta$ is injective we have $\Lambda_\gotha$ is a subgroup of $\Theta(\OO_K)$ of index $N(\gotha)$. From this it follows that \[P(\Lambda_{\gotha})=N(\gotha)P(\Theta(\OO_K))\] (compare this with the proof of Proposition \ref{prop: ideal norm coincides with other norm}) from which the result follows. 
 	\end{proof}
 	
-	\begin{lem}\label{lem: vol of S}
+	\begin{lemma}\label{lem: vol of S}
 		Let $S_t \subset \RR^{r_1} \times \CC^{r_2} \cong \RR^n$ be a subset given by points $(y_i,z_i) \in \RR^{r_1} \times \CC^{r_2}$  such that \[\sum_i |y_i|+ \sum_j |z_j| \leq t.\] Then $S$ is compact, convex and centrally symmetric and moreover \[\Vol(S)=\frac{2^{r_1}t^n}{n!}  \left( \frac{\pi}{4}\right)^{r_2}. \]
-	\end{lem}
+	\end{lemma}
 	
 	\begin{proof}
 		$S$ is closed and bounded and therefore is compact. $S$ is also clearly symmetric. For $\lam \in (0,1)$ we have \begin{align*}
