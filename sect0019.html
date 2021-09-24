@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Dedekind domains</title>
+<link rel="next" href="sect0020.html" title="Norms of ideals" />
+<link rel="prev" href="sect0018.html" title="Ideals in rings of integers" />
+<link rel="up" href="sect0016.html" title="Factorization in rings of integers" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000020">3.3 Dedekind domains</h1>
+<p> Next we will study properties of rings of integers. It turns out they are of a very special type, called Dedekind domains. </p>
+<p><div class="defn_thmwrapper" id="defn: ded dom">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.3.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#defn: ded dom">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p> A Dedekind domain is an integral domain \(R\) such that: </p>
+<ol class="enumerate">
+  <li><p>\(R\) is Noetherian. </p>
+</li>
+  <li><p>Every non-zero prime ideal is maximal. </p>
+</li>
+  <li><p>\(R\) is integrally closed. </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="thm_thmwrapper" id="a0000000305">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.3.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000305">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000306"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p>Let \(K\) be a number field with ring of integers \(\mathcal{O}_K\). Then \(\mathcal{O}_K\) is a Dedekind domain. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000306">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>By Proposition <a href="sect0018.html#prop: ring of ints is noeth">3.2.3</a> we get \((1)\) and by Corollary <a href="sect0018.html#cor: prim ideal is maximal">3.2.6</a> we get \((2)\). </p>
+<p>So we only need to prove \(\mathcal{O}_K\) is integrally closed. </p>
+<p>Let \(\gamma =\alpha / \beta \in K\) satisfy a monic polynomial with coefficients in \(\mathcal{O}_K\), then I claim that it is in fact an algebraic integer and therefore it is in \(K \cap \overline{\mathbb {Z}}=\mathcal{O}_K\). (Note \(\mathrm{Frac}(\mathcal{O}_K)=K\).) </p>
+<p>The claim is Exercise <a href="sect0011.html#quest: ints in tower law">2.1.18</a>. </p>
+
+  </div>
+</div>
+<p>Dedekind domains are great. Lets look at some of their properties. </p>
+<p><div class="lem_thmwrapper" id="lem: ded dom ideal has prim ideals">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">3.3.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#lem: ded dom ideal has prim ideals">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000307"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(R\) be a Dedekind domain. Then every ideal contains a product of prime ideals. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000307">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Assume for contradiction this is not the case. Let \(S\) denote the set of all ideals that do not contain a product of prime ideals. Then, since \(R\) is Noetherian, by Definition <a href="sect0018.html#defn: noeth ring">3.2.1</a>\((3)\), \(S\) must contain a maximal element \(\mathfrak {m}\) (not to be confused with maximal ideal, here maximal means with respect to the property of not containing a product of prime ideals). Now \(\mathfrak {m}\) cannot be prime (otherwise \(\mathfrak {m}\subseteq \mathfrak {m}\) gives a contradiction). Therefore we can find \(r,s \in R \backslash \mathfrak {m}\) such that \(rs \in \mathfrak {m}\). Now the ideals \((r)+\mathfrak {m}\) and \((s)+\mathfrak {m}\) are both larger then \(\mathfrak {m}\) so must contain a product of prime ideals, but then so does their product \(((r)+\mathfrak {m})((s)+\mathfrak {m})\). This product is contained in \(\mathfrak {m}\) (since \(rs \in \mathfrak {m}\)) so we have a contradiction. </p>
+
+  </div>
+</div>
+<p><div class="lem_thmwrapper" id="lem: proper ideal mult by frac is still int">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">3.3.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#lem: proper ideal mult by frac is still int">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000308"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(R\) be a Dedekind domain with field of fractions \(K\) and \(\mathfrak {a}\) a proper ideal . Then there is an element \(x \in K \backslash R\) such that \(x \mathfrak {a}\subset R\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000308">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(a \in \mathfrak {a}\) be any non-zero element. By Lemma <a href="sect0019.html#lem: ded dom ideal has prim ideals">3.3.3</a> the ideal \((a)\) contains a product of prime ideals. So lets take prime ideals \(\mathfrak {p}_i\) such that \(\prod _{i=1}^m \mathfrak {p}_i \subset (a)\) with \(m\) as small as possible. Now, since every proper ideal is contained in a maximal ideal \(\mathfrak {p}\) (see Proposition <a href="sect0002.html#prop: prime and max ideals in rings">1.1.22</a>), which is also a prime ideal (as maximal ideals are always prime). Therefore \(\mathfrak {a}\subset \mathfrak {p}\), so \(\prod _i \mathfrak {p}_i \subset \mathfrak {p}\). </p>
+<p>Now \(\mathfrak {p}\) must contain some \(\mathfrak {p}_i\) since if not, we can take \(a_i \in \mathfrak {p}_i \backslash \mathfrak {p}\) then \(\mathfrak {p}\) contains \(\prod _i a_i\) but none of the \(a_i\) which contradicts \(\mathfrak {p}\) being a prime ideal. So after possibly relabelling we have \(\mathfrak {p}_1 \subset \mathfrak {p}\). But by Definition <a href="sect0019.html#defn: ded dom">3.3.1</a>, in a Dedekind domain all prime ideals are maximal, so \(\mathfrak {p}=\mathfrak {p}_1\). </p>
+<p>Since \(m\) was taken as small as possible, \((a)\) can’t contain any smaller product of prime ideals, so we can find \(b \in (\prod _{i=2}^m \mathfrak {p}_i) \backslash (a)\). </p>
+<p>We claim that taking \(x=\frac{b}{a}\) gives the result: First note \(x \in K \backslash R\) since otherwise \(\frac{b}{a}=c \in R\) therefore \(b=ac \in (a)\) which contradicts our choice of \(b\). Moreover, we claim that \(x \mathfrak {a}\subset R\). To see this note that since \(b \mathfrak {p}\subset \prod _i \mathfrak {p}_i \subset (a)\) we have \(x \mathfrak {p}\subset R\) and therefore since \(\mathfrak {a}\subset \mathfrak {p}\) we have \(x\mathfrak {a}\subset x\mathfrak {p}\subset R\). </p>
+
+  </div>
+</div>
+<p><div class="thm_thmwrapper" id="thm: ideals are invertible">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.3.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#thm: ideals are invertible">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000309"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(R\) be a Dedekind domain and \(\mathfrak {a}\) an ideal in \(R\). Then there is an ideal \(\mathfrak {b}\) such that \(\mathfrak {a}\mathfrak {b}\) is principal. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000309">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(\alpha \in \mathfrak {a}\backslash 0\) and let </p>
+<div class="displaymath" id="a0000000310">
+  \[ \mathfrak {b}=\{ \beta \in R \mid \beta \mathfrak {a}\in (\alpha )\} . \]
+</div>
+<p> This is again an ideal and it is non-zero since \(\alpha \neq 0\). By definition we have </p>
+<div class="equation" id="a0000000311">
+<p>
+  <div class="equation_content">
+    \begin{equation}  \mathfrak {a}\mathfrak {b}\subset (\alpha ) \tag {$\dagger $}\end{equation}
+  </div>
+  <span class="equation_label">4</span>
+</p>
+</div>
+<p> so we need to show equality. </p>
+<p>For this consider the set \(\mathfrak {c}=\frac{1}{\alpha }\mathfrak {a}\mathfrak {b}\). This is a subset of \(R\) by \((\dagger )\) and is in fact an ideal. Now, if \(\mathfrak {c}=R\) then \(\mathfrak {a}\mathfrak {b}=(\alpha )\) and we are done. So assume for contradiction that \(\mathfrak {c}\) is a proper ideal. Then by Lemma <a href="sect0019.html#lem: proper ideal mult by frac is still int">3.3.4</a> we can find \(x \in K \backslash R\) with \(K\) the fraction field of \(R\) and \(x \mathfrak {c}\subset R\). </p>
+<p>Next, we note that \(\mathfrak {c}\) contains \(\mathfrak {b}\) since \(\alpha \in \mathfrak {a}\), therefore \(x \mathfrak {b}\subset x \mathfrak {c}\subset R\). Moreover, since \(x\mathfrak {c}=\frac{x}{\alpha }\mathfrak {b}\mathfrak {a}\subset R\) we have \(x\mathfrak {b}\mathfrak {a}\subset (\alpha )\). Now, if we look back at the definition of \(\mathfrak {b}\) we see that since \(x \mathfrak {b}\subset R\) we have \(x\mathfrak {b}\subset \mathfrak {b}\). </p>
+<p>If we let \(\beta _1,\dots ,\beta _n\) be a generating set for \(\mathfrak {b}\), we can use \(x\mathfrak {b}\subset \mathfrak {b}\) to think of multiplication by \(x\) on \(\mathfrak {b}\) as a matrix \(A_x\) defined by </p>
+<div class="displaymath" id="a0000000312">
+  \[ x (\beta _1,\dots ,\beta _n)^t=A_x (\beta _1,\dots ,\beta _n)^t. \]
+</div>
+<p> \(A_x\) is a \(n \times n\) matrix over \(R\) which has \(x\) as an eigenvalue. This means, \(x\) satisfies a monic polynomial with coefficients in \(R\). But \(R\) is integrally closed, so \(x \in R\) which gives a contradiction as we took \(x \in K\backslash R\). This completes the proof. </p>
+
+  </div>
+</div>
+<p><div class="question_thmwrapper" id="ques: if prod is princ, you are princ">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">3.3.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#ques: if prod is princ, you are princ">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p> Show that if \(\mathfrak {a}\) is an ideal in an integral domain \(R\) and \((\alpha )\mathfrak {a}\) is principal for \(\alpha \in R \backslash {0}\), then \(\mathfrak {a}\) is principal. </p>
+
+  </div>
+</div> </p>
+<p><div class="defn_thmwrapper" id="a0000000313">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.3.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000313">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>Let \(R\) be a Dedekind domain and \(K\) its field of fractions. A <i class="itshape">fractional ideal</i> is a subset \(\mathfrak {a}\subset K\) such that </p>
+<ol class="enumerate">
+  <li><p>\(\mathfrak {a}\) is an abelian group under addition. </p>
+</li>
+  <li><p>\(x \mathfrak {a}\subset \mathfrak {a}\) for every \(x \in R\). </p>
+</li>
+  <li><p>There exists some \(x \in R\) such that \(x\mathfrak {a}\subset R\). </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000314">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">3.3.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000314">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(q \in \mathbb {Q}\), then </p>
+<div class="displaymath" id="a0000000315">
+  \[ (q)=\{ nq \mid n \in \mathbb {Z}\}  \]
+</div>
+<p> is a fractional ideal. More generally, if \(R\) is an Dedekind domain \(K\) its field of fractions and \(\alpha \subset K\). Then for any ideal \(\mathfrak {a}\in R\), \(\frac{1}{\alpha }\mathfrak {a}\) is a fractional ideal. </p>
+
+  </div>
+</div> </p>
+<p><div class="warn_thmwrapper" id="a0000000316">
+  <div class="warn_thmheading">
+    <span class="warn_thmcaption">
+    Warning
+    </span>
+    <span class="warn_thmlabel">3.3.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000316">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000317"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="warn_thmcontent">
+  <p>If \(\mathfrak {a}\) is a fractional ideal and \(x,y \in \mathfrak {a}\) then it is not necessarily true that \(xy \in \mathfrak {a}\). </p>
+
+  </div>
+</div> <div class="defn_thmwrapper" id="defn: princ frac ideal">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.3.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#defn: princ frac ideal">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p> Let \(R\) be a Dedekind ring and \(K\) its field of fractions. For each \(x \in K\) we call the fractional ideal </p>
+<div class="displaymath" id="a0000000318">
+  \[ (x)=\{ xy\mid y \in R\}  \]
+</div>
+<p> a <i class="itshape">principal fractional ideal</i>. </p>
+
+  </div>
+</div> <div class="prop_thmwrapper" id="prop: frac ideals form grp">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.3.11</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#prop: frac ideals form grp">#</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(R\) be a Dedekind domain and \(K\) its field of fractions. Then the set \(J_K\) of non-zero fractional ideals forms a group under multiplication with \((1)=R\) being the identity. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000317">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>As we had before, if \(\mathfrak {a},\mathfrak {b}\) are fractional ideals, then \(\mathfrak {a}\mathfrak {b}\) is defined as the fractional ideal generated by products of elements in \(\mathfrak {a}\) and \(\mathfrak {b}\). This is clearly associative, so we only need to check the existence of inverses. </p>
+<p>If \(\mathfrak {a}\) is a proper ideal of \(R\), then by Theorem <a href="sect0019.html#thm: ideals are invertible">3.3.5</a> we can find an ideal \(\mathfrak {b}\) such that \(\mathfrak {a}\mathfrak {b}=(\alpha )\) for some \(\alpha \). Then setting \(\mathfrak {a}^{-1}=\frac{1}{\alpha }\mathfrak {b}\) gives an inverse to \(\mathfrak {a}\). If \(\mathfrak {a}\) is a fractional ideal, then we can find some \(x \in R\) such that \(x \mathfrak {a}\subset R\) is an ideal (not just a fractional ideal), call it \(\mathfrak {c}\), then \(\mathfrak {a}^{-1}=x\mathfrak {c}^{-1}\) is the inverse. </p>
+
+  </div>
+</div>
+<p><div class="rmrk_thmwrapper" id="a0000000319">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">3.3.12</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000319">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>It follows, that if \(\mathfrak {a}\) is a fractional ideal in \(R\), then </p>
+<div class="displaymath" id="a0000000320">
+  \[ \mathfrak {a}^{-1}=\{ x \in K | x\mathfrak {a}\subset R \}  \]
+</div>
+<p> where \(K\) is the field of fractions of \(R\). </p>
+
+  </div>
+</div> </p>
+<p><div class="cor_thmwrapper" id="cor: cancel of ideals">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.3.13</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#cor: cancel of ideals">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000321"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> If \(\mathfrak {a},\mathfrak {b},\mathfrak {c}\) are non-zero ideals in a Dedekind domain and \(\mathfrak {a}\mathfrak {b}=\mathfrak {a}\mathfrak {c}\) then \(\mathfrak {b}=\mathfrak {c}\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000321">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Multiplying on the left by \(\mathfrak {a}^{-1}\) gives the result. </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="cor: ideal div">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.3.14</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#cor: ideal div">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000322"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> Let \(\mathfrak {a},\mathfrak {b}\) be ideals in a Dedekind domain. Then \(\mathfrak {a}\mid \mathfrak {b}\) if and only if  \(\mathfrak {b}\subset \mathfrak {a}\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000322">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(\mathfrak {a}\mid \mathfrak {b}\) then by definition we have \(\mathfrak {b}=\mathfrak {c}\mathfrak {a}\), which means \(\mathfrak {b}\subset \mathfrak {a}\). Conversely, assume that \(\mathfrak {b}\subset \mathfrak {a}\). Then by Theorem <a href="sect0019.html#thm: ideals are invertible">3.3.5</a> we can find an ideal \(\mathfrak {m}\) such that \(\mathfrak {a}\mathfrak {m}=(\alpha )\). Now, \(\mathfrak {m}\mathfrak {b}\subset \mathfrak {a}\mathfrak {m}=(\alpha )\) therefore \(\mathfrak {c}=\frac{1}{\alpha }\mathfrak {m}\mathfrak {b}\) is again in \(R\) and moreover it is an ideal (since, for example it is the product of two fractional ideals). The result follows from then noting that \(\mathfrak {a}\mathfrak {c}=\mathfrak {b}\). </p>
+
+  </div>
+</div>
+<p>We can now use this as a fix to our problem of not being able to factor uniquely. </p>
+<p><div class="thm_thmwrapper" id="thm: ded dom ideal is prod of prim">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.3.15</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#thm: ded dom ideal is prod of prim">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000323"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(R\) be a Dedekind domain, then every ideal \(\mathfrak {a}\) can be written uniquely as a product of prime ideals, i.e, </p>
+<div class="displaymath" id="a0000000324">
+  \[ \mathfrak {a}=\mathfrak {p}_1\mathfrak {p}_2\dots \mathfrak {p}_n, \]
+</div>
+<p> with \(\mathfrak {p}_i\) prime ideals (not necessarily distinct). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000323">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Lets begin by showing that every ideal can be written as a product of prime ideal. Assume for contradiction that this is not the case. Then the set of proper ideals which are not a product of prime ideals, must have a maximal element by Definition <a href="sect0018.html#defn: noeth ring">3.2.1</a> \((3)\). Let \(\mathfrak {b}\) be this maximal element. Then \(\mathfrak {b}\) must be contained in some maximal ideal \(\mathfrak {p}\) of \(R\) (which we recall is also prime). Then by Corollary <a href="sect0019.html#cor: ideal div">3.3.14</a> we have \(\mathfrak {b}=\mathfrak {p}\mathfrak {c}\). </p>
+<p>This implies \(\mathfrak {b}\subset \mathfrak {c}\) and this must be a strict containment as otherwise if \(\mathfrak {c}=\mathfrak {b}\) then \(\mathfrak {b}=\mathfrak {b}\mathfrak {p}\) which by Corollary <a href="sect0019.html#cor: cancel of ideals">3.3.13</a> would mean \(\mathfrak {p}=R\), which cannot happen as \(\mathfrak {p}\) is a proper ideal. </p>
+<p>Now, since \(\mathfrak {c}\) is larger than \(\mathfrak {b}\) we must have \(\mathfrak {c}\) being a product of prime ideals. So then \(\mathfrak {p}\mathfrak {c}=\mathfrak {b}\) is also a product of prime ideals contradicting our assumption. </p>
+<p>Lets now prove that the representation as a product of prime ideals is unique. Suppose we have </p>
+<div class="displaymath" id="a0000000325">
+  \[ \mathfrak {p}_1\mathfrak {p}_2\dots \mathfrak {p}_n=\mathfrak {q}_1\mathfrak {q}_2\dots \mathfrak {q}_m \]
+</div>
+<p> with \(\mathfrak {p}_i,\mathfrak {q}_i\) not necessarily distinct prime ideals. Then \(\mathfrak {q}_1\dots \mathfrak {q}_m \subset \mathfrak {p}_1\), which means \(\mathfrak {p}_1\) contains some \(\mathfrak {q}_i\) (see the proof of Lemma <a href="sect0019.html#lem: proper ideal mult by frac is still int">3.3.4</a> to see why this is true). By relabelling the \(\mathfrak {q}_i\) we can assume \(\mathfrak {q}_1 \subset \mathfrak {p}_1\). But since all prime ideals in a Dedekind ring are maximal we must have \(\mathfrak {q}_1=\mathfrak {p}_1\). So we can cancel this from each side of the equality to get </p>
+<div class="displaymath" id="a0000000326">
+  \[ \mathfrak {p}_2\dots \mathfrak {p}_n=\mathfrak {q}_2\dots \mathfrak {q}_m. \]
+</div>
+<p> Continuing like this we get \(n=m\) and after relabelling \(\mathfrak {p}_i=\mathfrak {q}_i\), which completes the proof. </p>
+
+  </div>
+</div>
+<p><div class="nota_thmwrapper" id="a0000000327">
+  <div class="nota_thmheading">
+    <span class="nota_thmcaption">
+    Notation
+    </span>
+    <span class="nota_thmlabel">3.3.16</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000327">#</a>
+
+  </div>
+  </div>
+  <div class="nota_thmcontent">
+  <p>Since ideal multiplication commutes, we usually write the factorization of a an ideal as </p>
+<div class="displaymath" id="a0000000328">
+  \[ \mathfrak {a}=\mathfrak {p}_1^{e_1}\mathfrak {p}_2^{e_1}\dots \mathfrak {p}_r^{e_r} \]
+</div>
+<p> with \(\mathfrak {p}_i\) distinct prime ideals. </p>
+
+  </div>
+</div> </p>
+<p><div class="cor_thmwrapper" id="a0000000329">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.3.17</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000329">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000330"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p>Let \(K\) be a number field. Then every ideal in \(\mathcal{O}_K\) can factored uniquely into a product of prime ideals. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000330">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We know \(\mathcal{O}_K\) is a Dedekind domain, so the result follows. </p>
+
+  </div>
+</div>
+<p><div class="defn_thmwrapper" id="defn: ideal gcd and lcm">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.3.18</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#defn: ideal gcd and lcm">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p> Let \(R\) be a Dedekind domain and let \(\mathfrak {a},\mathfrak {b}\) be ideals. Then we define the greatest common divisor \(\gcd \) and least common multiple \(\operatorname{lcm}\) as follows: Let \(\mathfrak {a}=\prod _i \mathfrak {p}_i^{n_i}\) and \(\mathfrak {b}=\prod _i \mathfrak {p}_i^{m_i}\) then </p>
+<div class="displaymath" id="a0000000331">
+  \[ \gcd (\mathfrak {a},\mathfrak {b})=\prod _i \mathfrak {p}_i^{\min (n_i,m_i)} \qquad \operatorname{lcm}(\mathfrak {a},\mathfrak {b})=\prod _i \mathfrak {p}_i^{\max (n_i,m_i)}. \]
+</div>
+<p> Here the \(\mathfrak {p}_i\) are all different. </p>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="prop: ideal gcd and lcm">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.3.19</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#prop: ideal gcd and lcm">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000332"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> If \(R\) is a Dedekind domain and \(\mathfrak {a},\mathfrak {b}\) are ideals. Then </p>
+<div class="displaymath" id="a0000000333">
+  \[ \gcd (\mathfrak {a},\mathfrak {b})=\mathfrak {a}+\mathfrak {b} \]
+</div>
+<p> and </p>
+<div class="displaymath" id="a0000000334">
+  \[ \operatorname{lcm}(\mathfrak {a},\mathfrak {b})=\mathfrak {a}\cap \mathfrak {b} \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000332">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Corollary <a href="sect0019.html#cor: ideal div">3.3.14</a> tells us that division turns into containment for ideals, so the greatest common divisor of \(\mathfrak {a},\mathfrak {b}\) is the smallest ideal containing both \(\mathfrak {a},\mathfrak {b}\) which by definition is \(\mathfrak {a}+\mathfrak {b}\). </p>
+<p>Similarly, the least common multiple is the largest ideal contained in both of them, which by definition is \(\mathfrak {a}\cap \mathfrak {b}\). </p>
+
+  </div>
+</div>
+<p><div class="question_thmwrapper" id="ques: ideal gcd lcm">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">3.3.20</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#ques: ideal gcd lcm">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p> Show that \(\gcd (\mathfrak {a},\mathfrak {b})\operatorname{lcm}(\mathfrak {a},\mathfrak {b})=\mathfrak {a}\mathfrak {b}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="thm_thmwrapper" id="thm: chinese rem thm">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.3.21</span>
+    <span class="thm_thmtitle">Chinese remainder theorem</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#thm: chinese rem thm">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000335"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(R\) be a commutative ring and let \(\mathfrak {a},\mathfrak {b}\) be coprime ideals (i.e., \(\mathfrak {a}+\mathfrak {b}=(1)\)) then </p>
+<div class="displaymath" id="a0000000336">
+  \[ R/\mathfrak {a}\mathfrak {b}\cong R/\mathfrak {a}\times R/\mathfrak {b} \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000335">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Consider the ring homomorphism </p>
+<div class="displaymath" id="a0000000337">
+  \[ \phi : R \to R/\mathfrak {a}\times R/\mathfrak {b} \]
+</div>
+<p> given by \(\phi (x)=(x \pmod\mathfrak {a}, x \pmod\mathfrak {b})\). Then the kernel is given by \(\mathfrak {a}\cap \mathfrak {b}\). </p>
+<p>Now, since \(\mathfrak {a}+\mathfrak {b}=(1)\) then </p>
+<div class="displaymath" id="a0000000338">
+  \[ \mathfrak {a}\cap \mathfrak {b}=(\mathfrak {a}\cap \mathfrak {b})(\mathfrak {a}+\mathfrak {b})=(\mathfrak {a}\cap \mathfrak {b})(\mathfrak {a})+(\mathfrak {a}\cap \mathfrak {b})(\mathfrak {b}) \subset \mathfrak {a}\mathfrak {b}. \]
+</div>
+<p> Moreover, its easy to see \(\mathfrak {a}\mathfrak {b}\subset \mathfrak {a}\cap \mathfrak {b}\), therefore \(\mathfrak {a}\mathfrak {b}=\mathfrak {a}\cap \mathfrak {b}\). So we have an injective ring homomorphism </p>
+<div class="displaymath" id="a0000000339">
+  \[ \phi ':R/ \mathfrak {a}\mathfrak {b}=R/(\mathfrak {a}\cap \mathfrak {b}) \longrightarrow R/\mathfrak {a}\times R/\mathfrak {b}. \]
+</div>
+<p>It remains to check it is surjective. Write \(1=a+b\) for \(a \in \mathfrak {a},b \in \mathfrak {b}\), then for any \((r,s) \in R^2\) the element \(x=as+br \in R\) is such that \(x \equiv r \pmod\mathfrak {a}\) and \(x \equiv s \pmod\mathfrak {b}\) which gives us subjectivity. </p>
+
+  </div>
+</div>
+<p><div class="rmrk_thmwrapper" id="a0000000340">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">3.3.22</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000340">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>By induction one can extend this to the case where we have several pairwise coprime ideals. </p>
+
+  </div>
+</div> </p>
+<p><div class="thm_thmwrapper" id="a0000000341">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.3.23</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000341">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000342"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p>Let \(R\) be a Dedekind domain and let \(\mathfrak {a}\) be an ideal. Then for any \(\alpha \in \mathfrak {a}\) with \(\alpha \) non-zero we can find \(\beta \in \mathfrak {a}\) such that \(\mathfrak {a}=(\alpha ,\beta )\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000342">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We will find a \(\beta \) such that \(\mathfrak {a}=\gcd ((\alpha ),(\beta ))=(\alpha )+(\beta )=(\alpha ,\beta )\). </p>
+<p>Let </p>
+<div class="displaymath" id="a0000000343">
+  \[ \mathfrak {a}=\mathfrak {p}_1^{n_1}\mathfrak {p}_2^{n_2}\cdots \mathfrak {p}_r^{n_r} \]
+</div>
+<p> with \(\mathfrak {p}_i\) distinct prime ideals. Then since \((\alpha ) \subset \mathfrak {a}\) we have \((\alpha ) \subset \mathfrak {p}_i^{n_i}\) for all \(i\), in other words \(\alpha \) is divisible by the \(\mathfrak {p}_i^{n_i}\). Now, let \(\mathfrak {q}_1,\dots ,\mathfrak {q}_s\) be any other prime ideals dividing \((\alpha )\) (if any exist). So we have </p>
+<div class="displaymath" id="a0000000344">
+  \[ (\alpha )=\prod _i \mathfrak {p}_i^{n_i} \times \prod _j \mathfrak {q}_j. \]
+</div>
+<p>We construct \(\beta \) as follows. Take \(\beta _i \in \mathfrak {p}_i^{n_i} \backslash \mathfrak {p}_i^{n_i+1}\) and then use the Chinese remainder theorem <a href="sect0019.html#thm: chinese rem thm">3.3.21</a> to find \(\beta \in R\) such that \(\beta \equiv \beta _i \pmod{\mathfrak {p}_i^{n_i+1}}\) for \(i \in \{ 1,\dots ,r\} \) and \(\beta \equiv 1 \pmod{\mathfrak {q}_j}\) for \(j \in \{ 1,\dots ,s\} \). Note that we can do this, and the \(\mathfrak {p}_i,\mathfrak {q}_j\) are all pairwise distinct so \(\mathfrak {q}_j+\mathfrak {p}_i^{n_i}=(1)\) (as \(\mathfrak {q}_j\) is maximal) for all \(i,j\) and moreover, \(\mathfrak {p}_i^{n_i}+\mathfrak {p}_j^{n_j}=\gcd (\mathfrak {p}_i^{n_i},\mathfrak {p}_j^{n_j})\) which by Definition <a href="sect0019.html#defn: ideal gcd and lcm">3.3.18</a> is just \((1)\). </p>
+<p>So now, Definition <a href="sect0019.html#defn: ideal gcd and lcm">3.3.18</a> gives us \(\gcd ((\alpha ),(\beta ))=\prod _i \mathfrak {p}_i^{n_i}=\mathfrak {a}\) and therefore \(\beta \in \mathfrak {a}\) which finishes the proof. </p>
+
+  </div>
+</div>
+<p><div class="thm_thmwrapper" id="a0000000345">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.3.24</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0019.html#a0000000345">#</a>
+    <a class="icon proof" href="sect0019.html#a0000000346"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p>A Dedekind domain is a UFD if and only if it is a PID. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000346">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(R\) is a Dedekind domain that is a PID, then by Proposition <a href="sect0003.html#prop: background ring theory">1.2.6</a> it is a UFD. </p>
+<p>Now, let \(R\) be a UFD and assume for contradiction it is not a PID. Then by Theorem <a href="sect0019.html#thm: ded dom ideal is prod of prim">3.3.15</a> there must exist at least one non-principal prime ideal, call it \(\mathfrak {p}\). Now, let \(S\) be the set of ideals \(\mathfrak {a}\) such that \(\mathfrak {a}\mathfrak {p}\) is principal. By Theorem <a href="sect0019.html#thm: ideals are invertible">3.3.5</a> \(S\) is non-empty, so we can do the usual trick and find a maximal element, \(\mathfrak {m}\). Let \(\mathfrak {m}\mathfrak {p}=(\alpha )\), we claim \(\alpha \) must be irreducible. Assuming this for the moment, if we take \(a \in \mathfrak {p}\backslash (\alpha )\) and \(b \in \mathfrak {m}\backslash (\alpha )\) (which we can do in the first case as \(\mathfrak {p}\) is not principal and in the second by Exercise <a href="sect0019.html#ques: if prod is princ, you are princ">3.3.6</a>) then \(ab \in (\alpha )\) but \(\alpha \mid ab\) but \(\alpha \nmid a\) and \(\alpha \nmid b\) which cannot happen in a UFD. </p>
+<p>So it remains to prove the claim that \(\alpha \) is irreducible. For this we note that if \(\alpha =\beta \gamma \) then one of \((\beta )\) or \((\gamma )\) would be of the form \(\mathfrak {p}\mathfrak {b}\) for some \(\mathfrak {b}\) dividing \(\mathfrak {m}\), but \(\mathfrak {m}\) is maximal so \(\mathfrak {b}=\mathfrak {m}\) and therefore one of \(\beta ,\gamma \) is a unit. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0018.html" title="Ideals in rings of integers"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0016.html" title="Factorization in rings of integers"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0020.html" title="Norms of ideals"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

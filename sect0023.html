@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The ideal class group</title>
+<link rel="next" href="sect0024.html" title="Computing class groups" />
+<link rel="prev" href="sect0022.html" title="Embeddings and prime ideals" />
+<link rel="up" href="index.html" title="Algebraic Number Theory" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active current">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000024">4 The ideal class group</h1>
+<p>Recall that in a number field \(K\), a principal fractional ideal is a fractional ideal of the form \((x)=\{ xy| y \in \mathcal{O}_K\} \) for \(x \in K\). For example, principal ideals are principal fractional ideals. Note that furthermore, if \((x)\) and \((y)\) are two principal fractional ideals, then \((x)(y)=(xy)\) is also a fractional ideal and moreover, \((x)(x^{-1})=\mathcal{O}_K\). Thus the set of principal fractional ideals forms a subgroup of \(J_K\) (the group of fractional ideal as defined in Proposition <a href="sect0019.html#prop: frac ideals form grp">3.3.11</a>). Let \(P_K\) denote the subgroup of principal fractional ideals. </p>
+<p><div class="defn_thmwrapper" id="a0000000489">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">4.0.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0023.html#a0000000489">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>The <i class="itshape">class group</i> of \(K\) is defined to be quotient group </p>
+<div class="displaymath" id="a0000000490">
+  \[ \operatorname{Cl}_K=\frac{J_K}{P_K}.  \]
+</div>
+<p> Its elements are called ideal classes. If \(\mathfrak {a}\) is a fractional ideal, we let \([\mathfrak {a}]\) denote its class in \(\operatorname{Cl}_K\). We let \(h_K\) denote the size of \(\operatorname{Cl}_K\) (which we will see below is finite), this is called the <i class="itshape">class number</i> of \(K\). </p>
+
+  </div>
+</div> </p>
+<p><div class="rmrk*_thmwrapper" id="a0000000491">
+  <div class="rmrk*_thmheading">
+    <span class="rmrk*_thmcaption">
+    Remark
+    </span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0023.html#a0000000491">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk*_thmcontent">
+  <p>Note that in the class group, the identity element is given by the class of principal fractional ideals, which we denote by \([1]\) or \([(1)]\). </p>
+<p>Furthermore, note that if \(\mathfrak {a}\) and \(\mathfrak {b}\) are fractional ideals then </p>
+<div class="displaymath" id="a0000000492">
+  \[ [\mathfrak {a}]=[\mathfrak {b}] \]
+</div>
+<p> means that there is some principal fractional ideal \((\alpha )\) such that \(\mathfrak {a}=(\alpha )\mathfrak {b}\). So as a SET \([\mathfrak {a}]=\{ (x)\mathfrak {a}\mid x \in K\} \). </p>
+
+  </div>
+</div> </p>
+<p>Note that, \(\mathcal{O}_K\) is a PID if and only if \(\operatorname{Cl}_K\) is trivial. Moreover, since a Dedekind domain is a PID if and only if its a UFD, this means that \(\mathcal{O}_K\) is a UFD if and only if \(\operatorname{Cl}_K\) is trivial. So \(\operatorname{Cl}_K\) can be thought of measuring how far \(\mathcal{O}_K\) is from being a UFD. </p>
+<p><div class="thm_thmwrapper" id="thm: cls grp fin">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">4.0.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0023.html#thm: cls grp fin">#</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(K\) be a number field. Then \(\operatorname{Cl}_K\) is finite. </p>
+
+  </div>
+</div> </p>
+<p>To prove this theorem we will make use of the following result, which we will prove later. </p>
+<p><div class="thm_thmwrapper" id="thm: mink bound">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">4.0.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0023.html#thm: mink bound">#</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(K\) be a number field with \(r_1\) real embeddings and \(r_2\) conjugate pairs of complex embeddings. Let \([K:\mathbb {Q}]=n\) and let \(\mathfrak {a}\) be an ideal of \(\mathcal{O}_K\). Then there is an element \(a \in \mathfrak {a}\) such that </p>
+<div class="displaymath" id="a0000000493">
+  \[ |N_{K/\mathbb {Q}}(a)| \leq \frac{n!}{n^n} \left( \frac{4}{\pi } \right)^{r_2} |\Delta (\mathcal{O}_K)|^{1/2} N(\mathfrak {a})  \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="defn_thmwrapper" id="a0000000494">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">4.0.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0023.html#a0000000494">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>The quantity \( \frac{n!}{n^n} \left( \frac{4}{\pi } \right)^{r_2} |\Delta (\mathcal{O}_K)|^{1/2}\) is known as the Minkowski bound and we will denote it by \(M_K\). </p>
+
+  </div>
+</div> </p>
+<p>Now, we have: </p>
+<p><div class="prop_thmwrapper" id="prop: each ideal class has rep of small norm">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">4.0.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0023.html#prop: each ideal class has rep of small norm">#</a>
+    <a class="icon proof" href="sect0023.html#a0000000495"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K\) be a number field and let \(C\) be an ideal class in \(\operatorname{Cl}_K\). Then \(C\) contains an ideal \(\mathfrak {a}\) in \(\mathcal{O}_K\) such that </p>
+<div class="displaymath" id="a0000000496">
+  \[ N(\mathfrak {a}) \leq M_K. \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000497">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Consider the class \(C^{-1}\). This has a representative which is an ideal \(\mathfrak {b}\) of \(\mathcal{O}_K\). By Theorem <a href="sect0023.html#thm: mink bound">4.0.3</a> there is an \(x \in \mathfrak {b}\) such that \(|N_{K/\mathbb {Q}}(x)| \leq M_K N(\mathfrak {b})\). </p>
+<p>Set \(\mathfrak {a}=\mathfrak {b}^{-1} (x)\). Then this is in the same class as \(C\) since its a multiple of \(\mathfrak {b}^{-1}\) by a principal ideal \((x)\). Moreover, since \(x \in \mathfrak {b}\) it follows that \(\mathfrak {b}^{-1}(x) \subset \mathcal{O}_K\) (recall that \(\mathfrak {b}^{-1}=\{ y \in K | y\mathfrak {b}\subset \mathcal{O}_K\} \) ), so \(\mathfrak {a}\) is a proper ideal. Now by construction </p>
+<div class="displaymath" id="a0000000498">
+  \[ N(\mathfrak {a})=\frac{|N_{K/\mathbb {Q}}(x)|}{N(\mathfrak {b})} \leq M_K \]
+</div>
+<p> which gives the result. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000495">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof of Theorem <a href="sect0023.html#thm: cls grp fin">4.0.2</a>
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> By Proposition <a href="sect0023.html#prop: each ideal class has rep of small norm">4.0.5</a> each ideal class \(C\) in \(\operatorname{Cl}_K\) must contain an ideal of norm at most \(M_K\). Now Corollary <a href="sect0020.html#cor: fin many ideals of given norm">3.4.10</a> implies there are only finitely many such ideals. So there are only finitely many ideal classes. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+<nav class=local_toc>
+<ul>
+  <li>	
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+  </li>
+</ul>
+</nav>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0022.html" title="Embeddings and prime ideals"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Algebraic Number Theory"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0024.html" title="Computing class groups"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

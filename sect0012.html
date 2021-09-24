@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Discriminants</title>
+<link rel="next" href="sect0013.html" title="Formulae for calculating discriminants" />
+<link rel="prev" href="sect0011.html" title="Rings of integers" />
+<link rel="up" href="sect0010.html" title="Algebraic integers" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000013">2.2 Discriminants</h1>
+<p><div class="defn_thmwrapper" id="a0000000197">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">2.2.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#a0000000197">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>Let \(K\) be a number field and let \(B=\{ b_1,\dots ,b_n\} \) be a set of elements in \(K\). The discriminant of \(B\) is defined as </p>
+<div class="displaymath" id="a0000000198">
+  \[ \Delta (B)= \det \left(\begin{matrix}  \operatorname {Tr}_{K/\mathbb {Q}}(b_1b_1) 
+
+& \cdots 
+
+&  \operatorname {Tr}_{K/\mathbb {Q}}(b_1b_n)
+
+\\ \vdots 
+
+& &  \vdots 
+
+\\ \operatorname {Tr}_{K/\mathbb {Q}}(b_nb_1) 
+
+& \cdots 
+
+&  \operatorname {Tr}_{K/\mathbb {Q}}(b_nb_n) 
+
+\end{matrix} \right). \]
+</div>
+<p> If needed we will denote the matrix </p>
+<div class="displaymath" id="a0000000199">
+  \[ \left(\begin{matrix}  \operatorname {Tr}_{K/\mathbb {Q}}(b_1b_1) 
+
+& \cdots 
+
+&  \operatorname {Tr}_{K/\mathbb {Q}}(b_1b_n)
+
+\\ \vdots 
+
+& &  \vdots 
+
+\\ \operatorname {Tr}_{K/\mathbb {Q}}(b_nb_1) 
+
+& \cdots 
+
+&  \operatorname {Tr}_{K/\mathbb {Q}}(b_nb_n) 
+
+\end{matrix} \right) \]
+</div>
+<p> by \(T_B\). </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000200">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">2.2.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#a0000000200">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(K=\mathbb {Q}(\sqrt{d})\) with \(d\) square-free. Then lets take \(B=\{ 1,\sqrt{d}\} \) which is our basis for \(K\). Then we have </p>
+<div class="displaymath" id="a0000000201">
+  \[ \Delta (B)=\det \begin{pmatrix} \operatorname {Tr}_{K/\mathbb {Q}}(1)
+
+& \operatorname {Tr}_{K/\mathbb {Q}}(\sqrt{d})
+
+\\ \operatorname {Tr}_{K/\mathbb {Q}}(\sqrt{d})
+
+& \operatorname {Tr}_{K/\mathbb {Q}}(d)
+
+\end{pmatrix} =\det \begin{pmatrix} 2
+
+& 0
+
+\\ 0
+
+& 2d
+
+\end{pmatrix}=4d \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="a0000000202">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">2.2.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#a0000000202">#</a>
+    <a class="icon proof" href="sect0012.html#a0000000203"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K\) be a number field and let \(B=\{ b_1,\dots ,b_n\} \) be a set of elements in \(K\). Then \(\Delta (B) \neq 0\) if and only if the elements in \(B\) are linearly independent. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000203">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>First recall from linear algebra, that if we have a finite dimensional vector space \(V\) with a non-degenerate bilinear form \(\langle , \rangle \) on \(V\), then \(\{ v_1,\dots ,v_n\} \) a basis of \(V\) if and only if </p>
+<div class="displaymath" id="a0000000204">
+  \[ \det \left(\begin{matrix}  \langle v_1, v_1 \rangle 
+
+& \cdots 
+
+&  \langle v_1,v_n \rangle 
+
+\\ \vdots 
+
+& &  \vdots 
+
+\\ \langle v_n,v_1\rangle 
+
+& \cdots 
+
+&  \langle v_n,v_n\rangle 
+
+\end{matrix} \right) \neq 0. \]
+</div>
+<p> (This matrix appearing here is called the matrix associated to the pairing \(\langle ,\rangle \) with respect to our chosen basis). </p>
+<p>Now, by Proposition <a href="sect0009.html#prop: tr perfect">1.7.8</a> we know that the trace pairing is perfect, which in particular means it is non-degenerate. Moreover, \(\Delta (B)\) is exactly the determinant of the matrix associated to the trace pairing. So, we see that \(B\) consists on linearly independent vectors if and only if \(\Delta (B) \neq 0\). </p>
+
+  </div>
+</div>
+<p> So this is a good way to check if a set of elements are a basis for \(K/\mathbb {Q}\). Now, lets see how \(\Delta (B)\) is related to \(\Delta (B')\) for \(B,B'\) two different bases for \(K/\mathbb {Q}\). </p>
+<p><div class="prop_thmwrapper" id="prop: disc change of basis">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">2.2.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#prop: disc change of basis">#</a>
+    <a class="icon proof" href="sect0012.html#a0000000205"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K\) be a number field and \(B,B'\) bases for \(K/\mathbb {Q}\). If \(P\) denotes the change of basis matrix, then </p>
+<div class="displaymath" id="a0000000206">
+  \[ \Delta (B)=\det (P)^2 \Delta (B'). \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000205">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(T_B=(\operatorname {Tr}_{K/\mathbb {Q}}(b_i b_j))_{i,j}\) be the matrix associated to the trace pairing with respect to \(B\). Then, it is a basic result in linear algebra that if you have the matrix associated to a bilinear pairing and change the basis, then the matrix gets conjugated by the change of basis matrix. This means that \(T_B=P^{t}T_{B'}P\), (where \(()^t\) denotes transpose). Now, taking determinants we get \(\Delta (B)=\det (T_B)=\det (P^t T_{B'}P)=\det (P^t)\det (T_{B'})\det (P)\) which gives the result once you remember that \(\det (P^t)=\det (P)\). </p>
+
+  </div>
+</div>
+<p>Now, by the Primitive element theorem <a href="sect0007.html#thm: prim elt thm">1.5.11</a> we know that for a number field we can always find some \(\alpha \) such that \(K=\mathbb {Q}(\alpha )\) and in this case \(\{ 1,\alpha ,\dots ,\alpha ^{n-1}\} \) is a basis of \(K/\mathbb {Q}\) where \(n=[K:\mathbb {Q}]\). But as we mentioned above, we cant do this for rings of integers. But, using the discriminant we can check if we have a basis for our ring of integers. </p>
+<p>First note that: </p>
+<p><div class="prop_thmwrapper" id="prop: int basis int disc">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">2.2.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#prop: int basis int disc">#</a>
+    <a class="icon proof" href="sect0012.html#a0000000207"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K\) be a number field and \(B=\{ b_1,\dots ,b_n\} \) be elements in \(\mathcal{O}_K\), then \(\Delta (B) \in \mathbb {Z}\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000207">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(b_i b_k\) is an algebraic integer, then \(\operatorname {Tr}_{K/\mathbb {Q}}(b_i b_j) \in \mathbb {Z}\). Therefore the matrix \(T_B\) has integers coefficients, and therefore the determinant is a integer. </p>
+
+  </div>
+</div>
+<p><div class="warn_thmwrapper" id="a0000000208">
+  <div class="warn_thmheading">
+    <span class="warn_thmcaption">
+    Warning
+    </span>
+    <span class="warn_thmlabel">2.2.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#a0000000208">#</a>
+
+  </div>
+  </div>
+  <div class="warn_thmcontent">
+  <p>Just because we take a basis consisting of algebraic integers, it doesn’t mean that it is an integral basis. To find an integral basis we need to be a bit more careful. </p>
+
+  </div>
+</div> </p>
+<p><div class="lem_thmwrapper" id="lem: disc int basis">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">2.2.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#lem: disc int basis">#</a>
+    <a class="icon proof" href="sect0012.html#a0000000209"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(K\) be a number field and \(B=\{ b_1,\dots ,b_n\} \) be a basis for \(K/\mathbb {Q}\) consisting of algebraic integers. If \(B\) is not an integral basis then there exists an algebraic integer of the form </p>
+<div class="displaymath" id="a0000000210">
+  \[ \alpha =\frac{x_1b_1+\cdots +x_nb_n}{p} \]
+</div>
+<p> where \(p\) is a prime and \(x_i \in \{ 0,\dots ,p-1\} \) with not all \(x_i\) zero. Moreover, if \(x_i \neq 0\) and we let \(B'\) be the basis obtained by replacing \(b_i\) with \(\alpha \), then </p>
+<div class="displaymath" id="a0000000211">
+  \[ \Delta (B')= \frac{x_i^2}{p^2} \Delta (B). \]
+</div>
+<p> In particular \(p^2 \mid \Delta (B)\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000209">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(B\) is not an integral basis then we can find some element \(\phi \in \mathcal{O}_K\) such that </p>
+<div class="displaymath" id="a0000000212">
+  \[ \phi =y_1b_1+\dots y_nb_n \]
+</div>
+<p> with not all the \(y_i\) in \(\mathbb {Z}\). So, let \(N\) be the least common multiple of the denominators of the \(y_i\) (meaning \(Ny_i \in \mathbb {Z}\) for all \(i\)). Now, let \(p\) be a prime factor of \(N\). If we now consider \((N/p)\phi \) then all of the coefficients of \(b_i\) are in \(\frac{1}{p} \mathbb {Z}\) (so they have denominator \(1\) or \(p\).) and at least one of them has denominator \(p\) (since not all the \(y_i\) where in \(\mathbb {Z}\)). So by relabelling, wlog we can assume </p>
+<div class="displaymath" id="a0000000213">
+  \[ \phi =y_1b_1+\dots y_nb_n \]
+</div>
+<p> with \(y_i \in \frac{1}{p} \mathbb {Z}\) </p>
+<p>Now look at </p>
+<div class="displaymath" id="a0000000214">
+  \[ \psi :=\lfloor y_1 \rfloor b_1+\cdots +\lfloor y_n \rfloor b_n \]
+</div>
+<p> (here \(\lfloor x \rfloor \) denotes the integer part of \(x\)). The both \(\psi \) and \(\phi \) are algebraic integers (as the \(b_i\) are algebraic integers). Therefore, so is \(\theta =\phi -\psi \). By construction, \(\theta \) has coefficients of the for \(\frac{x_i}{p}:=y_i-\lfloor y_i \rfloor \) where \(x_i \in \{ 0,\dots ,p-1\} \) and not all the \(x_i\) are zero (since, again, not all the \(y_i\) were in \(\mathbb {Z}\)). This gives the first part of the lemma. </p>
+<p>Now, assume \(x_i \neq 0\), then let us replace \(b_i \in B\) with \(\theta \) to get a new basis \(B'\) which again consists of algebraic integers. Next, we note that the change of basis matrix from \(B\) to \(B'\) is </p>
+<div class="displaymath" id="a0000000215">
+  \[  \left( \begin{matrix}  1
+
+& 0
+
+& \cdots 
+
+&  \frac{x_1}{p}
+
+&  \cdots 
+
+& 0 
+
+\\ 0
+
+& 1
+
+& \cdots 
+
+&  \frac{x_2}{p}
+
+&  \cdots 
+
+& 0 
+
+\\ \vdots 
+
+&  \vdots 
+
+& & \vdots 
+
+& & \vdots 
+
+\\ 0
+
+& 0
+
+& \cdots 
+
+&  \frac{x_n}{p}
+
+&  \cdots 
+
+& 1 
+
+\\ \end{matrix} \right)  \]
+</div>
+<p>(here the column of \(x_j/p\)’s is in the \(i\)-th column). </p>
+<p>This matrix has determinant \(\frac{x_i}{p}.\) Therefore, by Proposition <a href="sect0012.html#prop: disc change of basis">2.2.4</a> we see that \(\Delta (B')=\frac{x_i^2}{p^2}\Delta (B)\). But both \(\Delta (B),\Delta (B')\) are in \(\mathbb {Z}\) by Proposition <a href="sect0012.html#prop: int basis int disc">2.2.5</a>, therefore \(p^2 \mid \Delta (B)\) giving the result. </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="cor: int basis exists">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">2.2.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#cor: int basis exists">#</a>
+    <a class="icon proof" href="sect0012.html#a0000000216"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> There exists a (finite) integral basis in \(K\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000217">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>The fact that it is finite follows from \(K\) being a finite extension of \(\mathbb {Q}\). Let \(B\) be a basis consisting of algebraic integers, now by repeatedly applying Lemma <a href="sect0012.html#lem: disc int basis">2.2.7</a>, we can obtain \(B\) such that \(\mid \Delta (B) \mid \) is as small as possible. This must now be an integral basis, otherwise Lemma <a href="sect0012.html#lem: disc int basis">2.2.7</a> would allow us to find a new basis \(B'\) with \(|\Delta (B')| {\lt} |\Delta (B)|\) contradicting our choice of \(B\). </p>
+
+  </div>
+</div>
+<p>From this we also get: <div class="cor_thmwrapper" id="cor: square free implies int basis">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">2.2.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#cor: square free implies int basis">#</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> If \(B\) is a basis consisting of integral elements and \(\Delta (B)\) is square-free, then \(B\) is an integral basis. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000216">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>This follows at once from Lemma <a href="sect0012.html#lem: disc int basis">2.2.7</a>. </p>
+
+  </div>
+</div>
+<p><div class="warn_thmwrapper" id="a0000000218">
+  <div class="warn_thmheading">
+    <span class="warn_thmcaption">
+    Warning
+    </span>
+    <span class="warn_thmlabel">2.2.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#a0000000218">#</a>
+
+  </div>
+  </div>
+  <div class="warn_thmcontent">
+  <p>Note that the converse is not true! For example if \(K=\mathbb {Q}(\sqrt{-1})\) then \(B=\{ 1,\sqrt{-1}\} \) is an integral basis, but \(\Delta (B)=-4\) which is not square-free. </p>
+
+  </div>
+</div> <div class="rmrk_thmwrapper" id="a0000000219">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">2.2.11</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#a0000000219">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>Note that this also gives us an algorithm for finding an integral basis as follows: </p>
+<ol class="enumerate">
+  <li><p>Pick \(B\) a basis consisting of algebraic integers and calculate \(\Delta (B)\). </p>
+</li>
+  <li><p>For each prime \(p\) such that \(p^2 \mid \Delta (B)\) we can use Lemma <a href="sect0012.html#lem: disc int basis">2.2.7</a> to get a new basis \(B'\) with smaller discriminant. </p>
+</li>
+  <li><p>Now, repeat step one. </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000220">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">2.2.12</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#a0000000220">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(K=\mathbb {Q}(\sqrt{5})\) and take \(B=\{ 1,\sqrt{5}\} \). Then we have \(\Delta (B)=2^2\cdot 5\). So, if we apply Lemma <a href="sect0012.html#lem: disc int basis">2.2.7</a> we get a new basis \(B'=\{ 1,\frac{1+\sqrt{5}}{2}\} \) which has discriminant \(5\), which is square-free, and therefore is a basis of \(\mathcal{O}_K\). </p>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="prop: int bases disc">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">2.2.13</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#prop: int bases disc">#</a>
+    <a class="icon proof" href="sect0012.html#a0000000221"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(B,B'\) be two integral bases of a number field \(K\). Then \(\Delta (B)= \Delta (B')\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000221">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>In this case the change of basis matrix from \(B\) to \(B'\) is an invertible matrix with integer coefficients, so its determinant is \(\pm 1\). Using Proposition <a href="sect0012.html#prop: disc change of basis">2.2.4</a>, we see that a change of basis matrix won’t alter the discriminant, since the factor of the determinant squared is what appears. </p>
+
+  </div>
+</div>
+<p><div class="defn_thmwrapper" id="defn: disc of num field">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">2.2.14</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0012.html#defn: disc of num field">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p> Let \(K\) be a number field, and let \(B\) be an integral basis. Then we define the discriminant of \(K\) as \(\Delta (B)\). Note that by Proposition <a href="sect0012.html#prop: int bases disc">2.2.13</a>, this definition does not depend on the choice of integral basis. So we will sometimes denote it simply by \(\Delta (\mathcal{O}_K)\). </p>
+
+  </div>
+</div> </p>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0011.html" title="Rings of integers"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0010.html" title="Algebraic integers"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0013.html" title="Formulae for calculating discriminants"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

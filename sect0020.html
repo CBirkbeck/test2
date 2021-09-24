@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Norms of ideals</title>
+<link rel="next" href="sect0021.html" title="Splitting of prime ideals" />
+<link rel="prev" href="sect0019.html" title="Dedekind domains" />
+<link rel="up" href="sect0016.html" title="Factorization in rings of integers" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000021">3.4 Norms of ideals</h1>
+<p><div class="defn_thmwrapper" id="a0000000347">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.4.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#a0000000347">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>Let \(K\) be a number field and \(\mathfrak {a}\subset \mathcal{O}_K\) an ideal. We define the norm of \(\mathfrak {a}\) to be </p>
+<div class="displaymath" id="a0000000348">
+  \[ N(\mathfrak {a}):=|\mathcal{O}_K / \mathfrak {a}|. \]
+</div>
+
+  </div>
+</div> </p>
+<p>Why does this deserve to be called norm? Well lets justify this. </p>
+<p><div class="prop_thmwrapper" id="prop: norm of ideal is mult">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.4.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#prop: norm of ideal is mult">#</a>
+    <a class="icon proof" href="sect0020.html#a0000000349"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K\) be a number field and let \(\mathfrak {a},\mathfrak {b}\) be ideals in \(\mathcal{O}_K\), then </p>
+<div class="displaymath" id="a0000000350">
+  \[ N(\mathfrak {a}\mathfrak {b})=N(\mathfrak {a})N(\mathfrak {b}). \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000349">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>By factoring each of \(\mathfrak {a},\mathfrak {b}\) into prime ideals, it suffices to prove that \(N(\mathfrak {p}\mathfrak {b})=N(\mathfrak {p})N(\mathfrak {b})\) where \(\mathfrak {p}\) is a prime ideal and \(\mathfrak {b}\) is any proper ideal. </p>
+<p>Now, by group theory \(\mathfrak {b}/\mathfrak {p}\mathfrak {b}\) is a subgroup of \(\mathcal{O}_K/\mathfrak {p}\mathfrak {b}\) and the quotient is \(\mathcal{O}_K/\mathfrak {b}\). This means </p>
+<div class="displaymath" id="a0000000351">
+  \[ |\mathcal{O}_K/\mathfrak {p}\mathfrak {b}|=|\mathcal{O}_K/\mathfrak {b}||\mathfrak {b}/\mathfrak {p}\mathfrak {b}|. \]
+</div>
+<p> So we need to show \(|\mathfrak {b}/\mathfrak {p}\mathfrak {b}|=|\mathcal{O}_K/\mathfrak {p}|\). </p>
+<p>Since \(\mathfrak {p}\neq \mathcal{O}_K\) and (fractional) ideals form a group we have \(\mathfrak {p}\mathfrak {b}\neq \mathfrak {b}\) (otherwise we could multiply through by \(\mathfrak {b}^{-1}\) giving a contradiction), so let \(x \in \mathfrak {b}\backslash \mathfrak {b}\mathfrak {p}\). Let us consider the map </p>
+<div class="displaymath" id="a0000000352">
+  \[ \mathcal{O}_K \longrightarrow \mathfrak {b}/\mathfrak {p}\mathfrak {b} \]
+</div>
+<p> given by \(a \mapsto ax + \mathfrak {p}\mathfrak {b}\). The kernel of this map contains \(\mathfrak {p}\) and the map is non-zero by our choice of \(x\), so the kernel is an ideal containing \(\mathfrak {p}\). But \(\mathfrak {p}\) is maximal, so the kernel must be \(\mathfrak {p}\). Therefore we have an injective map </p>
+<div class="displaymath" id="a0000000353">
+  \[ \mathcal{O}_K/\mathfrak {p}\longrightarrow \mathfrak {b}/\mathfrak {p}\mathfrak {b}. \]
+</div>
+<p>Now, to see that this map is also surjective we just note that by unique factorization, there cannot be any ideals strictly between \(\mathfrak {b}\) and \(\mathfrak {p}\mathfrak {b}\). Since otherwise, we would have \(\mathfrak {b}\mathfrak {p}\subset \mathfrak {c}\subset \mathfrak {b}\) which means \(\mathfrak {b}\mid \mathfrak {c}\) and \(\mathfrak {b}\mid \mathfrak {b}\mathfrak {p}\) so by uniqueness of factorization we would have either \(\mathfrak {c}=\mathfrak {b}\) or \(\mathfrak {c}=\mathfrak {p}\mathfrak {b}\). </p>
+<p>Therefore \(\mathfrak {b}=(x)+\mathfrak {p}\mathfrak {b}\) giving surjectivity. </p>
+
+  </div>
+</div>
+<p><div class="lem_thmwrapper" id="lem: containment of ideals equal if norm equal">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">3.4.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#lem: containment of ideals equal if norm equal">#</a>
+    <a class="icon proof" href="sect0020.html#a0000000354"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(K\) be a number field and \(\mathfrak {a}\subset \mathfrak {b}\subset \mathcal{O}_K\) non-zero ideals. Then \(\mathfrak {a}=\mathfrak {b}\) if and only if \(N(\mathfrak {a})=N(\mathfrak {b})\) </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000354">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Clearly, if \(\mathfrak {a}=\mathfrak {b}\) they have the same norm. So lets check the other direction. </p>
+<p>First note that since \(\mathfrak {a}\subset \mathfrak {b}\subset \mathcal{O}_K\), the tower law (which works for groups) gives us that \([\mathcal{O}_K:\mathfrak {a}]=[\mathcal{O}_K:\mathfrak {b}][\mathfrak {b}:\mathfrak {a}]\). But \([\mathcal{O}_K:\mathfrak {a}]=N(\mathfrak {a})=N(\mathfrak {b})=[\mathcal{O}_K:\mathfrak {b}]\) therefore \([\mathfrak {b}:\mathfrak {a}]=1\) giving the result. </p>
+
+  </div>
+</div>
+<p><div class="prop_thmwrapper" id="a0000000355">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.4.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#a0000000355">#</a>
+    <a class="icon proof" href="sect0020.html#a0000000356"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K\) be a number field and \(\mathfrak {a}\subset \mathcal{O}_K\) an ideal. If \(N(\mathfrak {a})\) is a prime, then \(\mathfrak {a}\) is a prime ideal. Conversely, if \(\mathfrak {p}\) is a prime ideal, then \(N(\mathfrak {p})=p^f\) for some prime number \(p\) and \(f \in \mathbb {Z}_{{\gt} 0}\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000356">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(\mathfrak {a}\) is not prime then \(\mathfrak {a}=\mathfrak {p}\mathfrak {b}\) with \(\mathfrak {p}\) a prime ideal and \(\mathfrak {b}\neq (1)\). Then by Proposition <a href="sect0020.html#prop: norm of ideal is mult">3.4.2</a> we have </p>
+<div class="displaymath" id="a0000000357">
+  \[ N(\mathfrak {a})=N(\mathfrak {p})N(\mathfrak {b}) \]
+</div>
+<p> which means \(N(\mathfrak {a})\) could not have been prime, which is a contradiction. </p>
+<p>For the converse we note that since \(\mathfrak {p}\) is prime it is therefore maximal. Therefore \(\mathcal{O}_K/\mathfrak {p}\) is a field, which we know is finite. Moreover, we know every finite field has size \(p^f\) for some prime \(p\) and natural number \(f\), which gives the result. </p>
+
+  </div>
+</div>
+<p><div class="prop_thmwrapper" id="prop: ideal norm coincides with other norm">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.4.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#prop: ideal norm coincides with other norm">#</a>
+    <a class="icon proof" href="sect0020.html#a0000000358"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K\) be a number field. Let \(\alpha \in \mathcal{O}_K \backslash 0\) and let \((\alpha )\) denote the ideal generated by \(\alpha \). Then </p>
+<div class="displaymath" id="a0000000359">
+  \[ |N_{K/\mathbb {Q}}(\alpha )|=|\mathcal{O}_K / (\alpha )|. \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000358">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(e_1,\dots ,e_n\) be an integral basis of \(\mathcal{O}_K\), then clearly \(\alpha e_1,\dots ,\alpha e_n\) is an integral basis of \((\alpha )\). On the other hand, since \((\alpha ) \subset \mathcal{O}_K \cong \mathbb {Z}^n\) we can make sure to choose the \(e_i\) such that there exist \(m_i \in \mathbb {Z}\) such that \(m_1e_1,\dots ,m_ne_n\) is an integral basis of \((\alpha )\). Alternatively, this follows from the structure theorem for finitely generated abelian groups. Then </p>
+<div class="displaymath" id="a0000000360">
+  \[ \mathcal{O}_K/(\alpha ) \cong \mathbb {Z}/m_1\mathbb {Z}\times \cdots \times \mathbb {Z}/m_n\mathbb {Z} \]
+</div>
+<p> and therefore \(N((\alpha ))=\prod _i |m_i|\). </p>
+<p>Next we need to relate this number to \(N_{K/\mathbb {Q}}(\alpha )\) in some way. For this, let us compare the three bases for \(K\) over \(\mathbb {Q}\) that we have written down: \(\{ e_1,\dots ,\epsilon _n\} \), \(\{ m_1e_1,\dots ,m_ne_n\} \) and \(\{ \alpha e_1,\dots ,\alpha e_n\} \). </p>
+<p>Now, lets see look at the diagram summarising the associated change of basis matrices. </p>
+<div class="centered"> <div class="tikzcd" id="a0000000361">
+    <img src="images/img-0001.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+				K \arrow[rr, &#34;e_i \mapsto \alpha e_i&#34;]      \arrow[dd,&#34;e_i \mapsto e_i&#34;,swap]                       &amp;&amp; K                               \\ \\
+				K \arrow[rr, &#34;e_i \mapsto m_ie_i&#34;,swap]  &amp;&amp; K \arrow[uu, &#34;m_ie_i \mapsto \a e_i&#34;,swap] 
+			\end{tikzcd}" />
+</div> </div>
+<p>The top arrow corresponds to the action of \(A_\alpha \). The arrow on the left corresponds to the identity matrix \(I\). The arrow along the bottom corresponds to a change of basis matrix with is diagonal which diagonal entries \(m_i\), lets call it \(D\). Lastly, whatever the matrix corresponding to the arrow going upwards on the right is, it represents a change of basis matrix between two integral bases for \((\alpha )\), therefore similarly to what we have seen before, it must correspond to an invertible matrix with integer coefficients, which we will denote by \(N\). Note that this also means, \(\det (N)=\pm 1\). </p>
+<p>Now, from the diagram it is clear that going along the top of the diagram is the same as first going down, then right and then up. This means this is a commutative diagram and therefore we have \(A_\alpha =NDI\) therefore </p>
+<div class="displaymath" id="a0000000362">
+  \[ N_{K/\mathbb {Q}}(\alpha )=\det (A_\alpha )=\det (N)\det (D)\det (I)=\pm \det (D)=\prod _i m_i. \]
+</div>
+<p> Taking absolute values now gives the result. </p>
+
+  </div>
+</div>
+<p><div class="exmp_thmwrapper" id="a0000000363">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">3.4.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#a0000000363">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(p\) be a odd prime, \(\zeta _p\) a \(p\)-th root of unity and \(\lambda _p=1-\zeta _p\). Let \(K=\mathbb {Q}(\zeta _p)\). Then from the proof of Theorem <a href="sect0015.html#thm: ring of ints of cyclo">2.3.2</a> we know \(N_{K/\mathbb {Q}}(\lambda _p)=p\) and therefore \(N((\lambda _p))=p\) which by the above means, \((\lambda _p)\) must be a prime ideal. </p>
+
+  </div>
+</div> </p>
+<p><div class="cor_thmwrapper" id="a0000000364">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.4.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#a0000000364">#</a>
+    <a class="icon proof" href="sect0020.html#a0000000365"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p>Let \(K\) be a number field, \(\mathfrak {a}\subset \mathcal{O}_K\) an ideal and \(\alpha \in \mathfrak {a}\). Then \(\mathfrak {a}=(\alpha )\) if and only if \(|N_{K/\mathbb {Q}}(\alpha )|=N(\mathfrak {a})\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000365">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Since \(\alpha \in \mathfrak {a}\) we have \((\alpha ) \subset \mathfrak {a}\). Then by Lemma <a href="sect0020.html#lem: containment of ideals equal if norm equal">3.4.3</a> and Proposition <a href="sect0020.html#prop: ideal norm coincides with other norm">3.4.5</a> gives the result. </p>
+
+  </div>
+</div>
+<p><div class="lem_thmwrapper" id="lem: ideal contains its norm">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">3.4.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#lem: ideal contains its norm">#</a>
+    <a class="icon proof" href="sect0020.html#a0000000366"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(K\) be a number field and \(\mathfrak {a}\subset \mathcal{O}_K\) a non-zero ideal. Let \(a=N(\mathfrak {a})\). Then \(a \in \mathfrak {a}\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000366">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Recall that by Lagrange’s Theorem, every element in \(\mathcal{O}_K/\mathfrak {a}\) has order at most \(a\). Therefore, if we look at the element \(1+\mathfrak {a}\in \mathcal{O}_K/\mathfrak {a}\) we have \(a\cdot (1+\mathfrak {a})=0 +\mathfrak {a}\) therefore \(a \in \mathfrak {a}\). </p>
+
+  </div>
+</div>
+<p><div class="rmrk_thmwrapper" id="a0000000367">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">3.4.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#a0000000367">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>We’ve seen something similar in the proof of Proposition <a href="sect0018.html#prop: quot of ideal is finite">3.2.4</a>. </p>
+
+  </div>
+</div> </p>
+<p><div class="cor_thmwrapper" id="cor: fin many ideals of given norm">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.4.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0020.html#cor: fin many ideals of given norm">#</a>
+    <a class="icon proof" href="sect0020.html#a0000000368"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> Let \(K\) be a number field. Then there are only finitely many ideals with a given norm. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000368">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(\mathfrak {a}\) is an ideal with \(N(\mathfrak {a})=a\) then by Lemma <a href="sect0020.html#lem: ideal contains its norm">3.4.8</a> we have \(a \in \mathfrak {a}\) which means \(\mathfrak {a}\mid (a)\). But by uniqueness of factorization, \(a\) only has finitely many factors, which gives the result. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0019.html" title="Dedekind domains"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0016.html" title="Factorization in rings of integers"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0021.html" title="Splitting of prime ideals"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

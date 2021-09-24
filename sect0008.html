@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: The standard representation</title>
+<link rel="next" href="sect0009.html" title="Norm and Trace" />
+<link rel="prev" href="sect0007.html" title="Embeddings" />
+<link rel="up" href="sect0001.html" title="Number Fields" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000009">1.6 The standard representation</h1>
+<p><div class="defn_thmwrapper" id="a0000000131">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.6.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0008.html#a0000000131">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>Let \(K\) be a number field and let \(\alpha \in K\). Then we can associate to \(\alpha \) a linear operator </p>
+<div class="displaymath" id="a0000000132">
+  \[ A_\alpha : K \longrightarrow K \qquad x \mapsto \alpha x. \]
+</div>
+<p> This can be written as a matrix over \(\mathbb {Q}\) by picking a basis of \(K\) over \(\mathbb {Q}\). The map \(\alpha \to A_\alpha \) is called the <i class="itshape">standard representation</i>. </p>
+
+  </div>
+</div> </p>
+<p><div class="rmrk_thmwrapper" id="a0000000133">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">1.6.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0008.html#a0000000133">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>If we had \(K/F\) an extension of number fields then by picking a basis of \(K/F\) we can write \(A_\alpha \) as a matrix with coefficients in \(F\). </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000134">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">1.6.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0008.html#a0000000134">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(K=\mathbb {Q}(\sqrt{5})\) and let \(\alpha =3+2\sqrt{5}\). We have a basis for \(K/\mathbb {Q}\) given by \(\{ 1,\sqrt{5}\} .\) So \(A_\alpha (1)=3+2\sqrt{5}\) and </p>
+<div class="displaymath" id="a0000000135">
+  \[ A_\alpha (\sqrt{5})=(3+2\sqrt{5})(\sqrt{5})=10+3\sqrt{5} \]
+</div>
+<p> therefore in this basis, we have </p>
+<div class="displaymath" id="a0000000136">
+  \[ A_\alpha =\begin{pmatrix} 3
+
+& 10
+
+\\ 2
+
+& 3
+
+\end{pmatrix} \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="a0000000137">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.6.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0008.html#a0000000137">#</a>
+    <a class="icon proof" href="sect0008.html#a0000000138"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K\) be a number field and \(\alpha \in K\). </p>
+<ol class="enumerate">
+  <li><p>The map \(\alpha \to A_\alpha \) is injective. </p>
+</li>
+  <li><p>Let \(\alpha ,\beta \in K\) and \(\lambda \in \mathbb {Q}\) then </p>
+<div class="displaymath" id="a0000000139">
+  \[ A_{\alpha \beta }=A_{\alpha }A_{\beta } \qquad A_{\alpha +\beta }=A_\alpha + A_\beta \qquad A_{\lambda \alpha }=\lambda A_\alpha  \]
+</div>
+</li>
+  <li><p>If \(C_\alpha \) is the characteristic polynomial of \(A_\alpha \) then \(C_\alpha (\alpha )=0\). </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000138">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>For [1] we just need to note that \(A_\alpha (1)=\alpha \), therefore \(\alpha =\beta \) if and only if \(A_\alpha =A_\beta \). </p>
+<p>For [2], this is obvious from the definition of \(A_\alpha \) as the multiplication by \(\alpha \) map. </p>
+<p>Lastly for [3] note that by Cayley–Hamilton that \(C(A_\alpha )=0\). Now, from [2] it follows that for any polynomial \(f(x) \in \mathbb {Q}[x]\) we have \(f(A_\alpha )=A_{f(\alpha )}\), so \(A_{C_\alpha (\alpha )}=C_\alpha (A_\alpha )=0\) but then by [1] we must have \(C_\alpha (\alpha )=0\). </p>
+
+  </div>
+</div>
+<p><div class="defn_thmwrapper" id="a0000000140">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.6.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0008.html#a0000000140">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>For \(K\) a number field and \(\alpha \in K\), then the characteristic polynomial of \(A_\alpha \) is known as the <i class="itshape">field polynomial</i> of \(\alpha \). We shall denote it by \(C_\alpha \), but note that it depends on the field we are working with. In particular, if we write a basis for \(K\) over \(\mathbb {Q}\) or a basis for \(K\) over \(F\) (for \(F\) some subfield), then the field polynomial can be different in each case. Therefore, unless otherwise stated we will assume we mean a basis of \(K/\mathbb {Q}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="prop: field pol min pol">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.6.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0008.html#prop: field pol min pol">#</a>
+    <a class="icon proof" href="sect0008.html#a0000000141"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K=\mathbb {Q}(\alpha )\) for some algebraic number \(\alpha \). Then \(C_\alpha =m_\alpha \), in other words, the field polynomial of \(\alpha \) agrees with the minimal polynomial. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000141">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Note that \(C_\alpha \) will be a monic polynomial of degree \([K:\mathbb {Q}]\) and has \(\alpha \) as a root. But this means it is divisible by \(m_\alpha \). But the are both monic and have the same degree, therefore must be equal. </p>
+
+  </div>
+</div>
+<p><div class="prop_thmwrapper" id="prop: field poly embs">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.6.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0008.html#prop: field poly embs">#</a>
+    <a class="icon proof" href="sect0008.html#a0000000142"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K\) be a number field and \(\beta \in K\). Then \(A_\beta \) is diagonalizable over \(\mathbb {C}\) and </p>
+<div class="displaymath" id="a0000000143">
+  \[ C_\beta =\prod _{i} (x-\sigma _i(\beta )) \in \mathbb {C}[x]  \]
+</div>
+<p> Here the product is over all embeddings \(\sigma _i\) of \(K\) into \(\mathbb {C}\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000142">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>By the Primitive Element Theorem <a href="sect0007.html#thm: prim elt thm">1.5.11</a> we can write \(K \cong \mathbb {Q}(\alpha )\). Now, from Proposition <a href="sect0008.html#prop: field pol min pol">1.6.6</a>, we know \(C_\alpha =m_\alpha \) and by Proposition <a href="sect0007.html#prop: conj roots emb">1.5.6</a> we know that \(m_\alpha =\prod _{i}(x-\sigma _i(\alpha ))\), therefore, \(C_\alpha \) has \(n:=[K:\mathbb {Q}]\) distinct roots (by Lemma <a href="sect0007.html#lem: sep lem">1.5.7</a>), therefore \(A_\alpha \) is diagonalisable over \(\mathbb {C}\), with eigenvalues being the conjugates of \(\alpha \). So we can find a matrix \(P\) (over \(\mathbb {C}\)) such that </p>
+<div class="displaymath" id="a0000000144">
+  \[ P^{-1}A_\alpha P= \left(\begin{matrix} \sigma _1(\alpha ) 
+
+& & \\ &  \ddots 
+
+& \\ & &  \sigma _n(\alpha ) 
+
+\end{matrix} \right) \]
+</div>
+<p> Now, \(\beta \in K\) we can find \(f(x) \in \mathbb {Q}[x]\) such that \(f(\alpha )=\beta \) and therefore </p>
+<span>\begin{align*}  P^{-1} A_\beta P=P^{-1} A_{f(\alpha )} P= P^{-1} f(A_\alpha ) P=f(P^{-1} A_\alpha P)& = \left(\begin{matrix} f(\sigma _1(\alpha )) 
+
+& & \\ &  \ddots 
+
+& \\ & &  f(\sigma _n(\alpha )) 
+
+\end{matrix} \right)\\ & = \left(\begin{matrix} \sigma _1(\beta ) 
+
+& & \\ &  \ddots 
+
+& \\ & &  \sigma _n(\beta ) 
+
+\end{matrix} \right) \end{align*}</span>
+<p>And since \(P^{-1}A_\beta P\) and \(A_\beta \) have the same characteristic polynomial, we get the result. </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="cor: field to min pol">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">1.6.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0008.html#cor: field to min pol">#</a>
+    <a class="icon proof" href="sect0008.html#a0000000145"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> Let \(K\) be a number field and \(\beta \in K\), then </p>
+<div class="displaymath" id="a0000000146">
+  \[ C_\beta (x)=m_\beta (x)^{[K:\mathbb {Q}(\beta )]} \in \mathbb {Q}[x] \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000145">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>By Proposition <a href="sect0008.html#prop: field poly embs">1.6.7</a> we know all the roots of \(C_\beta \) are of the form \(\sigma _i(\beta )\). Now, let \(v_i\) be the embedding of \(\mathbb {Q}(\beta )\). Then from Proposition <a href="sect0007.html#prop: emb extns">1.5.8</a> we know that each \(v_i\) extends to \([K:\mathbb {Q}(\beta )]\) embeddings of \(K\) and by definition each of these embeddings keeps \(v_i(\beta )\) the same. So for each \(v_i(\beta )\) there are \([K:\mathbb {Q}(\beta )]\) embeddings \(\sigma _j\) such that \(\sigma _j(\beta )=v_i(\beta )\). Now, since \(m_\beta (x)=\prod _i (x-v_i(\beta ))\) we see that </p>
+<div class="displaymath" id="a0000000147">
+  \[ C_\beta = \left[\prod _i (x-v_i(\beta ))\right]^{[K:\mathbb {Q}(\beta )]} \]
+</div>
+<p> giving the result. </p>
+<p>Note that \([K:\mathbb {Q}]=[K:\mathbb {Q}(\beta )][\mathbb {Q}(\beta ):\mathbb {Q}]\) so the power is correct, since \(C_\beta \) has degree \([K:\mathbb {Q}]\) and \(m_\beta \) has degree \([\mathbb {Q}(\beta ):\mathbb {Q}]\). </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0007.html" title="Embeddings"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0001.html" title="Number Fields"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0009.html" title="Norm and Trace"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

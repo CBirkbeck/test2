@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Algebraic extensions</title>
+<link rel="next" href="sect0006.html" title="Algebraic numbers and number fields" />
+<link rel="prev" href="sect0004.html" title="Field extensions" />
+<link rel="up" href="sect0004.html" title="Field extensions" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class=" active">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h2 id="a0000000006">1.3.6 Algebraic extensions</h2>
+<p><div class="defn_thmwrapper" id="defn: alg elts">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.3.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#defn: alg elts">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p> Let \(K/F\) be a field extension and let \(\alpha \in K\). Then we say \(\alpha \) is algebraic over \(F\) if there exists a polynomial \(f(x) \in F[x]\) such that \(f(\alpha )=0\). Otherwise we say \(\alpha \) is transcendental. </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000091">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">1.3.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000091">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <ol class="enumerate">
+  <li><p>\(\sqrt{2}\) is algebraic over \(\mathbb {Q}\). </p>
+</li>
+  <li><p>\(\sqrt{-1}\) is algebraic over \(\mathbb {R}\). </p>
+</li>
+</ol>
+
+  </div>
+</div> <div class="question_thmwrapper" id="a0000000092">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.3.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000092">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Prove that if \(\alpha \in K\) is algebraic over \(F\), then it is also algebraic over any field extension of \(F\). </p>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="prop: min pol">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.3.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#prop: min pol">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000093"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(\alpha \) be algebraic over \(F\). Then there is a unique monic irreducible polynomial \(m_{\alpha ,F}(x)\) in \(F[x]\) which has \(\alpha \) as a root. Moreover, \(m_{\alpha ,F}(x)\) divides any other polynomial in \(F[x]\) with \(\alpha \) as a root. This polynomial is called the minimal polynomial of \(\alpha \) over \(F\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000093">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Lets take \(m_{\alpha ,F}(x)\) to be a polynomial of minimal degree having \(\alpha \) as a root. Moreover, since we are working over a field, we can multiply by some element in \(F\) to make sure its monic. This is our candidate for the minimal polynomial. We need to show its unique and irreducible. </p>
+<p>If \(m_{\alpha ,F}(x)\) were reducible, then we would have </p>
+<div class="displaymath" id="a0000000094">
+  \[ m_{\alpha ,F}(x)=f(x)g(x), \]
+</div>
+<p> so \(f(\alpha )g(\alpha )=0\). Therefore, since we are in a field, this means either \(f(\alpha )=0\) or \(g(\alpha )=0\). But \(m_{\alpha ,F}(x)\) has minimal degree, so one of \(f\) or \(g\) must have degree \(0\) (i.e. a constant.) thus \(m_{\alpha ,F}(x)\) is irreducible. </p>
+<p>So we just need to check its unique. Note that if \(f(x)\) is any polynomial with \(\alpha \) as a root, then by polynomial long division we have </p>
+<div class="displaymath" id="a0000000095">
+  \[ f(x)=q(x)m_{\alpha ,F}(x)+r(x) \]
+</div>
+<p> with \(\deg (r(x)){\lt} \deg (m_{\alpha ,F}(x))\). But then evaluating this at \(\alpha \) we would have \(r(\alpha )=0\), but which can’t happen as it has smaller degree than \(m_{\alpha ,F}(x)\), so \(r(x)=0\). Therefore, \(m_{\alpha ,F}(x)\) divides any polynomial with \(\alpha \) as a root. From this it follows that if we had two minimal polynomials \(m_1(x),m_2(x)\) then \(m_1(x)|m_2(x)\) and \(m_2(x)|m_1(x)\) so \(m_1(x)=a m_2(x)\) for some \(a \in F\), but now being monic comes to the rescue to say that \(a=1\), giving uniqueness and finishing the proof. </p>
+
+  </div>
+</div>
+<p><div class="question_thmwrapper" id="a0000000096">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.3.11</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000096">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Let \(L/F\) be a field extension and let \(\alpha \) be algebraic over \(F\), then prove that \(m_{\alpha ,L}(x)\) divides \(m_{\alpha ,F}(x)\) in \(L[x]\). </p>
+
+  </div>
+</div> </p>
+<p>Now, from Theorem <a href="sect0004.html#thm: field iso">1.3.4</a>, Proposition <a href="sect0004.html#prop: dim of field ext">1.3.2</a> and Proposition <a href="sect0005.html#prop: min pol">1.3.10</a> we have the following: </p>
+<p><div class="cor_thmwrapper" id="cor: min pol simple ext">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">1.3.12</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#cor: min pol simple ext">#</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> Let \(K/F\) be a field extension and \(\alpha \in K\) algebraic over \(F\). Then </p>
+<div class="displaymath" id="a0000000097">
+  \[ F[x]/(m_{\alpha ,F}(x)) \cong F(\alpha ) \]
+</div>
+<p> and moreover \([F(\alpha ):F]=\deg (m_{\alpha ,F}(x))\). </p>
+
+  </div>
+</div> </p>
+<p><div class="defn_thmwrapper" id="a0000000098">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.3.13</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000098">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>Let \(K/F\) be a field extension. Then we say \(K\) is algebraic over \(F\) if every element of \(K\) is algebraic over \(F\). </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000099">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">1.3.14</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000099">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <ol class="enumerate">
+  <li><p>\(\mathbb {Q}(\sqrt{2})\) is algebraic over \(\mathbb {Q}\). </p>
+</li>
+  <li><p>\(\mathbb {C}\) is algebraic over \(\mathbb {R}\). </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="a0000000100">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.3.15</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000100">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000101"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K/F\) be a field extension. Then \(\alpha \in K\) is algebriac over \(F\) if and only if there is a finite extension of \(F\) (inside \(K\)) containing \(\alpha \). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000101">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(\alpha \) is algebraic over \(F\), then we know that \(F(\alpha )\) is a field isomorphic to \(F[x]/(m_{\alpha ,K}(x))\). Moreover, \([F(\alpha ):F]=\deg (m_{\alpha ,F}(x))\) by Corollary <a href="sect0005.html#cor: min pol simple ext">1.3.12</a> and by definition of \(F(\alpha )\) is is the the smallest such field, so \(F(\alpha )\) is contained in \(K\). </p>
+<p>Conversely, if \(\alpha \) is in a finite extension \(L/F\) of degree \(n\). Then consider \(1,\alpha ,\alpha ^2,\dots ,\alpha ^n\). These \(n+1\) elements must be linearly dependent over \(F\), so there exist \(b_i\) such that </p>
+<div class="displaymath" id="a0000000102">
+  \[ b_0+b_1\alpha +\cdots +b_n\alpha ^n=0 \]
+</div>
+<p> which proves that \(\alpha \) is algebraic over \(F\) since its a root of \(b_0+b_1x+\cdots +b_n x^n\). </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="cor: fin ext is alg">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">1.3.16</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#cor: fin ext is alg">#</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> If \(K/F\) is a finite extension, then is it algebraic. </p>
+
+  </div>
+</div> <div class="question_thmwrapper" id="a0000000103">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.3.17</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000103">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Is the converse of this statement true? In other words, if \(K/F\) is an algebraic extension, then does it have to be finite? </p>
+
+  </div>
+</div> </p>
+<p><div class="defn_thmwrapper" id="a0000000104">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.3.18</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000104">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>We say a field extension \(K/F\) is finitely generated, if there are finitely many elements \(\alpha _1,\dots ,\alpha _n\) such that \(K=F(\alpha _1,\dots ,\alpha _n)\). </p>
+
+  </div>
+</div> </p>
+<p>Now, here are a couple of facts you might remember from Galois theory </p>
+<p><div class="prop_thmwrapper" id="prop: tower law">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.3.19</span>
+    <span class="prop_thmtitle">Tower Law</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#prop: tower law">#</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K/F\) be a field extension, \(\alpha _i\) be elements of \(K\) which are algebraic over \(F\) and let \(F_i=F(\alpha _1,\dots ,\alpha _i)\). </p>
+<ol class="enumerate">
+  <li><p>\(F_n=F_{n-1}(\alpha _n)\) and in general \(F_i=F_{i-1}(\alpha _i)\). </p>
+</li>
+  <li><p>\([F_n:F]=[F_n:F_{n-1}][F_{n-1}:F_{n-2}]\dots [F_1:F]\) (note \(F_0=F\)) </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p>Proposition <a href="sect0005.html#prop: tower law">1.3.19</a> and Corollary <a href="sect0005.html#cor: fin ext is alg">1.3.16</a> gives us: </p>
+<p><div class="thm_thmwrapper" id="thm: fin ext iff alg">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">1.3.20</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#thm: fin ext iff alg">#</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> A field extension \(K/F\) is finite if and only if \(K\) is generated by a finite number of algebraic elements over \(F\). </p>
+
+  </div>
+</div> </p>
+<p><div class="cor_thmwrapper" id="a0000000105">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">1.3.21</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0005.html#a0000000105">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000106"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p>Let \(\alpha ,\beta \in K\) be non-zero and algebraic over \(F\). Then \(\alpha \pm \beta \), \(\alpha \beta \), \(\alpha /\beta \), \(\alpha ^{-1}\), \(\beta ^{-1}\),etc are also algebraic over \(F\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000106">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Note that \(\alpha , \beta \in F(\alpha ,\beta )\). But from Proposition <a href="sect0005.html#prop: tower law">1.3.19</a> we have that \([F(\alpha ,\beta ):F]\) is finite. So by Corollary <a href="sect0005.html#cor: fin ext is alg">1.3.16</a> \(F(\alpha ,\beta )\) is algebraic over \(F\), meaning all of its elements are algebraic over \(F\), which gives the result. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0004.html" title="Field extensions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0004.html" title="Field extensions"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0006.html" title="Algebraic numbers and number fields"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

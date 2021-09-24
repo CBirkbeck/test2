@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Geometry of numbers</title>
+<link rel="next" href="sect0027.html" title="Bibliography" />
+<link rel="prev" href="sect0025.html" title="Solving Diophantine equations" />
+<link rel="up" href="index.html" title="Algebraic Number Theory" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000027">6 Geometry of numbers</h1>
+<p><span style="None"></span>redNON-EXAMINABLE CHAPTER </p>
+<p>In this chapter we will develop the machinery necessary for proving Theorem <a href="sect0023.html#thm: mink bound">4.0.3</a>. </p>
+<p><div class="defn_thmwrapper" id="a0000000542">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">6.0.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000542">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>A lattice \(\Lambda \subset \mathbb {R}^n\) is a subgroup (under addition) generated by \(n\) linearly independent vectors. </p>
+
+  </div>
+</div> </p>
+<p><div class="rmrk_thmwrapper" id="a0000000543">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">6.0.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000543">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>If \(\Lambda \) is a lattice in \(\mathbb {R}^n\) then </p>
+<div class="displaymath" id="a0000000544">
+  \[ \Lambda = \mathbb {Z}e_1 \oplus \cdots \oplus \mathbb {Z}e_n \]
+</div>
+<p> where \(e_i\) are linearly independent vectors over \(\mathbb {R}\), i.e. there does not exist \(r_i \in \mathbb {R}\) such that \(\sum _i r_ie_i =0\). So its not enough that the \(e_i\) be independent over \(\mathbb {Q}\), so \((1,0)\) and \((\pi ,0)\) do not generate a lattice in \(\mathbb {R}^2\). </p>
+
+  </div>
+</div> </p>
+<p><div class="defn_thmwrapper" id="a0000000545">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">6.0.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000545">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>If \(\Lambda \subset \mathbb {R}^n\) is a lattice generated by \(e_i\) then </p>
+<div class="displaymath" id="a0000000546">
+  \[ P(\Lambda )=\{ x \in \mathbb {R}^n \mid x=\sum _i r_ie_i, 0 \leq r_i {\lt} 1 \}  \]
+</div>
+<p> is called the <i class="itshape">fundamental domain</i> of \(\Lambda \). </p>
+
+  </div>
+</div> </p>
+<p>Note that if we \(\lambda \in \Lambda \) and let \(P(\Lambda )+\lambda =\{ x+ \lambda \mid x \in P(\Lambda )\} \) then </p>
+<div class="displaymath" id="a0000000547">
+  \[ \mathbb {R}^n= \bigcup _{\lambda \in \Lambda } P(\Lambda ) +\lambda .  \]
+</div>
+<p><div class="lem_thmwrapper" id="a0000000548">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">6.0.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000548">#</a>
+    <a class="icon proof" href="sect0026.html#a0000000549"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p>Let \(\Lambda \subset \mathbb {R}^n\) be a lattice. Then the volume of \(P(\Lambda )\) does not depend on the choice of basis of \(\Lambda \). Moreover, if \(\{ e_i\} \) is the basis, then </p>
+<div class="displaymath" id="a0000000550">
+  \[ \operatorname{Vol}(P(\Lambda ))=|\det (e_1,e_2,\dots ,e_n)|  \]
+</div>
+<p> (here the right hand side is the determinant of the matrix whose columns are given by the \(e_i\)). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000549">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>The second statement is just linear algebra, so we will only prove the first. Let \(f_i\) denote a second basis of \(\Lambda \) and let \(M(e_i), M(f_i)\) denote the matrices whose columns are given by \(e_i\) and \(f_i\) respectively. Then </p>
+<div class="displaymath" id="a0000000551">
+  \[ M(e_i)=M(f_i)A \]
+</div>
+<p> where \(A\) is a \(n \times n\) matrix with entries in \(\mathbb {Z}\). Similarly , </p>
+<div class="displaymath" id="a0000000552">
+  \[ M(f_i)=M(e_i)B. \]
+</div>
+<p> Therefore, </p>
+<div class="displaymath" id="a0000000553">
+  \[ M(e_i)=M(e_i)BA \]
+</div>
+<p> Now, since \(M(e_i),M(f_i)\) are non-degenerate we have \(BA=I\) and therefore \(\det (A)=\pm 1\). </p>
+
+  </div>
+</div>
+<p><div class="lem_thmwrapper" id="lem: subset of Rn diff lem">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">6.0.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#lem: subset of Rn diff lem">#</a>
+    <a class="icon proof" href="sect0026.html#a0000000554"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(S \subset \mathbb {R}^n\) be a measurable set (i.e. \(\operatorname{Vol}(S)=|\idotsint _S dx_1\cdots dx_n|\) exists) and \(\Lambda \) is a lattice. Then if  \(\operatorname{Vol}(S) {\gt} \operatorname{Vol}(P(\Lambda ))\) then there exist \(x,y \in S\) with \(x \neq y\) such that \(x-y \in \Lambda \). </p>
+<p>Furthermore, if \(S\) is compact, then the same conclusion holds if \(\operatorname{Vol}(S) \geq \operatorname{Vol}(P(\Lambda ))\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000554">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We begin by writing </p>
+<div class="displaymath" id="a0000000555">
+  \[ \mathbb {R}^n = \bigcup _{\lambda \in \Lambda } \left(P(\Lambda )+\lambda \right)\qquad \text{(as a disjoint union)} \]
+</div>
+<p> therefore </p>
+<div class="displaymath" id="a0000000556">
+  \[ S= \mathbb {R}^n \cap S= \bigcup _{\lambda \in \Lambda } \left(P(\Lambda )+\lambda \right) \cap S \qquad \text{(as a disjoint union)}.  \]
+</div>
+<p> From this it follows that </p>
+<div class="displaymath" id="a0000000557">
+  \[ \operatorname{Vol}(S)=\sum _{\lambda \in \Lambda } \operatorname{Vol}\left((P(\Lambda )+\lambda \right) \cap S) =\sum _{\lambda \in \Lambda } \operatorname{Vol}\left((P(\Lambda ) \right) \cap (S-\lambda ) ).  \]
+</div>
+<p>Now, if \(P(\Lambda ) \cap (S -\lambda )\) are all disjoint, then the sum their volume is \({\lt} \operatorname{Vol}(P(\Lambda ))\) contradicting our assumption that \(\operatorname{Vol}(S){\gt} \operatorname{Vol}(P(\Lambda ))\). Therefore two of these sets meet, say \(P(\Lambda ) \cap (S -\lambda )\) and \(P(\Lambda ) \cap (S -\mu )\) (with \(\lambda \neq \mu \)) and therefore we have some \(x-\lambda =y-\mu \) giving \(x-y=\lambda -\mu \in \Lambda \). </p>
+<p>For the second part, if \(S\) is now compact with \(\operatorname{Vol}(S) \geq \operatorname{Vol}(P(\Lambda ))\). Then let \(S'=(1+\epsilon )S\) such that \(\operatorname{Vol}(S'){\gt} \operatorname{Vol}(P(\Lambda ))\). Then by the above, we can find \(x,y \in S'\) such that \(x-y \in \Lambda \). Let \(\Lambda _\epsilon \) denote the set of such \(x,y\). </p>
+<p>Note that if \(\epsilon ' \leq \epsilon \) then \(\Lambda _{\epsilon '} \subset \Lambda _\epsilon \). Therefore \(\cap _{\epsilon {\gt}0} \Lambda _\epsilon \neq \emptyset \). So let \(\lambda \in \cap _{\epsilon {\gt}0} \Lambda _\epsilon \). We claim that \(\lambda =x-y\) for some \(x,y \in S\). Take \(\epsilon =1/n\) and write \(\lambda =x_n-y_n\) with \(x_n,y_n \in (1+1/n)S\) (which we can do by the first part). Since \(x_n,y_n \in 2S\) for all \(n\) and \(2S\) is compact. So \((x_n,y_n)\) form a sequence in a compact set, so there is a subsequence that converges to a point \((x,y)\). Since \(x_n,y_n \in (1+1/n)S\) we have \(x \in \bigcap (1+1/n)S=S\) and similarly \(y \in S\). Since \(\lambda =x_n-y_n\) for all \(n\) we see that in the limit \(\lambda =x-y\) which then gives the result. </p>
+
+  </div>
+</div>
+<p><div class="defn_thmwrapper" id="a0000000558">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">6.0.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000558">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>A subset \(S \subset \mathbb {R}^n\) is called: </p>
+<ol class="enumerate">
+  <li><p>Convex if whenever \(x,y \in S\) then the line segment joining \(x\) and \(y\) is also contained in \(S\). </p>
+</li>
+  <li><p>Centrally symmetric if whenever \(x \in S\) then \(-x \in S\). </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="lem_thmwrapper" id="lem: mink conv bod">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">6.0.7</span>
+    <span class="lem_thmtitle">Minkowski’s convex body lemma</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#lem: mink conv bod">#</a>
+    <a class="icon proof" href="sect0026.html#a0000000559"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(S\) be a compact, convex and centrally symmetric subset of \(\mathbb {R}^n\) and \(\Lambda \) a lattice. If </p>
+<div class="displaymath" id="a0000000560">
+  \[ \operatorname{Vol}(S) \geq 2^n \operatorname{Vol}(P(\Lambda )) \]
+</div>
+<p> then \(S\) contains a point of \(\Lambda \). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000559">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Consider the set </p>
+<div class="displaymath" id="a0000000561">
+  \[ \frac{1}{2}S=\{ \frac{1}{2} x \mid x \in S\} . \]
+</div>
+<p> Then \(\operatorname{Vol}(\frac{1}{2}S) \geq \operatorname{Vol}(P(\Lambda ))\). So by Lemma <a href="sect0026.html#lem: subset of Rn diff lem">6.0.5</a> there exist \(x,y \in \frac{1}{2}S\) such that \(x-y \in \Lambda \). We claim that \(x-y \in S\). </p>
+<p>Note that \(2x,2y \in S\). Now, since \(S\) is centrally symmetric, we have \(-2y \in S\). Furthermore, since \(S\) is convex, </p>
+<div class="displaymath" id="a0000000562">
+  \[ \frac{1}{2} (2x-2y) \in S. \]
+</div>
+<p> Thus \(x-y \in S\). </p>
+
+  </div>
+</div>
+<p>Let now apply this to number theory. Let \(K\) be a number field with \([K:\mathbb {Q}]=n\). Then we have \(n\) embeddings of \(K \hookrightarrow \mathbb {C}\) and in fact if we let \(r_1\) be the number of real embeddings and \(r_2\) the number of complex conjugate embeddings then we have: </p>
+<p><div class="defn_thmwrapper" id="a0000000563">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">6.0.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000563">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>Let \(K\) be a number field with \(r_1\) real embeddings and \(r_2\) complex conjugate pairs of embeddings, then the canonical embedding is </p>
+<div class="displaymath" id="a0000000564">
+  \[ \Theta : K \longrightarrow \mathbb {R}^{r_1} \times \mathbb {C}^{r_2} \overset {\sim }{\longrightarrow } \mathbb {R}^n \]
+</div>
+<p> given by </p>
+<span>\begin{align*}  x \mapsto &  (\sigma _1(x),\dots ,\sigma _{r_1}(x),\sigma _{r_1+1}(x),\dots ,\sigma _{r_1+r_2}(x))\\ & \mapsto (\sigma _1(x),\dots ,\sigma _{r_1}(x),\Re \sigma _{r_1+1}(x),\Im \sigma _{r_1+1}(x), \dots ,\Re \sigma _{r_1+r_2}(x)), \Im \sigma _{r_1+1}(x) \end{align*}</span>
+<p> where the first \(r_1\) of the \(\sigma _i\) are the real embeddings then rest are the complex ones and \(\Re ,\Im \) denote real and imaginary parts. </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000565">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">6.0.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000565">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <ol class="enumerate">
+  <li><p>Let \(K=\mathbb {Q}(\sqrt{-d})\) with \(d\) a square-free positive integer. Then the embedding is given by sending \(x+y\sqrt{-d}\) to </p>
+<div class="displaymath" id="a0000000566">
+  \[ (x,y\sqrt{-d}) \in \mathbb {R}^2.  \]
+</div>
+</li>
+  <li><p>If \(K=\mathbb {Q}(\sqrt{d})\) with \(d\) a square-free positive integer. Then the embedding is given by sending \(x+y\sqrt{d}\) to </p>
+<div class="displaymath" id="a0000000567">
+  \[ (x+y\sqrt{d},x-y\sqrt{d}) \in \mathbb {R}^2.  \]
+</div>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="a0000000568">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">6.0.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000568">#</a>
+    <a class="icon proof" href="sect0026.html#a0000000569"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K\) be a number field with \([K:\mathbb {Q}]=n\) and \(\Theta : K \to \mathbb {R}^n\) is canonical embedding. Then \(\Theta (\mathcal{O}_K)\) is a lattice in \(\mathbb {R}^n\) and if \(P=P(\Theta (\mathcal{O}_K))\) then </p>
+<div class="displaymath" id="a0000000570">
+  \[ \operatorname{Vol}(P)=2^{-r_2}\sqrt{|\Delta (\mathcal{O}_K)|} \]
+</div>
+<p> where \(r_2\) is the number of complex conjugate pairs of embeddings. </p>
+<p>Furthermore, if \(\mathfrak {a}\subset \mathcal{O}_K\) is an ideal, then \(\Lambda _\mathfrak {a}:=\Theta (\mathfrak {a})\) is a sublattice of \(\Theta (\mathcal{O}_K)\). Moreover, </p>
+<div class="displaymath" id="a0000000571">
+  \[ \operatorname{Vol}(P(\Lambda _\mathfrak {a}))=2^{-r_2}\sqrt{|\Delta (\mathcal{O}_K)|}N(\mathfrak {a}) \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000569">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(\{ e_i\} \) be an integral basis of \(\mathcal{O}_K\). Then </p>
+<div class="displaymath" id="a0000000572">
+  \[ \Theta (\mathcal{O}_K)=\left\{ \sum _i \lambda _i \Theta (e_i) \mid \lambda _i \in \mathbb {Z}\right\} . \]
+</div>
+<p> We want to compute </p>
+<div class="displaymath" id="a0000000573">
+  \[ |\det (M(\Theta ))|:=|\det (\Theta (e_1),\dots ,\Theta (e_n))| . \]
+</div>
+<p> By definition </p>
+<div class="displaymath" id="a0000000574">
+  \[ \Theta (e_i)=(\sigma _1(e_i),\dots ,\sigma _{r_1}(e_i),\Re \sigma _{r_1+1}(e_i),\Im \sigma _{r_1+1}(e_i), \dots ,\Re \sigma _{r_1+r_2}(e_i)), \Im \sigma _{r_1+1}(e_i) )^T. \]
+</div>
+<p> Now, note that </p>
+<div class="displaymath" id="a0000000575">
+  \[ \Re \sigma _{r_1+1}(e_i)=\frac{1}{2}(\sigma _{r_1+1}(e_i) + \overline{\sigma }_{r_1+1}(e_i)) \qquad \Im \sigma _{r_1+1}(e_i)=\frac{1}{2\sqrt{-1}}(\sigma _{r_1+1}(e_i) - \overline{\sigma }_{r_1+1}(e_i)). \]
+</div>
+<p> Using this we have </p>
+<div class="displaymath" id="a0000000576">
+  \[ |\det (M(\Theta ))|= \left(\frac{1}{2} \right)^{2r_2} \left| \det \left(\begin{matrix}  \sigma _1(e_1) 
+
+& \cdots 
+
+&  \sigma _1(e_n)
+
+\\ \vdots 
+
+& &  \vdots 
+
+\\ \sigma _{r_1}(e_1) 
+
+& \cdots 
+
+&  \sigma _{r_1}(e_n) 
+
+\\ (\sigma _{r_1+1}(e_1) + \overline{\sigma }_{r_1+1}(e_1)) 
+
+& \cdots 
+
+&  (\sigma _{r_1+1}(e_n) + \overline{\sigma }_{r_1+1}(e_n)) 
+
+\\ (\sigma _{r_1+1}(e_1) - \overline{\sigma }_{r_1+1}(e_1)) 
+
+& \cdots 
+
+&  (\sigma _{r_1+1}(e_n) - \overline{\sigma }_{r_1+1}(e_n))
+
+\\ \vdots 
+
+& &  \vdots 
+
+\end{matrix} \right) \right|  \]
+</div>
+<p> Doing simple row operations we can transform this into </p>
+<div class="displaymath" id="a0000000577">
+  \[ \left(\frac{1}{2} \right)^{2r_2} \left| \det \left(\begin{matrix}  \sigma _1(e_1) 
+
+& \cdots 
+
+&  \sigma _1(e_n)
+
+\\ \vdots 
+
+& &  \vdots 
+
+\\ \sigma _{r_1}(e_1) 
+
+& \cdots 
+
+&  \sigma _{r_1}(e_n) 
+
+\\ (\sigma _{r_1+1}(e_1) + \overline{\sigma }_{r_1+1}(e_1)) 
+
+& \cdots 
+
+&  (\sigma _{r_1+1}(e_n) + \overline{\sigma }_{r_1+1}(e_n)) 
+
+\\ 2\sigma _{r_1+1}(e_1) 
+
+& \cdots 
+
+&  2\sigma _{r_1+1}(e_n)
+
+\\ \vdots 
+
+& &  \vdots 
+
+\end{matrix} \right) \right|  \]
+</div>
+<p> and then to</p>
+<div class="displaymath" id="a0000000578">
+  \[ \left(\frac{1}{2} \right)^{r_2} \left| \det \left(\begin{matrix}  \sigma _1(e_1) 
+
+& \cdots 
+
+&  \sigma _1(e_n)
+
+\\ \vdots 
+
+& &  \vdots 
+
+\\ \sigma _{r_1}(e_1) 
+
+& \cdots 
+
+&  \sigma _{r_1}(e_n) 
+
+\\ \overline{\sigma }_{r_1+1}(e_1) 
+
+& \cdots 
+
+&  \overline{\sigma }_{r_1+1}(e_n)) 
+
+\\ \sigma _{r_1+1}(e_1) 
+
+& \cdots 
+
+&  \sigma _{r_1+1}(e_n)
+
+\\ \vdots 
+
+& &  \vdots 
+
+\end{matrix} \right) \right|  \]
+</div>
+<p> Notice the power of \(1/2\) has changed. But now, if we look back at Proposition <a href="sect0013.html#prop: disc via embs">2.2.16</a> we see that this is simply </p>
+<div class="displaymath" id="a0000000579">
+  \[ 2^{-r_2} \sqrt{|\Delta (\mathcal{O}_K)|}. \]
+</div>
+<p>Lets now look at the sublattice \(\Lambda _\mathfrak {a}\). Note that as additive abelian groups we have \(\mathcal{O}_K \cong \mathbb {Z}^n\) and \(\mathfrak {a}\) is a subgroup of index \(N(\mathfrak {a})\). Since \(\Theta \) is injective we have \(\Lambda _\mathfrak {a}\) is a subgroup of \(\Theta (\mathcal{O}_K)\) of index \(N(\mathfrak {a})\). From this it follows that </p>
+<div class="displaymath" id="a0000000580">
+  \[ P(\Lambda _{\mathfrak {a}})=N(\mathfrak {a})P(\Theta (\mathcal{O}_K)) \]
+</div>
+<p> (compare this with the proof of Proposition <a href="sect0020.html#prop: ideal norm coincides with other norm">3.4.5</a>) from which the result follows. </p>
+
+  </div>
+</div>
+<p><div class="lem_thmwrapper" id="lem: vol of S">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">6.0.11</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#lem: vol of S">#</a>
+    <a class="icon proof" href="sect0026.html#a0000000581"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(S_t \subset \mathbb {R}^{r_1} \times \mathbb {C}^{r_2} \cong \mathbb {R}^n\) be a subset given by points \((y_i,z_i) \in \mathbb {R}^{r_1} \times \mathbb {C}^{r_2}\) such that </p>
+<div class="displaymath" id="a0000000582">
+  \[ \sum _i |y_i|+ \sum _j |z_j| \leq t. \]
+</div>
+<p> Then \(S\) is compact, convex and centrally symmetric and moreover </p>
+<div class="displaymath" id="a0000000583">
+  \[ \operatorname{Vol}(S)=\frac{2^{r_1}t^n}{n!} \left( \frac{\pi }{4}\right)^{r_2}.  \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000581">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>\(S\) is closed and bounded and therefore is compact. \(S\) is also clearly symmetric. For \(\lambda \in (0,1)\) we have </p>
+<span>\begin{align*}  \sum _i |\lambda y_i+(1-\lambda )y_i’|+&  2 \sum _j |\lambda z_i+(1-\lambda )z_i’| \leq \sum _i |\lambda y_i|+|(1-\lambda )y_i’|+2 \sum _j |\lambda z_i|+|(1-\lambda )z_i’|\\ &  = \lambda \sum _i | y_i|+(1-\lambda )\sum _j |z_i| + \lambda \sum _i | y_i’|+(1-\lambda )\sum _j |z_i’| \\ &  \leq \lambda +(1-\lambda )=1 \end{align*}</span>
+<p>From this it follows that \(S\) is also convex. </p>
+<p>Note that if \(r_1=1\) and \(r_2\) then \(S=[-t,t]\) which has volume (in this case length) \(2\). Similarly, if \(r_1=0\) and \(r_2=1\) then \(S\) is just a ball in \(\mathbb {C}\) of radius \(\frac{1}{2}\) so has volume (in this case area) \(\frac{\pi t^2}{4}\). We will prove the formula for the volume by induction on \((r_1,r_2)\). </p>
+<p>Assume we know the formula for \((r_1,r_2)\). Lets look at the \((r_1+1,r_2)\) case. Here the set is given by points such that </p>
+<div class="displaymath" id="a0000000584">
+  \[ \sum _{i=1}^{r_1+1}|y_i|+ 2\sum _{j=1}^{r_2} |z_j| \leq 1 \]
+</div>
+<p> which can be rewritten as </p>
+<div class="displaymath" id="a0000000585">
+  \[ \sum _{i=1}^{r_1}|y_i|+ 2\sum _{j=1}^{r_2} |z_j| \leq t-|y| \]
+</div>
+<p> where \(y=y_{r_1+1}\). This set has volume </p>
+<div class="displaymath" id="a0000000586">
+  \[ \int _{0}^{1} \frac{2^{r_1}t^n}{n!} \left( \frac{\pi }{4}\right)^{r_2} (t-|y|)^n dy= \frac{2^{r_1}t^n}{n!} \left( \frac{\pi }{4}\right)^{r_2} \int _{0}^{1}(t-y)^n dy=\frac{2^{r_1+1}t^{n+1}}{n+1!} \left( \frac{\pi }{4}\right)^{r_2}.  \]
+</div>
+<p>A slightly more involved, yet still elementary proof gives the \((r_1,r_2+1)\) and thus the result. </p>
+
+  </div>
+</div>
+<p>Finally, with this we can finally prove Theorem <a href="sect0023.html#thm: mink bound">4.0.3</a> </p>
+<p><div class="thm*_thmwrapper" id="a0000000587">
+  <div class="thm*_thmheading">
+    <span class="thm*_thmcaption">
+    Theorem
+    </span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0026.html#a0000000587">#</a>
+    <a class="icon proof" href="sect0026.html#a0000000588"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm*_thmcontent">
+  <p>Let \(K\) be a number field with \(r_1\) real embeddings and \(r_2\) conjugate pairs of complex embeddings. Let \([K:\mathbb {Q}]=n\) and let \(\mathfrak {a}\) be an ideal of \(\mathcal{O}_K\). Then there is an element \(a \in \mathfrak {a}\) such that </p>
+<div class="displaymath" id="a0000000589">
+  \[ |N_{K/\mathbb {Q}}(a)| \leq \frac{n!}{n^n} \left( \frac{4}{\pi } \right)^{r_2} |\Delta (\mathcal{O}_K)|^{1/2} N(\mathfrak {a})  \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000588">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(S_t\) be as in Lemma <a href="sect0026.html#lem: vol of S">6.0.11</a> and pick \(t\) such that </p>
+<div class="displaymath" id="a0000000590">
+  \[ \operatorname{Vol}(S_t)=2^n \operatorname{Vol}(P(\Lambda _\mathfrak {a})) \]
+</div>
+<p> i.e. such that </p>
+<div class="displaymath" id="a0000000591">
+  \[ t^n=2^{n-r_1}\pi ^{-r_2}n! \sqrt{|\Delta (\mathcal{O}_k)|} N(\mathfrak {a}) \tag {1} \]
+</div>
+<p>Then by Lemma <a href="sect0026.html#lem: mink conv bod">6.0.7</a> there is an \(a \in \mathfrak {a}\) such that \(\Theta (a) \in S_t\). Then we have </p>
+<div class="displaymath" id="a0000000592">
+  \[ |N_{K/\mathbb {Q}}(a)|= \prod _{i=1}^{r_1} |\sigma _i(a)| \prod _{j=r_1+1}^{r_1+r_2} |\sigma _j(a)|^2  \]
+</div>
+<p> (here we use Proposition <a href="sect0009.html#prop: alt defn of norm and trace">1.7.6</a>). Now, using the arithmetic-geometric mean inequality </p>
+<div class="displaymath" id="a0000000593">
+  \[ \sqrt[n]{z_1\dots z_n} \leq \frac{1}{n} \sum _i z_i \]
+</div>
+<p> for \(z_i\) positive real numbers, we have </p>
+<div class="displaymath" id="a0000000594">
+  \[ |N_{K/\mathbb {Q}}(a)| \leq \left( \frac{1}{n}\sum _{i=1}^{r_1} |\sigma _i(a)|+ \frac{2}{n}\sum _{j=r_1+1}^{r_1+r_2} |\sigma _j(a)| \right)^n \leq \frac{t^n}{n!} \]
+</div>
+<p> by definition of \(S_t\). Using (1) then gives the result. </p>
+
+  </div>
+</div>
+
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0025.html" title="Solving Diophantine equations"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Algebraic Number Theory"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0027.html" title="Bibliography"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

@@ -9,9 +9,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="next" href="sect0004.html" title="Bibliography" />
-<link rel="prev" href="sect0002.html" title="Brouwer’s Fixed Point Theorem" />
-<link rel="up" href="sect0002.html" title="Brouwer’s Fixed Point Theorem" />
+<title>Algebraic Number Theory: Irreducible polynomials</title>
+<link rel="next" href="sect0004.html" title="Field extensions" />
+<link rel="prev" href="sect0002.html" title="Recap on rings and fields" />
+<link rel="up" href="sect0001.html" title="Number Fields" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 </head>
@@ -19,34 +20,103 @@
 <body>
 <header>
 <svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
-<h1 id="doc_title"><a href="index.html">Blueprint for Brouwer’s Fixed Point Theorem</a></h1>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
 </header>
 
 <div class="wrapper">
 <nav class="toc">
 <ul class="sub-toc-0">
-<li class="">
-  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Sperner’s Lemma</span></a>
- </li>
 <li class=" active">
-  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Brouwer’s Fixed Point Theorem</span></a>
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
   <span class="expand-toc">▼</span>
   <ul class="sub-toc-1 active">
-     <li class=" active current">
-  <a href="sect0003.html"><span class="toc_ref">2.1</span> <span class="toc_entry"></span></a>
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
  </li>
 
   </ul>
  </li>
 <li class="">
-  <a href="sect0004.html"><span class="toc_ref">3</span> <span class="toc_entry">Bibliography</span></a>
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
  </li>
   <li></li>	
   <li>	
   <a href="dep_graph.html">Dependency graph</a>
-  </li>
-  <li>	
-  <a href="https://github.com/mmasdeu/brouwerfixedpoint">Project home</a>
   </li>
 </ul>
 </nav>
@@ -56,115 +126,237 @@
 
 
 <div class="main-text">
-<h2 id="a0000000004">2.1 </h2>
-<p> Given \(f\colon \Delta \to \Delta \) (where \(\Delta \) is triangulated), we construct a coloring of the triangulation. </p>
-<p><div class="definition_thmwrapper" id="def:induced_colouring">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
+<h1 id="a0000000004">1.2 Irreducible polynomials</h1>
+<p> How do we define more exotic fields? Well a good way is to take quotients of polynomial rings. </p>
+<p><div class="defn_thmwrapper" id="a0000000057">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">2.1</span>
+    <span class="defn_thmlabel">1.2.1</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#def:induced_colouring">#</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-        </ul>
-
-      </div>
-    </div>
+    <a class="icon proof" href="sect0003.html#a0000000057">#</a>
 
   </div>
   </div>
-  <div class="definition_thmcontent">
-  <p>  Let \(\Delta \) be a simplex. Given an ordered list of its vertices, and a function \(f:\Delta \to \Delta \), the induced color of a point \(x\in \Delta \) is \(i=\min \{ j ~ |~  f(x)_j {\lt} x_j\} \). </p>
+  <div class="defn_thmcontent">
+  <p>Let \(R\) be an integral domain. A non-zero polynomial \(p(x)\) of degree at least \(1\) in \(R[x]\) is said to be irreducible if whenever \(p(x)=f(x)g(x)\) with \(f(x),g(x) \in R[x]\) then one of \(f(x)\) or \(g(x)\) is in \(R\). Note this is slightly different to Definition <a href="sect0002.html#defn: irr elt">1.1.14</a>. </p>
 
   </div>
 </div> </p>
-<p><div class="lemma_thmwrapper" id="induced_colouring_is_sperner_colouring">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<p><div class="exmp_thmwrapper" id="a0000000058">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
     </span>
-    <span class="lemma_thmlabel">2.2</span>
+    <span class="exmp_thmlabel">1.2.2</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#induced_colouring_is_sperner_colouring">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0003.html#def:induced_colouring">Definition 2.1</a></li>
-          <li><a href="sect0001.html#is_sperner_colouring">Definition 1.1</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-        </ul>
-
-      </div>
-    </div>
+    <a class="icon proof" href="sect0003.html#a0000000058">#</a>
 
   </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p>   The coloring above is a Sperner coloring. </p>
+  <div class="exmp_thmcontent">
+  <p>The polynomial \(x^2+1\) is irreducible in \(\mathbb {Z}[x]\). </p>
 
   </div>
 </div> </p>
-<p>Apply the above to a triangulation of \(\Delta \) of diameter \({\lt}\epsilon \), to get a panchromatic triangle of diameter \(\epsilon \). </p>
-<p><div class="lemma_thmwrapper" id="small_panchromatic_simplex_has_almost_fixed_point">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
+<p><div class="nexmp_thmwrapper" id="a0000000059">
+  <div class="nexmp_thmheading">
+    <span class="nexmp_thmcaption">
+    Non-example
+    </span>
+    <span class="nexmp_thmlabel">1.2.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#a0000000059">#</a>
+
+  </div>
+  </div>
+  <div class="nexmp_thmcontent">
+  <p>The polynomial \(x^2-1\) is not irreducible in \(\mathbb {Z}[x]\) since it is \((x-1)(x+1)\) and neither is a unit. </p>
+
+  </div>
+</div> </p>
+<p><div class="question_thmwrapper" id="Q1">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.2.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#Q1">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p> Let \(F\) be a field. Check that the only units in \(F[x]\) are given by polynomials of degree \(0\), i.e., they are elements of \(F\). </p>
+
+  </div>
+</div> </p>
+<p><div class="question_thmwrapper" id="a0000000060">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.2.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#a0000000060">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>True or False: If \(p(x)\) is reducible in \(F[x]\) then there exists \(\alpha \in F\) such that \(f(\alpha )=0\) (i.e it has a root in \(F\)). </p>
+
+  </div>
+</div> Now, here is a proposition whose content you should’ve seen in a previous course covering ring theory or commutative algebra </p>
+<p><div class="prop_thmwrapper" id="prop: background ring theory">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.2.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#prop: background ring theory">#</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(F\) be a field. </p>
+<ol class="enumerate">
+  <li><p>\(F[x]\) is a Euclidean domain and thus a Principal Ideal Domain (PID). </p>
+</li>
+  <li><p>In a PID, the ideal generated by a irreducible element is prime. </p>
+</li>
+  <li><p>Every non-zero prime ideal in a PID is maximal. </p>
+</li>
+  <li><p>Every PID is a UFD. </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="rmrk_thmwrapper" id="a0000000061">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">1.2.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#a0000000061">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>Let me just remind you why \(F[x]\) is a Euclidean domain. This is because if you have two polynomials \(f(x),g(x)\) then we can do polynomial long division to write, \(f(x)=q(x)g(x)+r(x)\) where \(\deg (g) \leq \deg (f)\) and \(\deg (r) {\lt} \deg (g)\) (this last bit having a strict inequality is what is important). </p>
+
+  </div>
+</div> </p>
+<p>Ok great, so if we want to create fields then we just need to find some irreducible polynomials and then just need to quotient out by it. In other words: </p>
+<p><div class="prop_thmwrapper" id="propo: quot by irr pol gives field">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.2.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#propo: quot by irr pol gives field">#</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(F\) be a field, and \(p(x)\) an irreducible polynomial in \(F[x]\). Then </p>
+<div class="displaymath" id="a0000000062">
+  \[ F[x]/(p(x)) \]
+</div>
+<p> is a field. </p>
+
+  </div>
+</div> </p>
+<p><div class="rmrk_thmwrapper" id="a0000000063">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">1.2.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#a0000000063">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>(In case you’ve forgotten.) What does this field look like? well its elements can be thought of as \(f(x)+a(x) p(x)\) where \(f(x), a(x) \in F[x]\). Here \(p(x)\) is the zero of this field, so \(f(x)\) and \(f+a(x)p(x)\) represent the same element in this field for any \(a(x)\). </p>
+
+  </div>
+</div> </p>
+<p>Ok, so how do we check if a polynomial is irreducible? Let look at the case we will most care about, which is \(\mathbb {Q}[x]\). Now, we have the following Lemmas which you may have seen in the Galois theory course or algebra course, so we wont prove them: <div class="lem_thmwrapper" id="a0000000064">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">2.3</span>
+    <span class="lem_thmlabel">1.2.10</span>
+    <span class="lem_thmtitle">Gauss’s Lemma</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#small_panchromatic_simplex_has_almost_fixed_point">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000007"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0003.html#a0000000064">#</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> A polynomial is irreducible in \(\mathbb {Z}[x]\) if and only if it is irreducible in \(\mathbb {Q}[x]\). </p>
+
+  </div>
+</div> </p>
+<p>Here is a slightly different version for monic polynomials </p>
+<p><div class="lem_thmwrapper" id="monic gauss">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">1.2.11</span>
+    <span class="lem_thmtitle">Monic Gauss Lemma</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#monic gauss">#</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> Let \(f \in \mathbb {Z}[x]\) be monic and assume that \(f=gh\) with \(g,h \in \mathbb {Q}[x]\) which are also monic. Then \(g,h \in \mathbb {Z}[x]\). </p>
+
+  </div>
+</div> </p>
+<p><div class="rmrk_thmwrapper" id="a0000000065">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">1.2.12</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#a0000000065">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>Convince yourself that both these lemmas deserve to be named similarly. </p>
+
+  </div>
+</div> This reduces us to checking if a polynomial is irreducible over \(\mathbb {Z}[x]\). </p>
+<p><div class="prop_thmwrapper" id="prop: irred pol mod p">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.2.13</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#prop: irred pol mod p">#</a>
+    <a class="icon proof" href="sect0003.html#a0000000066"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-        </ul>
-
-      </div>
-    </div>
 
   </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p>  For all \(\varepsilon {\gt}0\) exists \(\delta {\gt}0\), such that given a panchromatic simplex \(X\subseteq \Delta \) of a diameter \(\leq \delta \) then \(|f(x) - x| {\lt} \varepsilon ,\  \forall x \in X\). </p>
+  <div class="prop_thmcontent">
+  <p> If \(f(x)\) is a polynomial in \(\mathbb {Z}[x]\), let \(\bar{f}(x)\) denote its image in \(\mathbb {F}_p[x]\). A polynomial \(f(x)\) in \(\mathbb {Z}[x]\) is irreducible, if we can find some prime number \(p\) such that \(f(x)\) and \(\bar{f}(x)\) have the same degree and \(\bar{f}(x)\) is irreducible in \(\mathbb {F}_p[x]\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000007">
+<div class="proof_wrapper" id="a0000000066">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -172,74 +364,35 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>By compactness, \(f\) is uniformly continuous in \(\Delta \). Then for all \(\frac{\varepsilon }{2n}{\gt}0\) there exists \(\delta _0{\gt}0\) such that \(diam(f(X)) {\lt} \frac{\varepsilon }{2n}\). We define \(\delta :=\min (\delta _0,\frac{\varepsilon }{4n})\), that preserves the properties of \(\delta \).<br />Let \(p_0, \ldots , p_n\) be the vertices of \(X\). Then, since \(X\) is panchromatic, for each \(i = 0,\ldots ,n-1\), \(f(p_i)_i {\lt} (p_i)_i\) and \(f(p_{i+1})_i \geq (p_{i+1})_i\). Then, for all \(x \in X\), </p>
-<div class="displaymath" id="a0000000008">
-  \[ f(x)_i \leq f(p_i)_i + diam(f(X)) {\lt} (p_i)_i + diam(f(X)) \leq (x)_i + \delta + diam(f(X)) \]
-</div>
-<p> and </p>
-<div class="displaymath" id="a0000000009">
-  \[ f(x)_i \geq f(p_{i+1})_i - diam(f(X)) \geq (p_{i+1})_i - diam(f(X)) \geq (x)_i - \delta - diam(f(X)) \]
-</div>
-<p> Putting them together, </p>
-<div class="displaymath" id="a0000000010">
-  \[ |f(x)_i - (x)_i| \leq \delta + diam(f(X)),\  \  i\in \{ 0,...,n-1\}  \]
-</div>
-<p> Therefore, for all \(x \in X\), </p>
-<div class="displaymath" id="a0000000011">
-  \[ |f(x)_n - (x)_n| = |(1 - f(x)_0 - \ldots - f(x)_{n-1}) - (1 - (x)_0 - \ldots - (x)_{n-1})| =  \]
-</div>
-<div class="displaymath" id="a0000000012">
-  \[  = |((x)_0 - f(x)_0) + \ldots + ((x)_n - f(x)_n)| \leq  \]
-</div>
-<div class="displaymath" id="a0000000013">
-  \[ \leq |(x)_0 - f(x)_0| + \ldots + |(x)_n - f(x)_n| \leq (n-1)(\delta + diam(f(X))) \]
-</div>
-<p><br />Finally, for all \(x \in X\), </p>
-<div class="displaymath" id="a0000000014">
-  \[ |f(x) - x| = \sqrt{(f(x)_0 - (x)_0)^2 + \ldots + (f(x)_{n-1} - (x)_{n-1})^2 + (f(x)_n - (x)_n)^2} \]
-</div>
-<div class="displaymath" id="a0000000015">
-  \[ \leq \sqrt{(1 + \ldots + 1 + (n - 1)^2)(\delta + diam(f(X))^2} =  \]
-</div>
-<div class="displaymath" id="a0000000016">
-  \[  = \sqrt{n(n-1)}(\delta + diam(f(X)) {\lt} \frac{\varepsilon }{n}\sqrt{n(n-1)} {\lt} \varepsilon \Longleftrightarrow |f(x)-x|{\lt}\varepsilon  \]
-</div>
-<p> \( \) </p>
+  <p>This is the same as proving that, if \(f(x)\) is reducible in \(\mathbb {Z}[x]\) then it is also reducible in \(\mathbb {F}_p[x]\), which is obvious. </p>
 
   </div>
 </div>
-<p><div class="lemma_thmwrapper" id="arbitrary_almost_fixed_points_implies_fixed_point">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<p>Lastly, we have: </p>
+<p><div class="prop_thmwrapper" id="prop: shonemann">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
     </span>
-    <span class="lemma_thmlabel">2.4</span>
+    <span class="prop_thmlabel">1.2.14</span>
+    <span class="prop_thmtitle">Shönemann’s Irreducibility Criterion</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#arbitrary_almost_fixed_points_implies_fixed_point">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000017"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0003.html#prop: shonemann">#</a>
+    <a class="icon proof" href="sect0003.html#a0000000067"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-        </ul>
-
-      </div>
-    </div>
 
   </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p>  \(f\colon X \to X\) continuous and \(X\) compact metric space. Suppose that \(\forall \epsilon {\gt}0\), there exists \(x\in X\) such that \(d(f(x),x) {\lt} \epsilon \). Then \(f\) has a fixed point. </p>
+  <div class="prop_thmcontent">
+  <p> Let \(f(x) \in \mathbb {Z}[x]\) be a monic polynomial of degree \(n{\gt}0\). Assume that there is a prime \(p\) and an integer \(a\) such that </p>
+<div class="displaymath" id="a0000000068">
+  \[ f(x)=(x-a)^n+pg(x) \]
+</div>
+<p> for \(g(x) \in \mathbb {Z}[x]\). If \(g(a) \not\equiv 0 \bmod p\) then \(f(x)\) is irreducible modulo \(p^2\) and in \(\mathbb {Z}[x]\). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000017">
+<div class="proof_wrapper" id="a0000000067">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -247,137 +400,51 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Using the epsilons property, we can construct a sequance verifying the following inequality </p>
-<div class="displaymath" id="a0000000018">
-  \[ \left|f(x_n)-x_n\right|\leq \frac{1}{n} \]
+  <p>Assume for contradiction that </p>
+<div class="displaymath" id="a0000000069">
+  \[ f(x) \equiv r(x)s(x) \bmod p^2, \]
 </div>
-<p> Because of the Bolzano-Weierstrass theorem, we know there exists a convergent subsequance \( x_{k_n} \) of \( x_n \) satisfying, </p>
-<div class="displaymath" id="a0000000019">
-  \[ \left|f(x_{n_k})-x_{n_k}\right|\leq \frac{1}{n_k} \]
+<p> where WLOG \(r(x),s(x)\) are monic. Now, if we instead look at this modulo \(p\), we have \((x-a)^n \equiv r(x)s(x) \bmod p\) and therefore, since we are in \(\mathbb {F}_p[x]\) which is a UFD, we must have \(r(x) \equiv (x-a)^i \bmod p\) and \(s(x) \equiv (x-a)^j \bmod p\) with \(i+j=n\) and \(i,j{\gt}0\). If we now evaluate at \(x=a\) we see that </p>
+<div class="displaymath" id="a0000000070">
+  \[ r(a) \equiv s(a) \equiv 0 \bmod p \]
 </div>
-<p> Applying the limits in the inequality, we obtain the equality </p>
-<div class="displaymath" id="a0000000020">
-  \[ \left|\lim _{x\to \infty } f(x_{n_k})-x\right|\leq 0\Longleftrightarrow \lim _{x\to \infty } f(x_{n_k})-x = 0\Longleftrightarrow \lim _{x\to \infty } f(x_{n_k}) = x \]
+<p> as \(i,j {\gt}0\). But if we now go back to </p>
+<div class="displaymath" id="a0000000071">
+  \[ f(x) \equiv r(x)s(x) \bmod p^2 \]
 </div>
-<p> Using the continuity property of limits we can conclude, </p>
-<div class="displaymath" id="a0000000021">
-  \[ f(x)=f\left(\lim _{x\to \infty } x_{n_k}\right)=\lim _{x\to \infty } f(x_{n_k})=x \]
+<p> we see that setting \(x=a\) gives </p>
+<div class="displaymath" id="a0000000072">
+  \[ pg(a) \equiv r(a)s(a) \equiv 0 \bmod p^2, \]
 </div>
-<p> \( \)  </p>
+<p> which contradicts \(g(a) \not\equiv 0 \bmod p\). </p>
+<p>Now, since we are irreducible modulo \(p^2\) we are also irreducible in \(\mathbb {Z}[x]\), since the same argument as in Proposition <a href="sect0003.html#prop: irred pol mod p">1.2.13</a> applies. </p>
 
   </div>
 </div>
-<p>Now we apply Sperner’s lemma to deduce that there is a panchromatic face in the subdivision. </p>
-<p><div class="definition_thmwrapper" id="barycenter">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
+<p><div class="cor_thmwrapper" id="Eis crit">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
     </span>
-    <span class="definition_thmlabel">2.5</span>
+    <span class="cor_thmlabel">1.2.15</span>
+    <span class="cor_thmtitle">Eisenstein Criterion</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#barycenter">#</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="https://github.com/mmasdeu/brouwerfixedpoint//blob/548270f79ecf12d7e20a256806ccb9fcf57b87e2/src/barycentric_subdivision.lean#L9">barycenter</a></li>
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>  The baricenter of points \(p_1, \dots , p_k\) is \(B(p_1, \dots , p_k)= \frac{1}{k}\sum _{i=1}^k p_i\) </p>
-
-  </div>
-</div> </p>
-<p><div class="definition_thmwrapper" id="barycentric_subdivision">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">2.6</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#barycentric_subdivision">#</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0003.html#barycenter">Definition 2.5</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p>   Let \(S\subseteq \mathbb {R}^n\) be a \(n\)-dimensional simplex with barycentric coordinates \(x_0,\ldots ,x_n\). The barycentric subdivison is a map form permutations of the \(n+1\) vertices of \(S\) to \(n\)-dimensional simplexes defined as follows </p>
-<div class="displaymath" id="a0000000022">
-  \[  (p_0, p_1, \dots , p_n) \mapsto Simplex(B(p_0), B(p_0,p_1), \dots , B(p_0,p_1,\dots , p_n))  \]
-</div>
-<p>See end of <code class="verbatim">https://github.com/leanprover-community/mathlib/blob/sperner-again/src/combinatorics/simplicial_complex/subdivision.lean</code> </p>
-
-  </div>
-</div> </p>
-<p><div class="lemma_thmwrapper" id="diameter_simplex_is_longest_edge">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">2.7</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#diameter_simplex_is_longest_edge">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0003.html#Eis crit">#</a>
+    <a class="icon proof" href="sect0003.html#a0000000073"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-        </ul>
-
-      </div>
-    </div>
 
   </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p>  Let \(S\) be a \(k\)-dimensional simplex with vertices \(v_0, \dots , v_k\). The diameter of \(S\) \( Diam(S)= \max _{x,y\in S} |x-y|\) equals \(\max |v_i - v_j|\). </p>
+  <div class="cor_thmcontent">
+  <p> Let </p>
+<div class="displaymath" id="a0000000074">
+  \[ f(x)=a_n x^n+a_{n-1}x^{n-1}+ \cdots , a_1x+a_0 \]
+</div>
+<p> be a polynomial in \(\mathbb {Z}[x]\) (with \(n \geq 1)\) and let \(p\) be a prime number. Suppose \(a_n\) is not divisible by \(p\), \(a_{n-1},\dots ,a_0\) are all divisible by \(p\) and \(a_0\) is not divisible by \(p^2\). Then \(f(x)\) is irreducible. </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000023">
+<div class="proof_wrapper" id="a0000000073">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -385,126 +452,122 @@
     <span class="expand-proof">▼</span>
   </div>
   <div class="proof_content">
-  <p>Since \(v_i, v_j \in S\), we have \(Diam(S) \geq \max |v_i - v_j|\). </p>
-<p>Let \(l\max |v_i - v_j|\), and for each vertex consider the closed ball centered at \(v_i\) and radius \(l\). </p>
-<div class="displaymath" id="a0000000024">
-  \[  B_l(v_i) = \{ x : |x-v_i|\leq l\} .  \]
-</div>
-<p> Since \(B_l(v_i)\) is convex, and it contains every vertex of \(S\), we have \(|x-v_i|\leq l\) for all \(x\in S\). </p>
-<p>Finally we show \(|x-y|\leq l\) for all \(x, y\in S\). Given \(x\in S\), \(B_l(x)\) contains all vertices of \(S\), and since \(B_l(x)\) is convex, it contains any \(y\in S\). Therefore \(|x-y|\leq l\) for all \(x, y\in S\). This is \(diam(S)\leq l\). </p>
+  <p>Since \(a_n \not\equiv 0 \bmod p\), it is invertible. Now let \(b\) be any integer such that \(b \equiv a_n^{-1} \bmod p\), then \(bf(x)=x^n+pg(x)\) for some \(g(x) \in \mathbb {Z}[x]\). Moreover, \(g(0) \not\equiv 0 \bmod p\) since \(a_0\) is not divisible by \(p^2\). Therefore, we satisfy Shönemann’s Irreducibility Criterion and therefore \(bf(x)\) is irreducible and thus so is \(f(x)\). </p>
 
   </div>
 </div>
-<p><div class="lemma_thmwrapper" id="diameter_barycentric_subdivision">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<p><div class="exmp_thmwrapper" id="exp: cyclo min pol">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
     </span>
-    <span class="lemma_thmlabel">2.8</span>
+    <span class="exmp_thmlabel">1.2.16</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#diameter_barycentric_subdivision">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000025"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-          <li><a href="sect0003.html#barycentric_subdivision">Definition 2.6</a></li>
-        </ul>
-
-      </div>
-    </div>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-        </ul>
-
-      </div>
-    </div>
+    <a class="icon proof" href="sect0003.html#exp: cyclo min pol">#</a>
 
   </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p>Let \(\hat S = B(v_0,v_1,\dots , v_k)\) be the barycenter of \(S\). We bound the distance of any vertex \(v_i\) of \(S\) to \(\hat S\).    Given a simplex \(S\) of diameter \(D\), its barycentric subdivision has diameter at most \(\frac{n}{n+1}D\) </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000025">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
-  <p> The dinstance of any vertex of \(S\) to its barycenter is bounded by </p>
-<div class="displaymath" id="a0000000026">
-  \[  |v_i - \hat S | = | v_i - \sum _{k=0}^k \frac{1}{n+1}v_k| \leq \sum _{t=0}^k \frac{1}{k+1}|v_i - v_t| \leq \frac{1}{n+1} D.  \]
-</div>
-<p>Therefore, the closed ball centered at \(\hat S\), of radius \(\frac{p}{p+1}D\), contains the vertices of \(S\), by convexity it contains \(S\). </p>
-<p>Finally we proof the result by strong induction, for \(k=0\) the result is trivial. If \(s\) and \(s'\) are faces of \(S\) such that \(s\) is a proper face of \(s'\), </p>
-<div class="displaymath" id="a0000000027">
-  \[  |\hat s -\hat s'| \leq (\frac{k}{k+1})diam(S).  \]
-</div>
-
-  </div>
-</div>
-<p><div class="lemma_thmwrapper" id="exists_small_subdivision_of_simplex">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">2.9</span>
-    <div class="thm_icons">
-    <a class="icon proof" href="sect0003.html#exists_small_subdivision_of_simplex">#</a>
-    <a class="icon proof" href="sect0003.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    <button class="modal lean">L∃∀N</button>
-    <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-                <ul class="uses">
-        </ul>
-
-      </div>
-    </div>
-
-  </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>  For all \(\epsilon {\gt}0\), there exists a subdivision of \(\Delta \) of diameter \({\lt}\epsilon \). </p>
-
-  </div>
-</div> </p>
-<div class="proof_wrapper" id="a0000000028">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▼</span>
-  </div>
-  <div class="proof_content">
+  <div class="exmp_thmcontent">
   
+<ol class="enumerate">
+  <li><p>The polynomial \(3x^4+10x+5\) is irreducible in \(\mathbb {Z}[x]\) by Eisensteins criterion with \(p=5\). </p>
+</li>
+  <li><p>Let \(p\) be a prime and let </p>
+<div class="displaymath" id="a0000000075">
+  \[ \Phi _p(x):=\frac{x^p-1}{x-1}=x^{p-1}+\cdots +x+1. \]
+</div>
+<p> Then this is irreducible. Lets prove this: </p>
+<p>Note that we cant apply Eisenstein’s criterion right away, but the trick is to consider </p>
+<div class="displaymath" id="a0000000076">
+  \[ \Phi _p(x+1)=x^{p-1}+px^{p-2}+\cdots +\binom {p}{2}x+p. \]
+</div>
+<p> Now, by properties of binomial coefficients, we see that all coefficients other than the leading one are divisible by \(p\) and the last coefficient isn’t divisible by \(p^2\), so Eisensteins criterion applies. </p>
+</li>
+</ol>
 
   </div>
-</div>
+</div> </p>
+<p><div class="question_thmwrapper" id="a0000000077">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.2.17</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#a0000000077">#</a>
 
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Prove that \(f(x) \in \mathbb {Z}[x]\) is irreducible if and only if \(f(x+a)\) is irreducible for any \(a \in \mathbb {Z}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="exmp: more fields">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">1.2.18</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#exmp: more fields">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p> Now we have more examples of fields: </p>
+<ol class="enumerate">
+  <li><p>Note that \(x^2-2\) is irreducible in \(\mathbb {Z}[x]\), so </p>
+<div class="displaymath" id="a0000000078">
+  \[ \frac{\mathbb {Q}[x]}{(x^2-2)} \]
+</div>
+<p> is a field. </p>
+</li>
+  <li><p>\(\mathbb {R}[x]/(x^2+1)\) is also a field as \(x^2+1\) is irreducible over \(\mathbb {R}\). This field is isomorphic to \(\mathbb {C}\), but you need to be careful, its not *equal* to \(\mathbb {C}\), only isomorphic to. We will talk about this more below. </p>
+</li>
+  <li><p>Let \(p(x)=x^2+x+1\) in \(\mathbb {F}_2[x]\). Then \(p(x)\) is irreducible in \(\mathbb {F}_2[x]\) and thus </p>
+<div class="displaymath" id="a0000000079">
+  \[ \mathbb {F}_2[x]/(x^2+x+1) \]
+</div>
+<p> is also a field. </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="question_thmwrapper" id="ques: irr pol mod 2">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.2.19</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#ques: irr pol mod 2">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p> Check that \(p(x)=x^2+x+1\) is irreducible in \(\mathbb {F}_2[x]\). </p>
+
+  </div>
+</div> </p>
+<p>Lastly, here is a fact about finite fields we will use several times later but we wont prove. </p>
+<p><div class="prop_thmwrapper" id="a0000000080">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">1.2.20</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0003.html#a0000000080">#</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>For each integer \(n\) and each prime number \(p\), there is a unique finite field of size \(p^n\). We denote it by \(\mathbb {F}_{p^n}\). Conversely, every finite field has size \(p^n\) for some prime \(p\) and \(n \in \mathbb {Z}_{{\gt} 0}\). </p>
+
+  </div>
+</div> </p>
 
 </div> <!--main-text -->
 </div> <!-- content-wrapper -->
@@ -512,11 +575,11 @@
 </div> <!-- wrapper -->
 
 <nav class="prev_up_next">
-  <a href="sect0002.html" title="Brouwer’s Fixed Point Theorem"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0002.html" title="Recap on rings and fields"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="sect0002.html" title="Brouwer’s Fixed Point Theorem"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="sect0001.html" title="Number Fields"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0004.html" title="Bibliography"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0004.html" title="Field extensions"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Computing class groups</title>
+<link rel="next" href="sect0025.html" title="Solving Diophantine equations" />
+<link rel="prev" href="sect0023.html" title="The ideal class group" />
+<link rel="up" href="sect0023.html" title="The ideal class group" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class=" active current">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000025">4.1 Computing class groups</h1>
+<p>The proof of Theorem <a href="sect0023.html#thm: mink bound">4.0.3</a> will require some work, so lets first convince ourselves that this theorem is worth all the work. In particular, lets see how we can use it to compute some class groups </p>
+<p><div class="exmp_thmwrapper" id="a0000000499">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">4.1.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0024.html#a0000000499">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(i=\sqrt{-1}\). Lets look at \(K=\mathbb {Q}(i)\). Using Proposition <a href="sect0013.html#prop: num field disc in terms of norm">2.2.19</a> we see that \(\Delta (\mathcal{O}_K)=-4\). Moreover, \(K\) has no real embeddings, so \(r_1=0\) and \(r_2=1\). Putting this together we get </p>
+<div class="displaymath" id="a0000000500">
+  \[ M_K=\frac{2!}{2^2} \left(\frac{4}{\pi }\right)\sqrt{4}=\frac{4}{\pi } \approxeq 1.273. \]
+</div>
+<p> Theorem <a href="sect0023.html#thm: mink bound">4.0.3</a> tells us that each ideal class contains an ideal of norm \(\leq 1\). But the only ideal of norm \(1\) is the trivial ideal. So \(\operatorname{Cl}_K\) is trivial. If follows that \(\mathcal{O}_K=\mathbb {Z}[i]\) is a PID. </p>
+
+  </div>
+</div> </p>
+<p><div class="question_thmwrapper" id="a0000000501">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">4.1.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0024.html#a0000000501">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Show that if \(d \in \{ -1,-2,-3,-7,-11,-19,-43,-67,-163\} \) then \(\mathbb {Q}(\sqrt{d})\) has trivial class group and is thus a PID. </p>
+
+  </div>
+</div> <div class="exmp_thmwrapper" id="exmp: class group -5">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">4.1.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0024.html#exmp: class group -5">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p> Let \(K=\mathbb {Q}(\sqrt{-5})\). From Theorem <a href="sect0011.html#thm: int quad field">2.1.11</a> we know that \(\mathcal{O}_K=\mathbb {Z}[\sqrt{-5}]\). Here again we have \(r_1=0\), \(r_2=1\) and \(\Delta (\mathcal{O}_K)=-20\). Therefore </p>
+<div class="displaymath" id="a0000000502">
+  \[ M_K=\frac{2!}{2^2} \left(\frac{4}{\pi }\right)\sqrt{20}=\sqrt{80 \pi }{\lt} 3 \]
+</div>
+<p> This means every class contains an ideal of norm \(1\) or \(2\). We know the trivial ideal has norm \(1\), so lets look at what ideal has norm \(2\). As we saw in the proof of Corollary <a href="sect0020.html#cor: fin many ideals of given norm">3.4.10</a>, its enough to look at what prime ideals divide \(2\). By Theorem <a href="sect0021.html#thm: splitting in quad ext">3.5.17</a> we have </p>
+<div class="displaymath" id="a0000000503">
+  \[ (2)=(2,1+\sqrt{-5})^2 \]
+</div>
+<p> and therefore \(\mathfrak {p}_2:=(2,1+\sqrt{-5})\) is the unique ideal of norm \(2\). </p>
+<p>So, this means the class group \(\operatorname{Cl}_K\) has either \(1\) or \(2\) elements, depending of whether or not these two ideals are in the same class, i.e., if \([1]=[\mathfrak {p}_2]\). In other words, is \(\mathfrak {p}_2\) a principal ideal (since principal ideals are the things which \([1]\) consists of). If it where principal, then Proposition <a href="sect0020.html#prop: ideal norm coincides with other norm">3.4.5</a> would mean that there is some element in \(\mathcal{O}_K\) of norm \(\pm 2\). Now </p>
+<div class="displaymath" id="a0000000504">
+  \[ N_{K/\mathbb {Q}}(x+y\sqrt{-5})=x^2+5y^2 \]
+</div>
+<p> and its easy to see that this is never equal to \(\pm 2\). So \(\mathfrak {p}_2\) is not principal and therefore </p>
+<div class="displaymath" id="a0000000505">
+  \[ \operatorname{Cl}_K=\{ [1],[\mathfrak {p}_2]\}  \]
+</div>
+<p> so \(\operatorname{Cl}_K\) is cyclic of order \(2\). </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000506">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">4.1.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0024.html#a0000000506">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(K=\mathbb {Q}(\sqrt{-31})\). In this case by Theorem <a href="sect0011.html#thm: int quad field">2.1.11</a> we have \(\mathcal{O}_K=\mathbb {Z}[\alpha ]\) where \(\alpha =\frac{1+\sqrt{-31}}{2}\), \(n=[K:\mathbb {Q}]=2\) and \(r_1=0,r_2=1\). Lastly, Exercise <a href="sect0014.html#ques: disc of quad">2.2.28</a> gives \(\Delta (\mathcal{O}_K)=-31\). This means \(M_K=\frac{2}{\pi }\sqrt{31} {\lt} 4\). </p>
+<p>So we need to find the ideals of norm less than \(4\). Using Theorem <a href="sect0021.html#thm: splitting in quad ext">3.5.17</a> gives </p>
+<div class="displaymath" id="a0000000507">
+  \[ (2)=\mathfrak {p}_2\mathfrak {p}_2':=(2,\frac{1+\sqrt{-31}}{2})(2,\frac{1-\sqrt{-31}}{2}) \]
+</div>
+<p> with \(\mathfrak {p}_2 \neq \mathfrak {p}_2'\), both of which have norm \(2\). Moreover, we see that \((3)\) is inert in \(K\), so has norm \(9\). </p>
+<p>So the ideals of norm \({\lt}4\) are \((1),\mathfrak {p}_2,\mathfrak {p}_{2}'\). We know \(\mathfrak {p}_2 \neq \mathfrak {p}_2'\), but this does NOT mean we have \([\mathfrak {p}_2] \neq [\mathfrak {p}_2']\). We need to see whether or not this is the case. We know that \(\mathfrak {p}_2\mathfrak {p}_2'=(2)\) which means we have \([\mathfrak {p}_2][\mathfrak {p}_2']=[(2)]=[1]\) so we have \([\mathfrak {p}_2]=[\mathfrak {p}_2']^{-1}\). Therefore if we had \([\mathfrak {p}_2] = [\mathfrak {p}_2']\) this would mean that \([\mathfrak {p}_2]^2=[1]\) which means that \(\mathfrak {p}_2\) would have to be principal. Can this happen? Assume this is the case, then we have \(\mathfrak {p}_2^2=(\beta )\) for some \(\beta \in \mathcal{O}_K\) (its in \(\mathcal{O}_K\) and not \(K\) since \(\mathfrak {p}_2\) is a ideal in \(\mathcal{O}_K\) not a fractional ideal). Now, we know that \(N(\mathfrak {p}_2)=2\) (this follows from Corollary <a href="sect0021.html#cor: ded-kum for K/Q">3.5.11</a>). This would mean \(\beta \) has norm \(4\). Note that the norm of an arbitrary element in \(\mathcal{O}_K\) is </p>
+<div class="displaymath" id="a0000000508">
+  \[ N_{K/\mathbb {Q}}(x+y \alpha )=x^2+xy+8y^2 \qquad x,y \in \mathbb {Z}. \]
+</div>
+<p> Therefore we need to check if this can be equal to \(4\). Clearly this can happen, and moreover it can only happen if \(x=\pm 2\) and \(y=0\). This would mean that we have \(\beta =2\) and therefore </p>
+<div class="displaymath" id="a0000000509">
+  \[ \mathfrak {p}_2^2=(2) \]
+</div>
+<p> but we know that </p>
+<div class="displaymath" id="a0000000510">
+  \[ (2)=\mathfrak {p}_2\mathfrak {p}_2' \]
+</div>
+<p> therefore, by uniqueness of factorization and the fact that \(\mathfrak {p}_2 \neq \mathfrak {p}_2'\) we see that \(\mathfrak {p}_2^2\) cant be principal and therefore \([\mathfrak {p}_2] \neq [\mathfrak {p}_2']\). </p>
+<p>It remains to check if \([\mathfrak {p}_2]=[1]\) or \([\mathfrak {p}_2']=[1]\). Similar to what we did above, we now need to see if there is some element of norm \(\pm 2\). </p>
+<p>So the question is, can we find \(x,y\) which make \(x^2+xy+8y^2\) this equal to \(2\). The first thing to note is that \(N_{K/\mathbb {Q}}(x+y\alpha ) \geq 7y^2\), (to see this, note that \(x^2+xy+y^2 \geq 0\)) so we are going to need \(y=0\). This means we would need \(x^2=2\) which cant happen, therefore \([\mathfrak {p}_2] \neq [1] \neq [\mathfrak {p}_2']\). Thus we have </p>
+<div class="displaymath" id="a0000000511">
+  \[ \operatorname{Cl}_K=\{ [1],[\mathfrak {p}_2],[\mathfrak {p}_2']\}  \]
+</div>
+<p> so its cyclic of order \(3\). From this we can deduce that \([\mathfrak {p}_2^2]=[\mathfrak {p}_2']\) and \([\mathfrak {p}_2^3]=[1]\) (i.e. \(\mathfrak {p}_2^3\) is principal). Lets finish off by writing down the multiplication table for the group: </p>
+<div class="centered"> <table class="tabular">
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>[\(\mathfrak {p}_2]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>[\(\mathfrak {p}_2^2\)]</p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_2]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_2^2]\)</p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_2]\)</p>
+
+    </td>
+    <td  style="text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_2] \)</p>
+
+    </td>
+    <td  style="text-align:center" 
+        rowspan=""
+        colspan="">
+      <p> \([\mathfrak {p}_2^2]\)</p>
+
+    </td>
+    <td  style="text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_2^2]\)</p>
+
+    </td>
+    <td  style="text-align:center; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_2^2]\)</p>
+
+    </td>
+    <td  style="text-align:center; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+    <td  style="text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_2]\)</p>
+
+    </td>
+  </tr>
+</table> </div>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000512">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">4.1.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0024.html#a0000000512">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Lets look at \(K=\mathbb {Q}(\sqrt[3]{7})\) and let \(\alpha =\sqrt[3]{7}\). The minimal polynomial is clearly \(x^3-7\) which has discriminant \(-1323=-3^3 \cdot 7^2\). Next, lets check that \(\mathcal{O}_K=\mathbb {Z}[\sqrt[3]{7}]\). For this we need to check if any of </p>
+<div class="displaymath" id="a0000000513">
+  \[ \frac{x_2\alpha ^2+x_1\alpha +x_0}{3} \qquad \text{ or } \qquad \frac{y_2\alpha ^2+y_1\alpha +y_0}{7} \]
+</div>
+<p> can be algebraic integers for \(0 \leq x_i \leq 2\), \(0\leq y_i \leq 6\). Since the minimal polynomial is clearly Eisenstein at \(7\) we know from Lemma <a href="sect0013.html#lem: eis crit and alg ints">2.2.21</a> that we only need to worry about \(3\). Here is a trick: note that </p>
+<div class="displaymath" id="a0000000514">
+  \[ (x+7)^3-7 \]
+</div>
+<p> is Eisenstein at \(3\) and at \(7\) so if \(\beta \) is one of its roots, then \(\mathbb {Z}[\beta ]=\mathcal{O}_{K'}\) where \(K'=\mathbb {Q}(\beta )\), but \(\mathbb {Q}(\alpha )=\mathbb {Q}(\beta )\) and \(\mathbb {Z}[\alpha ]=\mathbb {Z}[\beta ]\). Therefore \(\mathcal{O}_K=\mathbb {Z}[\sqrt[3]{7}]\). </p>
+<p>Knowing this means we can freely use Theorem <a href="sect0021.html#thm: ded-kum">3.5.10</a>. Now, lets calculate the Minkowski bound. In this case \(n=3\), \(\Delta (\mathcal{O}_K)=-1323\), and \(r_1=r_2=1\). Putting this together we get </p>
+<div class="displaymath" id="a0000000515">
+  \[ M_K=\frac{3!}{3^3}\left(\frac{4}{\pi }\right) \sqrt{1323}= \frac{56\sqrt{3}}{3\pi } \approxeq 10.3 \]
+</div>
+<p>So we need to find all ideals of norm at most \(10\). So lets factor the ideals given by \(2,3,5,7\) using Theorem <a href="sect0021.html#thm: ded-kum">3.5.10</a>. </p>
+<ul class="itemize">
+  <li><p>\(x^3-7 \equiv (x-1)(x^2+x+1) \mod 2\) </p>
+</li>
+  <li><p>\(x^3-7 \equiv (x-1)^3 \mod 3\) </p>
+</li>
+  <li><p>\(x^3-7 \equiv (x-3)(x^2+3x-1) \mod 5\) </p>
+</li>
+  <li><p>\(x^3-7 \equiv x^3 \mod 7\) </p>
+</li>
+</ul>
+<p>From this we deduce </p>
+<ul class="itemize">
+  <li><p>\((2)=\mathfrak {p}_2\mathfrak {p}_2'=(2,\alpha -1)(2,\alpha ^2+\alpha +1)\) </p>
+</li>
+  <li><p>\((3)=\mathfrak {p}_3^3=(3,\alpha -1)^3\) </p>
+</li>
+  <li><p>\((5)=\mathfrak {p}_5\mathfrak {p}_5'=(5,\alpha -3)(5,\alpha ^2+3\alpha -1)\) </p>
+</li>
+  <li><p>\((7)=\mathfrak {p}_7^3=(7,\alpha )^3=(\alpha )^3\) </p>
+</li>
+</ul>
+<p>By Theorem <a href="sect0021.html#thm: ram-rel">3.5.7</a> we know that \(N({\mathfrak {p}_i})=p^{f_{\mathfrak {p}_i|p}}\) so if we calculate the residue degrees, we will know the norms of these ideals. But again Theorem <a href="sect0021.html#thm: ded-kum">3.5.10</a> tells us that this is exactly the degrees of the polynomials appearing on the right hand side of each factorization modulo \(p\). So combining this we have: </p>
+<ul class="itemize">
+  <li><p>\(N(\mathfrak {p}_2)=2\) and \(N(\mathfrak {p}_2')=4\) </p>
+</li>
+  <li><p>\(N(\mathfrak {p}_3)=3\) </p>
+</li>
+  <li><p>\(N(\mathfrak {p}_5)=5\) and \(N(\mathfrak {p}_5')=25\) </p>
+</li>
+  <li><p>\(N(\mathfrak {p}_7)=7\) </p>
+</li>
+</ul>
+<p>So by combining these ideals we can construct any ideal of norm at most \(10\). The next question is are these ideals distinct in \(\operatorname{Cl}_K\)? Lets see if any of them are principal: </p>
+<p>Clearly, \((7)=(\alpha )^3\) is principal so this gives the trivial class in the class group. Note that since \((2)=\mathfrak {p}_2\mathfrak {p}_2'\) we have \([\mathfrak {p}_2]^{-1}=[\mathfrak {p}_2']\). </p>
+<p>So lets look at the other ideals. </p>
+<p>Note that </p>
+<div class="displaymath" id="a0000000516">
+  \[ N_{K/\mathbb {Q}}(x+y\alpha +z\alpha ^2)=x^3+7y^3+49z^3-21xyz. \]
+</div>
+<p> So, do we have elements of norm \(2,3\) or \(5\)? We’ll from the above we see that the norm of an element must be a cube modulo \(7\). But the only cubes modulo \(7\) are \(\pm 1\). So there are no elements of norm \(2,3,5\). So these ideals are not principal. So \(\operatorname{Cl}_K\) is generated by \(\mathfrak {p}_{2},\mathfrak {p}_3,\mathfrak {p}_5\). </p>
+<p>The next question is, do these ideals give distinct classes in \(\operatorname{Cl}_K\)? First note that \(\mathfrak {p}_3^3=(3)\) therefore \([\mathfrak {p}_3]\) has order \(3\) in \(\operatorname{Cl}_K\) (since we already know its not trivial). Note that \(N_{K/\mathbb {Q}}(2+\sqrt[3]{7})=15\) and \(N_{K/\mathbb {Q}}(-1+\sqrt[3]{7})=6\). </p>
+<p>Therefore, since we only have one prime ideal of norm \(2,3\) and \(5\) we must have </p>
+<div class="displaymath" id="a0000000517">
+  \[ (2+\sqrt[3]{7})=\mathfrak {p}_3\mathfrak {p}_5 \qquad (-1+\sqrt[3]{7})=\mathfrak {p}_3\mathfrak {p}_2  \]
+</div>
+<p> thus \([\mathfrak {p}_5][\mathfrak {p}_3]=[1]\) and \([\mathfrak {p}_{2}][\mathfrak {p}_3]=[1]\) giving \([\mathfrak {p}_5]=[\mathfrak {p}_3]^{-1}=[\mathfrak {p}_2]\). Thus \(\operatorname{Cl}_K\) is generated by \([\mathfrak {p}_3]\) and is therefore cyclic of order \(3\). The multiplication table is then </p>
+<div class="centered"> <table class="tabular">
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>[\(\mathfrak {p}_3]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>[\(\mathfrak {p}_3^2\)]</p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_3]\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_3^2]\)</p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_3]\)</p>
+
+    </td>
+    <td  style="text-align:center" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_3] \)</p>
+
+    </td>
+    <td  style="text-align:center" 
+        rowspan=""
+        colspan="">
+      <p> \([\mathfrak {p}_3^2]\)</p>
+
+    </td>
+    <td  style="text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_3^2]\)</p>
+
+    </td>
+    <td  style="text-align:center; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_3^2]\)</p>
+
+    </td>
+    <td  style="text-align:center; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\([1]\)</p>
+
+    </td>
+    <td  style="text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\([\mathfrak {p}_3]\)</p>
+
+    </td>
+  </tr>
+</table> </div>
+
+  </div>
+</div> </p>
+<p>Roughly, the steps for computing a class group of a number field \(K\) are as as follows: </p>
+<p><div class="alg_thmwrapper" id="a0000000518">
+  <div class="alg_thmheading">
+    <span class="alg_thmcaption">
+    Algorithm
+    </span>
+    <span class="alg_thmlabel">4.1.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0024.html#a0000000518">#</a>
+
+  </div>
+  </div>
+  <div class="alg_thmcontent">
+  <ol class="enumerate">
+  <li><p>Find the ring of integers \(\mathcal{O}_K\) and the discriminant \(\Delta (\mathcal{O}_K)\) (as defined in Definition <a href="sect0012.html#defn: disc of num field">2.2.14</a> ). As we have seen in the problem sheet, in many cases (but not all) we can calculate the discriminant using Theorem <a href="sect0014.html#thm: disc of trinom">2.2.25</a>. </p>
+</li>
+  <li><p>Find how many real \(r_1\) and complex conjugate \(r_2\) embeddings our number field \(K\) has. To do this, you need to write down the embeddings (all \([K:\mathbb {Q}]\) of them) and see how many of them are real or complex. How do you do this quickly? If \(K=\mathbb {Q}(\alpha )\) then look at the conjugates of \(\alpha \). With this \(r_1\) will be the number of conjugates of \(\alpha \) that are real numbers and \(r_2\) will be half the number conjugates that are complex. </p>
+</li>
+  <li><p>Compute the Minkowski bound </p>
+<div class="displaymath" id="a0000000519">
+  \[ M_K= \frac{n!}{n^n} \left( \frac{4}{\pi } \right)^{r_2} |\Delta (\mathcal{O}_K)|^{1/2} \]
+</div>
+<p> where \(n=[K:\mathbb {Q}]\). </p>
+</li>
+  <li><p>Find all ideals of norm \(\leq \lfloor M_K \rfloor \). To do this, look at all the primes \(p\) less than \(\lfloor M_K \rfloor \) and factor the ideal \((p)\) in \(\mathcal{O}_K\) using Corollary <a href="sect0021.html#cor: ded-kum for K/Q">3.5.11</a>, or if we are in a quadratic field, use Theorem <a href="sect0021.html#thm: splitting in quad ext">3.5.17</a> which makes things really quick. </p>
+</li>
+  <li><p>After doing this you will have a list of prime ideals \(\mathfrak {p}_i\) all with norm \(\leq \lfloor M_K \rfloor \). The next step is to see if any of them are trivial in the class group. This means, we need to check if \([\mathfrak {p}_i]=[1]\), in other words is \(\mathfrak {p}_i\) principal?<a class="footnote" href="#a0000000520">
+  <sup class="footnotemark">1</sup>
+</a> How does one do this? Well if \(\mathfrak {p}_i\) was principal, it would be generated by an element \(\beta \) such that \(|N_{K/\mathbb {Q}}(\beta )|=N((\beta ))=N(\mathfrak {p}_i)\). Now check if this gives a contradiction by looking at the possibilities for the norm of \(\beta \). </p>
+</li>
+  <li><p>After this we now have a possibly smaller list of prime ideals, all of which we know are not principal. The next question is to check if they are distinct from one another. In other words, if \([\mathfrak {p}]=[\mathfrak {q}]\). In general this might be difficult, but in the examples above, we have seen some tricks how to do this. </p>
+</li>
+  <li><p>Once this is all done, we have our final set of generators, and by this point we know the size of the group and it should be easy to write down the multiplication table for the class group. </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+
+</div> <!--main-text -->
+<footer id="footnotes">
+<ol>
+  <li id="a0000000520">Warning: Just because Corollary <a href="sect0021.html#cor: ded-kum for K/Q">3.5.11</a> says \(\mathfrak {p}_i=(p,something)\) doesn’t mean this ideal can’t be principal.</li>
+</ol>
+</footer>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0023.html" title="The ideal class group"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0023.html" title="The ideal class group"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0025.html" title="Solving Diophantine equations"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

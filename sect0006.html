@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Algebraic numbers and number fields</title>
+<link rel="next" href="sect0007.html" title="Embeddings" />
+<link rel="prev" href="sect0005.html" title="Algebraic extensions" />
+<link rel="up" href="sect0001.html" title="Number Fields" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000007">1.4 Algebraic numbers and number fields</h1>
+<p><div class="defn_thmwrapper" id="a0000000107">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.4.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#a0000000107">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>An algebraic number is a complex number which is algebraic over \(\mathbb {Q}\). Meaning, it is a root of a polynomial \(f(x) \in \mathbb {Q}[x]\). </p>
+
+  </div>
+</div> </p>
+<p><div class="nota_thmwrapper" id="a0000000108">
+  <div class="nota_thmheading">
+    <span class="nota_thmcaption">
+    Notation
+    </span>
+    <span class="nota_thmlabel">1.4.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#a0000000108">#</a>
+
+  </div>
+  </div>
+  <div class="nota_thmcontent">
+  <p>If \(\alpha \) is an algebraic number, then it has a minimal polynomial which we denoted by \(m_{\alpha ,\mathbb {Q}}\) in Proposition <a href="sect0005.html#prop: min pol">1.3.10</a>. Since from now on we will be working over \(\mathbb {Q}\), we will make the notational convention that \(m_{\alpha }:=m_{\alpha ,\mathbb {Q}}\) </p>
+
+  </div>
+</div> </p>
+<p><div class="defn_thmwrapper" id="a0000000109">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.4.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#a0000000109">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>If \(\alpha \) is an algebraic number and \(m_\alpha (x)\) is its minimal polynomial, then the set of roots of \(m_\alpha (x)\) in \(\mathbb {C}\) are called the <i class="itshape">conjugates</i> of \(\alpha \). </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000110">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">1.4.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#a0000000110">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <ol class="enumerate">
+  <li><p>\(0,47,\sqrt{2},\sqrt{-1},3/4, \sqrt[10]{5}\) are all algebraic numbers </p>
+</li>
+  <li><p>If \(d\) is a square-free integer, \(\sqrt{d}\) is algebraic and its conjugate root is \(-\sqrt{d}\). </p>
+</li>
+  <li><p>\(\alpha =\sqrt{2+\sqrt{2}}\) is an algebraic number. Lets prove it by finding its minimal polynomial: </p>
+<span>\begin{align} & \alpha =\sqrt{2+\sqrt{2}}\\ & \alpha ^2-2= \sqrt{2}\\ & (\alpha ^2-2)^2=2\\ & \alpha ^4-4\alpha ^2+2=0 \end{align}</span>
+<p> So we see that \(\alpha \) satisfies \(x^4-4x^2+2\), which means its algebraic. </p>
+<p>Is this the minimal polynomial? well lets check. By Eisensteins Criterion <a href="sect0003.html#Eis crit">1.2.15</a> with \(p=2\) we see that this is irreducible. Moreover its monic, so it must be the minimal polynomial. </p>
+<p>Now, what are the conjugate roots of \(\alpha \)? If you work backwards through the computation above you’ll see that \(\pm \sqrt{2 \pm \sqrt{2}}\) are all the roots of \(m_\alpha \) and thus are the conjugates of \(\alpha \). </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="nexmp_thmwrapper" id="a0000000111">
+  <div class="nexmp_thmheading">
+    <span class="nexmp_thmcaption">
+    Non-example
+    </span>
+    <span class="nexmp_thmlabel">1.4.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#a0000000111">#</a>
+
+  </div>
+  </div>
+  <div class="nexmp_thmcontent">
+  <p>\(\pi =3.1415\dots \) is NOT an algebraic number (although this isn’t easy to prove). </p>
+
+  </div>
+</div> </p>
+<p><div class="defn_thmwrapper" id="a0000000112">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.4.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#a0000000112">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>A <i class="itshape">Number field</i> is a subfield of \(\mathbb {C}\) of finite degree over \(\mathbb {Q}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000113">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">1.4.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#a0000000113">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(d\) be a square-free integer then \(\mathbb {Q}(\sqrt{d})=\{ a+b\sqrt{d}| a,b \in \mathbb {Q}\} \) is a number field of degree \(2\) over \(\mathbb {Q}\). </p>
+
+  </div>
+</div> Note that by Corollary <a href="sect0005.html#cor: fin ext is alg">1.3.16</a> we see that every element of a number field is a algebraic number. </p>
+<p>By the Fundamental Theorem of algebra, if we take any polynomial \(f(x) \in \mathbb {Q}[x]\), then it has a root \(\alpha \) in \(\mathbb {C}\). Therefore \(\mathbb {Q}(\alpha )\) is a number field. This gives us a great supply of number fields. Similarly, using Theorem <a href="sect0005.html#thm: fin ext iff alg">1.3.20</a> we can take any finite set \(\{ \alpha _1,\dots ,\alpha _n\} \) of algebraic numbers and then \(\mathbb {Q}(\alpha _1,\dots ,\alpha _n)\) will again be a number field. </p>
+<p><div class="question_thmwrapper" id="a0000000114">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.4.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#a0000000114">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Let \(\overline{\mathbb {Q}}\) denote the set of all algebraic numbers. Prove that \(\overline{\mathbb {Q}}\) is actually a field. Is it a number field? explain your answer. </p>
+
+  </div>
+</div> </p>
+<p><div class="question_thmwrapper" id="ex: min pol of inv">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">1.4.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0006.html#ex: min pol of inv">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p> Let \(\alpha \) be an algebraic number with minimal polynomial \(m_\alpha (x)=\sum _i a_i x^i\). Then using this, write down the minimal of \(1/\alpha \). </p>
+
+  </div>
+</div> </p>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0005.html" title="Algebraic extensions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0001.html" title="Number Fields"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0007.html" title="Embeddings"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

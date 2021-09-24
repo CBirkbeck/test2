@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Ideals in rings of integers</title>
+<link rel="next" href="sect0019.html" title="Dedekind domains" />
+<link rel="prev" href="sect0017.html" title="Units" />
+<link rel="up" href="sect0016.html" title="Factorization in rings of integers" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000019">3.2 Ideals in rings of integers</h1>
+<p>Let me recall some definition you may have seen in other courses. </p>
+<p><div class="defn_thmwrapper" id="defn: noeth ring">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.2.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0018.html#defn: noeth ring">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p> Let \(R\) be a commutative ring. Then \(R\) is called <i class="itshape">Noetherian</i> any of the following equivalent conditions holds: </p>
+<ol class="enumerate">
+  <li><p>Every ideal is finitely generated. </p>
+</li>
+  <li><p>Every increasing chain of ideals \(I_1 \subset I_2 \subset \dots \) is eventually constant. </p>
+</li>
+  <li><p>Every non-empty set \(S\) of ideals contains a (not necessarily unique) maximal member. </p>
+</li>
+</ol>
+
+  </div>
+</div> </p>
+<p><div class="question_thmwrapper" id="a0000000296">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">3.2.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0018.html#a0000000296">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Check that these definitions are all equivalent. </p>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="prop: ring of ints is noeth">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.2.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0018.html#prop: ring of ints is noeth">#</a>
+    <a class="icon proof" href="sect0018.html#a0000000297"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K\) be a number field and \(\mathcal{O}_K\) its ring of integers. Then \(\mathcal{O}_K\) is a Noetherian ring. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000297">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We saw in Corollary <a href="sect0012.html#cor: int basis exists">2.2.8</a> that \(\mathcal{O}_K\) is finitely generated as an additive group. Now, any ideal \(\mathfrak {a}\subset \mathcal{O}_K\) is an additive subgroup of the <i class="itshape">abelian</i> group \(\mathcal{O}_K\) and therefore is also finitely generated.<a class="footnote" href="#a0000000298">
+  <sup class="footnotemark">1</sup>
+</a> So \(\mathcal{O}_K\) is Noetherian. </p>
+
+  </div>
+</div>
+<p><div class="prop_thmwrapper" id="prop: quot of ideal is finite">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.2.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0018.html#prop: quot of ideal is finite">#</a>
+    <a class="icon proof" href="sect0018.html#a0000000299"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K\) be a number field and \(\mathfrak {a}\) a non-zero ideal in \(\mathcal{O}_K\). Then \(\mathfrak {a}\) contains some positive integer and moreover the quotient ring \(\mathcal{O}_K /\mathfrak {a}\) is finite. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000299">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(\alpha \in \mathfrak {a}\backslash 0\) and \(N=N_{K/\mathbb {Q}}(\alpha )\). Since \(\alpha \neq 0\), then \(N \neq 0\). Now, by Proposition <a href="sect0009.html#prop: alt defn of norm and trace">1.7.6</a> we see that \(N=\alpha \beta \) where \(\beta \) is a product of conjugates of \(\alpha \) so it is in \(\overline{\mathbb {Z}}\). Moreover, \(\beta \in \mathcal{O}_K\) since \(\beta =N/\alpha \in K\) (recall \(\mathcal{O}_K=K \cap \overline{\mathbb {Z}}\)). But since \(\mathfrak {a}\) is an ideal \(N=\alpha \beta \in \mathfrak {a}\). </p>
+<p>Now, lets use this to prove the quotient is finite. First note that since \(N \in \mathfrak {a}\) then \((N) \subset \mathfrak {a}\) therefore \(|\mathcal{O}_K /\mathfrak {a}| \leq |\mathcal{O}_K / (N)|\). Secondly, since \(\mathcal{O}_K\) is finitely generated as an abelian group, by picking an integral basis we get an isomorphism (of additive abelian groups) \(\mathcal{O}_K \cong \mathbb {Z}^n\) where \(n=[K:\mathbb {Q}]\). Therefore \(\mathcal{O}_K/(N) \cong (\mathbb {Z}/N\mathbb {Z})^n\) which is finite. Therefore so is \(\mathcal{O}_K/\mathfrak {a}\). </p>
+
+  </div>
+</div>
+<p><div class="lem_thmwrapper" id="lem: fin int dom is field">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">3.2.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0018.html#lem: fin int dom is field">#</a>
+    <a class="icon proof" href="sect0018.html#a0000000300"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> A finite integral domain is a field. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000300">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(R\) be a finite, non-trivial integral domain. Let \(r \in R\backslash 0\). We need to show that \(r\) has an inverse. Here is the trick: consider the sequence \(r,r^2,r^3,\dots .\) Since \(R\) is finite at some point we must have \(r^n=r^m\) for some \(m{\lt}n\). Then \(r^m(r^{n-m}-1)=0\), but this is where being an integral domain comes in, since this means either \(r^m=0\) or \(r^{n-m}-1=0\). Since \(r \neq 0\) and \(R\) is an integral domain \(r^m \neq 0\). Therefore \(r^{n-m}=1\). This means \(r^{-1}=r^{n-m-1}\) and therefore \(r\) has an inverse. </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="cor: prim ideal is maximal">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.2.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0018.html#cor: prim ideal is maximal">#</a>
+    <a class="icon proof" href="sect0018.html#a0000000301"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> Let \(K\) be a number field. Then every non-zero prime ideal in \(\mathcal{O}_K\) is maximal. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000301">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>By Proposition <a href="sect0002.html#prop: prime and max ideals in rings">1.1.22</a> we know that if \(\mathfrak {p}\subset \mathcal{O}_K\) is a prime ideal then \(\mathcal{O}_K/\mathfrak {p}\) is an integral domain. Now, by Proposition <a href="sect0018.html#prop: quot of ideal is finite">3.2.4</a> \(\mathcal{O}_K /\mathfrak {p}\) is finite. But by Lemma <a href="sect0018.html#lem: fin int dom is field">3.2.5</a> this is then a field. Now, using Proposition <a href="sect0002.html#prop: prime and max ideals in rings">1.1.22</a> again, \(\mathfrak {p}\) is maximal. </p>
+
+  </div>
+</div>
+<p><div class="defn_thmwrapper" id="a0000000302">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.2.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0018.html#a0000000302">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>Let \(R,A\) be rings with \(A \subset R\) a subring and \(x \in R\). We say \(x\) is integral over \(A\) if there exist \(a_i \in A\) such that </p>
+<div class="displaymath" id="a0000000303">
+  \[ x^n+a_{n-1}x^{n-1}+\cdots +a_0=0 \]
+</div>
+<p> for some \(n\). </p>
+<p>Let \(A'\) be the set of all elements of \(R\) that are integral over \(A\). Then similarly to how we prove Corollary <a href="sect0011.html#cor: sum and mult of alg ints is alg ints">2.1.16</a>, \(A'\) is a ring which we call the integral closure of \(A\) in \(R\). </p>
+<p>Moreover, if \(R\) is an integral domain and we let </p>
+<div class="displaymath" id="a0000000304">
+  \[ \mathrm{Frac}(R):=\{ a/b | a,b \in R, b \neq 0\}  \]
+</div>
+<p> be its fields of fractions (this can alternatively be defined as smallest field containing \(R\)), then we say \(R\) is integrally closed, if it is integrally closed in its field of fractions. </p>
+
+  </div>
+</div> </p>
+
+</div> <!--main-text -->
+<footer id="footnotes">
+<ol>
+  <li id="a0000000298">Be warned, its not true in general that a subgroup of a finitely generated group \(G\) is finitely generated. You really need \(G\) to be abelian for this to work.</li>
+</ol>
+</footer>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0017.html" title="Units"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0016.html" title="Factorization in rings of integers"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0019.html" title="Dedekind domains"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

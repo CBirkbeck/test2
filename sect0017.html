@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Units</title>
+<link rel="next" href="sect0018.html" title="Ideals in rings of integers" />
+<link rel="prev" href="sect0016.html" title="Factorization in rings of integers" />
+<link rel="up" href="sect0016.html" title="Factorization in rings of integers" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class=" active current">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000018">3.1 Units</h1>
+<p>One of the things we would like to know is what are the units in \(\mathcal{O}_K\) for \(K\) some number field. </p>
+<p><div class="prop_thmwrapper" id="a0000000273">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.1.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000273">#</a>
+    <a class="icon proof" href="sect0017.html#a0000000274"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K\) be a number field and let \(\mathcal{O}_K^\times \) denote the group of units, then </p>
+<div class="displaymath" id="a0000000275">
+  \[ \mathcal{O}_K^\times =\{ \alpha \in \mathcal{O}_K \mid N_{K/\mathbb {Q}}(\alpha )=\pm 1\}   \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000274">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(\alpha \) is a unit the \(\alpha ^{-1} \in \mathcal{O}_K\) and therefore \(N_{K/\mathbb {Q}}(\alpha )N_{K/\mathbb {Q}}(\alpha )^{-1}=N_{K/\mathbb {Q}}(\alpha \alpha ^{-1})=N_{K/\mathbb {Q}}(1)=1\). So \(N_{K/\mathbb {Q}}(\alpha ) \in \mathbb {Z}^\times \) and is therefore \(\pm 1\). </p>
+<p>Now, assume \(N_{K/\mathbb {Q}}(\alpha )=\pm 1\) and let \(\sigma _i\) be the embeddings of \(K\) into \(\mathbb {C}\) with \(\sigma _1\) the identity embedding. Then </p>
+<div class="displaymath" id="a0000000276">
+  \[ \alpha \prod _{i=2}^n \sigma _i(\alpha )=\pm 1  \]
+</div>
+<p> which means \(\alpha ^{-1}=\pm \prod _{i=2}^n \sigma _i(\alpha )\) but each \(\sigma _i(\alpha )\) is again an algebraic integer so \( \alpha ^{-1} \in \overline{\mathbb {Z}} \cap K=\mathcal{O}_K\) (see Remark <a href="sect0011.html#rmrk: all alg ints">2.1.7</a>). </p>
+
+  </div>
+</div>
+<p><div class="exmp_thmwrapper" id="a0000000277">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">3.1.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000277">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let us look at \(K=\mathbb {Q}(\sqrt{2})\). In this case we have already seen that \(\mathcal{O}_K=\mathbb {Z}[\sqrt{2}]\). Now, is \(1+\sqrt{2}\) a unit? Well </p>
+<div class="displaymath" id="a0000000278">
+  \[ N_{K/\mathbb {Q}}(1+\sqrt{2})=(1+\sqrt{2})(1-\sqrt{2})=-1 \]
+</div>
+<p> So yes it is. </p>
+
+  </div>
+</div> </p>
+<p>Next we have a theorem which we will use but not prove. <div class="thm_thmwrapper" id="thm: dir unit thm">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.1.3</span>
+    <span class="thm_thmtitle">Dirichlet’s Unit theorem</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#thm: dir unit thm">#</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(K\) be a number field and let </p>
+<div class="displaymath" id="a0000000279">
+  \[ \mu _K=\{ x \in K^\times \mid x^n=1 \text{ for some } n \in \mathbb {Z}_{{\gt} 0}\} . \]
+</div>
+<p> This is the set of roots of unity in \(K\). Let \(r_1\) denote the number of real embeddings of \(K\) and \(r_2\) the number of complex conjugate pairs of embeddings. Then </p>
+<div class="displaymath" id="a0000000280">
+  \[ \mathcal{O}_K^{\times } \cong \mu _K \times \mathbb {Z}^{r_1+r_2-1} \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="cor_thmwrapper" id="a0000000281">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.1.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000281">#</a>
+    <a class="icon proof" href="sect0017.html#a0000000282"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p>If \(K=\mathbb {Q}(\sqrt{-d})\) with \(d \in \mathbb {Z}_{{\gt} 0}\) a square-free integer, then \(\mathcal{O}_K^\times \) is \(\mu _K\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000282">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>In this case \(r_1=0\) and \(r_2=1\) therefore Theorem <a href="sect0017.html#thm: dir unit thm">3.1.3</a> gives the result. </p>
+
+  </div>
+</div>
+<p><div class="question_thmwrapper" id="ques: units in img quad">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">3.1.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#ques: units in img quad">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p> Show that if \(K=\mathbb {Q}(\sqrt{d})\) with \(d \in \mathbb {Z}\) a square-free integer, then </p>
+<div class="displaymath" id="a0000000283">
+  \[  {\mu _K=} \begin{cases}  \{ \pm 1, \pm \sqrt{-1}\}  &  \text{if } d=-1\\ \{ 1, \zeta , \zeta ^2, \zeta ^3, \zeta ^4, \zeta ^5 \}  &  \text{if } d=-3\\ \{ \pm 1\}  &  \text{otherwise} \end{cases} \]
+</div>
+<p> where \(\zeta =e^{2\pi /6}=\frac{1+\sqrt{-3}}{2}\). </p>
+
+  </div>
+</div> </p>
+<p><div class="cor_thmwrapper" id="a0000000284">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.1.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000284">#</a>
+    <a class="icon proof" href="sect0017.html#a0000000285"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p>Let \(K=\mathbb {Q}(\sqrt{d})\) with \(d\) a positive square-free integer. Then </p>
+<div class="displaymath" id="a0000000286">
+  \[ \mathcal{O}_K^{\times } \cong \{ \pm 1\}  \times \mathbb {Z}. \]
+</div>
+<p> In this case there is a unique unit in \(u \in \mathcal{O}_K^{\times }\) which generates \(\mathcal{O}_K^\times / \{ \pm 1\} \) and under the standard embedding we have \(u \geq 1\). This unit \(u\) is called the fundamental unit. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000285">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Note that in this case \(\mu _K=\{ \pm 1\} \). So the structure of the group of units follows from Theorem <a href="sect0017.html#thm: dir unit thm">3.1.3</a>. Now, \(\mathcal{O}_{K}^{\times }/\{ \pm 1\}  \cong \mathbb {Z}\) so take any unit \(v\) mapping to a generator of \(\mathcal{O}_{K}^{\times }/\{ \pm 1\} \). Then one of \(\{ \pm v, \pm v^{-1}\} \) is in the set \((1,\infty )\). So let \(u\) be this unit. </p>
+
+  </div>
+</div>
+<p><div class="prop_thmwrapper" id="a0000000287">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.1.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000287">#</a>
+    <a class="icon proof" href="sect0017.html#a0000000288"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K\) be a number field and let \(\alpha \in \mathcal{O}_K\). If \(N_{K/\mathbb {Q}}(\alpha )=\pm p\) for \(p\) a prime number, then \(\alpha \) is an irreducible element of \(\mathcal{O}_K\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000288">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(\alpha =\beta \gamma \) we want to show that one of \(\beta ,\gamma \) is a unit. Now taking norms we have </p>
+<div class="displaymath" id="a0000000289">
+  \[ N_{K/\mathbb {Q}}(\alpha )=N_{K/\mathbb {Q}}(\beta )N_{K/\mathbb {Q}}(\gamma )=\pm p.  \]
+</div>
+<p> Therefore as \(p\) is prime we must have \(N_{K/\mathbb {Q}}(\beta )=\pm 1\) or \(N_{K/\mathbb {Q}}(\gamma )=\pm 1\). In either case we get the result. </p>
+
+  </div>
+</div>
+<p><div class="rmrk_thmwrapper" id="a0000000290">
+  <div class="rmrk_thmheading">
+    <span class="rmrk_thmcaption">
+    Remark
+    </span>
+    <span class="rmrk_thmlabel">3.1.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000290">#</a>
+
+  </div>
+  </div>
+  <div class="rmrk_thmcontent">
+  <p>The converse is false. For example in \(\mathbb {Z}[\sqrt{-1}]\) the element \(3\) is irreducible and has norm \(9\). </p>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="a0000000291">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.1.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000291">#</a>
+    <a class="icon proof" href="sect0017.html#a0000000292"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p>Let \(K\) be a number field and \(\alpha \in \mathcal{O}_K\) be non-zero and not a unit. Then \(\alpha \) can be written as a product of irreducible elements. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000292">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We prove this by induction on \(|N_{K/\mathbb {Q}}(\alpha )|\). If \(N_{K/\mathbb {Q}}(\alpha )=2\) then \(\alpha \) is irreducible so we are done. Now assume it is true for all \(\beta \) with \(|N_{K/\mathbb {Q}}(\beta )|{\lt} |N_{K/\mathbb {Q}}(\alpha )\). If \(\alpha \) is irreducible then we are done, otherwise \(\alpha =\beta \gamma \) with \(|N_{K/\mathbb {Q}}(\beta )|, |N_{K/\mathbb {Q}}(\gamma )|{\lt} |N_{K/\mathbb {Q}}(\alpha )|\). Therefore both \(\beta \) and \(\gamma \) can be factored into irreducibles and thus so can \(\alpha \). </p>
+
+  </div>
+</div>
+<p><div class="defn_thmwrapper" id="a0000000293">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.1.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000293">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>We say a ring has unique factorization if whenever </p>
+<div class="displaymath" id="a0000000294">
+  \[ p_1p_2\cdots p_n=q_1q_2\cdots q_m \]
+</div>
+<p> for \(p_i,q_i\) irreducible elements, then \(n=m\) and after possibly reordering we can find units \(u_i\) such that \(p_i=u_iq_i\) for all \(i\). </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000295">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">3.1.11</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0017.html#a0000000295">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>The \(\mathbb {Z}\) has unique factorization as does \(\mathbb {Z}[\sqrt{-2}]\). </p>
+<p>But this is not usually the case, for example \(\mathbb {Z}[\sqrt{-10}]\) doesn’t have unique factorization as \(10=2 \cdot 5= -\sqrt{-10}\sqrt{-10}\) all of which are irreducible as can be seen by taking norms: Note that \(N_{K/\mathbb {Q}}(2)=4,N_{K/\mathbb {Q}}(5)=25, N_{K/\mathbb {Q}}(\sqrt{-10})=10\). Now, every element in \(K=\mathbb {Q}(\sqrt{-10})\) has norm of the form \(x^2+10y^2\) and this can never be \(\pm 2, \pm 5\), so there can’t be any irreducible elements dividing \(2,5,\sqrt{-10}\) therefore they are irreducible. </p>
+
+  </div>
+</div> </p>
+<p>In order to fix this, we will later decompose things into prime ideals and work with this, but before this we need to understand ideals better. </p>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0016.html" title="Factorization in rings of integers"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0016.html" title="Factorization in rings of integers"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0018.html" title="Ideals in rings of integers"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

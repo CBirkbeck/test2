@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic Number Theory: Embeddings and prime ideals</title>
+<link rel="next" href="sect0023.html" title="The ideal class group" />
+<link rel="prev" href="sect0021.html" title="Splitting of prime ideals" />
+<link rel="up" href="sect0016.html" title="Factorization in rings of integers" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Algebraic Number Theory</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Number Fields</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Recap on rings and fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Irreducible polynomials</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">1.3</span> <span class="toc_entry">Field extensions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Algebraic numbers and number fields</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">1.5</span> <span class="toc_entry">Embeddings</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">1.6</span> <span class="toc_entry">The standard representation</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Norm and Trace</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">2</span> <span class="toc_entry">Algebraic integers</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0011.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0012.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Discriminants</span></a>
+ </li>
+<li class="">
+  <a href="sect0015.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Cyclotomic fields</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="sect0016.html"><span class="toc_ref">3</span> <span class="toc_entry">Factorization in rings of integers</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0017.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Units</span></a>
+ </li>
+<li class="">
+  <a href="sect0018.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Ideals in rings of integers</span></a>
+ </li>
+<li class="">
+  <a href="sect0019.html"><span class="toc_ref">3.3</span> <span class="toc_entry">Dedekind domains</span></a>
+ </li>
+<li class="">
+  <a href="sect0020.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Norms of ideals</span></a>
+ </li>
+<li class="">
+  <a href="sect0021.html"><span class="toc_ref">3.5</span> <span class="toc_entry">Splitting of prime ideals</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0022.html"><span class="toc_ref">3.6</span> <span class="toc_entry">Embeddings and prime ideals</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0023.html"><span class="toc_ref">4</span> <span class="toc_entry">The ideal class group</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0024.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Computing class groups</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0025.html"><span class="toc_ref">5</span> <span class="toc_entry">Solving Diophantine equations</span></a>
+ </li>
+<li class="">
+  <a href="sect0026.html"><span class="toc_ref">6</span> <span class="toc_entry">Geometry of numbers</span></a>
+ </li>
+<li class="">
+  <a href="sect0027.html"><span class="toc_ref">7</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+  <li></li>	
+  <li>	
+  <a href="dep_graph.html">Dependency graph</a>
+  </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000023">3.6 Embeddings and prime ideals</h1>
+<p>Lets now look at how embeddings interact with prime ideals. We begin with a definition you may have seen in your Galois theory course. </p>
+<p><div class="defn_thmwrapper" id="a0000000441">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">3.6.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000441">#</a>
+
+  </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>Let \(K/F\) be an extension of number fields. We say \(K\) is <i class="itshape">normal</i> over \(F\) every embedding \(\sigma :K \to \mathbb {C}\) which fixes \(F\) has image again in \(K\). In other words the embedding \(\sigma \) is an automorphism \(\sigma :K \to K\) which fixes the elements of \(F\). </p>
+<p>In particular, if \(K=F(\alpha )\) and \(K\) contains all of the conjugates of \(\alpha \), then \(K\) is normal. </p>
+
+  </div>
+</div> </p>
+<p><div class="exmp_thmwrapper" id="a0000000442">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">3.6.2</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000442">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Let \(K=\mathbb {Q}(\sqrt{2})\) and \(F=\mathbb {Q}\). Then since each embedding that fixes \(\mathbb {Q}\) sends \(\sqrt{2}\) to one of \(\pm \sqrt{2} \in K\), we see that \(K\) is normal. </p>
+
+  </div>
+</div> <div class="nexmp_thmwrapper" id="a0000000443">
+  <div class="nexmp_thmheading">
+    <span class="nexmp_thmcaption">
+    Non-example
+    </span>
+    <span class="nexmp_thmlabel">3.6.3</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000443">#</a>
+
+  </div>
+  </div>
+  <div class="nexmp_thmcontent">
+  <p>If \(K=\mathbb {Q}(\sqrt[3]{2})\) then this is not normal, since one of the embeddings will send \(\sqrt[3]{2}\) to \(\zeta _3\sqrt[3]{2}\) (where \(\zeta _3\) is a non-trivial cube root of unity) which is a complex number and therefore not contained in \(K\). </p>
+
+  </div>
+</div> </p>
+<p><div class="prop_thmwrapper" id="prop: fin ext makes normal">
+  <div class="prop_thmheading">
+    <span class="prop_thmcaption">
+    Proposition
+    </span>
+    <span class="prop_thmlabel">3.6.4</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#prop: fin ext makes normal">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000444"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="prop_thmcontent">
+  <p> Let \(K/F\) be a finite extension of number fields. Then there is a finite extension \(L/K\) such that \(L/F\) is normal as is \(L/K\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000444">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(K=F(\alpha )\), then just set \(L=F(\alpha _1,\alpha _2,\dots ,\alpha _n)\) where \(\alpha _i\) are the conjugates of \(\alpha \). </p>
+
+  </div>
+</div>
+<p><div class="nota_thmwrapper" id="a0000000445">
+  <div class="nota_thmheading">
+    <span class="nota_thmcaption">
+    Notation
+    </span>
+    <span class="nota_thmlabel">3.6.5</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000445">#</a>
+
+  </div>
+  </div>
+  <div class="nota_thmcontent">
+  <p>If \(K/F\) is a normal extension, \(\mathfrak {a}\subset \mathcal{O}_K\) is an ideal and \(\sigma \) is an embedding of \(K\) fixing \(F\) (which in particular is an automorphism). Then we let \(\sigma (\mathfrak {a})\) be the ideal in \(K\) generated by the images of the elements of \(\mathfrak {a}\) under \(\sigma \). </p>
+<p>Furthermore, we let \(\operatorname{Gal}(K/F)\) denote the set of embeddings of \(K\) which fix \(F\). Since \(K/F\) is normal, this can be made into a group by using composition as our group operation, i.e. \(\sigma _1,\sigma _2 \in \operatorname{Gal}(K/F)\) we let \((\sigma _1 \sigma _2)(x)= \sigma _1(\sigma _2(x))\). By Proposition <a href="sect0007.html#prop: emb extns">1.5.8</a> there are only \([K:F]\) such embeddings, so this group has size \([K:F]\) and is known as the Galois group. </p>
+
+  </div>
+</div> </p>
+<p><div class="thm_thmwrapper" id="thm: ideals and embs">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.6.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#thm: ideals and embs">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000446"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(K/F\) be a normal extension of number fields. Let \(\mathfrak {p}\) be a prime ideal in \(\mathcal{O}_F\) and \(\mathfrak {P},\mathfrak {P}'\) be two prime ideals of \(\mathcal{O}_K\) above \(\mathfrak {p}\). Then \(\sigma (\mathfrak {P})\) is again a prime ideal lying over \(\mathfrak {p}\), moreover there is some element \(\sigma \in \operatorname{Gal}(K/F)\), such that \(\sigma (\mathfrak {P})=\mathfrak {P}'\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000446">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(G:=\operatorname{Gal}(K/F)\). Note that since \(\mathfrak {P}\) is a prime ideal \(\mathcal{O}_K/\mathfrak {P}\) is a integral domain. Now, apply \(\sigma \) to this quotient. Since \(\sigma (\mathcal{O}_K)=\mathcal{O}_K\) (as \(K/F\) is normal) we get </p>
+<div class="displaymath" id="a0000000447">
+  \[ \mathcal{O}_K/\mathfrak {P}\cong \mathcal{O}_K /\sigma (\mathfrak {P}) \]
+</div>
+<p> and therefore \(\sigma (\mathfrak {P})\) is again a prime ideal. Moreover, since \(\mathfrak {P}\cap \mathcal{O}_F=\mathfrak {p}\) (this is what lying above means) and \(\sigma \) fixes \(F\) we see that \(\sigma (\mathfrak {P}) \cap \mathcal{O}_F=\mathfrak {p}\). </p>
+<p>Now, suppose that \(\sigma (\mathfrak {P}) \neq \mathfrak {P}'\) for all \(\sigma \in G\). Then we can use the Chinese remainder theorem <a href="sect0019.html#thm: chinese rem thm">3.3.21</a> to find some \(\alpha \in \mathcal{O}_K\) such that </p>
+<div class="displaymath" id="a0000000448">
+  \[ \alpha \equiv 0 \mod \mathfrak {P}' \]
+</div>
+<p> and </p>
+<div class="displaymath" id="a0000000449">
+  \[ \alpha \equiv 1 \mod \sigma (\mathfrak {P}) \]
+</div>
+<p> for all \(\sigma \in G\). </p>
+<p>Now, </p>
+<div class="displaymath" id="a0000000450">
+  \[ N_{K/F}(\alpha )=\prod _{\sigma \in G} \sigma (\alpha ) \in \mathfrak {P}' \cap \mathcal{O}_F=\mathfrak {p}. \]
+</div>
+<p> On the other hand \(\alpha \not\in \sigma (\mathfrak {P})\) by construction, and therefore \(\sigma ^{-1}(\alpha ) \not\in \mathfrak {P}\). But we have </p>
+<div class="displaymath" id="a0000000451">
+  \[ N_{K/F}(\alpha )=\prod _{\sigma \in G} \sigma (\alpha )=\prod _{\sigma ^{-1} \in G} \sigma ^{-1}(\alpha ). \]
+</div>
+<p> This gives us a contradiction, since we have just seen that the left hand side is in \(\mathfrak {p}\). But the right hand is not contained in \(\mathfrak {P}\) since \(\sigma ^{-1}(\alpha ) \not\in \mathfrak {P}\), but \(\mathfrak {p}\subset \mathfrak {P}\). </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="cor: ram and inert in gal ext">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.6.7</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#cor: ram and inert in gal ext">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000452"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> Let \(K/F\) be a normal extension of number fields and let \(\mathfrak {P}\) and \(\mathfrak {P}'\) be two primes lying above the prime \(\mathfrak {p}\). Then </p>
+<div class="displaymath" id="a0000000453">
+  \[ e_{\mathfrak {P}|\mathfrak {p}}=e_{\mathfrak {P}'|\mathfrak {p}} \qquad f_{\mathfrak {P}|\mathfrak {p}}=e_{\mathfrak {P}'|\mathfrak {p}} \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000452">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Lets start by factoring \(\mathfrak {p}\) in \(\mathcal{O}_K\). We have </p>
+<div class="displaymath" id="a0000000454">
+  \[ \mathfrak {p}\mathcal{O}_K=\prod _i \mathfrak {P}_i^{e_{\mathfrak {P}_i|\mathfrak {p}}}. \]
+</div>
+<p> Now, by Theorem <a href="sect0022.html#thm: ideals and embs">3.6.6</a>, if we apply \(\sigma \) to this equation we get </p>
+<div class="displaymath" id="a0000000455">
+  \[ \mathfrak {p}\mathcal{O}_K=\sigma (\mathfrak {p})\mathcal{O}_K=\prod _i \sigma (\mathfrak {P}_i)^{e_{\mathfrak {P}_i|\mathfrak {p}}} \]
+</div>
+<p> but then by the fact that for any \(i,j\) we can find \(\sigma \) such that \(\mathfrak {P}_i=\sigma (\mathfrak {P}_j)\) and uniqueness of factorization, we get that </p>
+<div class="displaymath" id="a0000000456">
+  \[ e_{\mathfrak {P}_i|\mathfrak {p}}=e_{\mathfrak {P}_j|\mathfrak {p}} \]
+</div>
+<p> which gives the first part of the result. </p>
+<p>For the second part, we note that by the proof of Theorem <a href="sect0022.html#thm: ideals and embs">3.6.6</a> we have seen that </p>
+<div class="displaymath" id="a0000000457">
+  \[ \mathcal{O}_K/\mathfrak {P}=:k_{\mathfrak {P}} \cong k_{\sigma (\mathfrak {P})}:=\mathcal{O}_K/\sigma (\mathfrak {P}) \]
+</div>
+<p> from which the result follows. </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="a0000000458">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.6.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000458">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000459"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p>Let \(n\) be an integer and \(\zeta _n\) an \(n\)-th root of unity. Let \(K=\mathbb {Q}(\zeta _n)\) and \(p\) a prime number. Then </p>
+<div class="displaymath" id="a0000000460">
+  \[ (p)=(\mathfrak {p}_1 \mathfrak {p}_2\cdots \mathfrak {p}_r)^e \]
+</div>
+<p> where \(\mathfrak {p}_i\) are the primes of \(\mathcal{O}_K\) over \(p\), which moreover all have the same inertial degree. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000459">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>This follows from Corollary <a href="sect0022.html#cor: ram and inert in gal ext">3.6.7</a> by noting that \(K\) is a normal extension. </p>
+
+  </div>
+</div>
+<p>Next we have a theorem that tells us about which primes will ramify in an extension. </p>
+<p><div class="thm_thmwrapper" id="thm: ram primes div disc">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.6.9</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#thm: ram primes div disc">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000461"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(p\) be a prime number and \(K\) a number field. If \(p\) is ramified in \(\mathcal{O}_K\) then \(p \mid \Delta (\mathcal{O}_K)\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000461">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(\mathfrak {p}\) be a prime ideal in \(\mathcal{O}_K\) over \(p\) such that \(e_{\mathfrak {p}|p}{\gt}1\). Then we can write \((p)=\mathfrak {p}\mathfrak {a}\) where \(\mathfrak {a}\) is an ideal divisible by all prime ideals in \(\mathcal{O}_K\) which are above \(p\). </p>
+<p>Now, let \(\alpha _1,\dots ,\alpha _n\) be a integral basis for \(\mathcal{O}_K\). Since \(\mathfrak {a}\) properly contains \((p)\) we can find some \(\alpha \in \mathfrak {a}\backslash (p)\). Then writing </p>
+<div class="displaymath" id="a0000000462">
+  \[ \alpha =\alpha _1m_1+\dots +\alpha _nm_n \]
+</div>
+<p> with \(m_i \in \mathbb {Z}\) we see that since \(\alpha \not\in (p)\), one of the \(m_i\) must not be divisible by \(p\). So after relabelling, we can assume \(p \nmid m_1\). Now, similar to Proposition <a href="sect0012.html#prop: disc change of basis">2.2.4</a> we have that </p>
+<div class="displaymath" id="a0000000463">
+  \[ \Delta (\alpha ,\alpha _2,\dots ,\alpha _n)=m_1^2 \Delta (\alpha _1,\dots ,\alpha _n)=m_1^2\Delta (\mathcal{O}_K). \]
+</div>
+<p> Since \(p \nmid m_1\) its enough to show that \(p \mid \Delta (\alpha ,\alpha _2,\dots ,\alpha _n)\). </p>
+<p>Now, let \(\sigma _1,\dots ,\sigma _n\) denote the embeddings of \(K\) into \(\mathbb {C}\). Let \(L\) be a finite extension of \(K\) such that \(L/\mathbb {Q}\) is normal (which we can do by Proposition <a href="sect0022.html#prop: fin ext makes normal">3.6.4</a>). Let \(G:=\operatorname{Gal}(L/\mathbb {Q})\). Then the elements of \(G\) are just the embeddings of \(L\) extending the embeddings of \(K\) (if you dont remember what this means go to Definition <a href="sect0007.html#defn: emb ext">1.5.5</a>) </p>
+<p>Since \(\alpha \) is contained in \(\mathfrak {a}\), its contained in every prime ideal in \(\mathcal{O}_K\) over \(p\). It follows that \(\alpha \) is also in every prime ideal \(\mathfrak {P}\) in \(\mathcal{O}_L\) containing \(p\), since each such prime contains \(p\) and \(\mathfrak {P}\cap \mathcal{O}_K=\mathfrak {p}\) is again a prime ideal which contains \(p\), hence \(\mathfrak {p}\) lies over \(p\) and therefore contains \(\alpha \). Fix \(\mathfrak {P}\) a prime ideal of \(\mathcal{O}_L\) over \(p\). Then we claim that for any \(\sigma \in G\), \(\sigma (\alpha ) \in \mathfrak {P}\). To see this note that \(\sigma ^{-1}(\mathfrak {P})\) is again a prime ideal in \(\mathcal{O}_L\) over \(p\) and thus contains \(\alpha \). In particular, \(\sigma _i(\alpha ) \in \mathfrak {P}\) for all \(i\). Therefore, by Proposition <a href="sect0013.html#prop: disc via embs">2.2.16</a> \(\Delta (\alpha ,\alpha _2,\dots ,\alpha _n) \in \mathfrak {P}\). But since the discriminant is an integer, we have \(\Delta (\alpha ,\alpha _2,\dots ,\alpha _n) \in \mathfrak {P}\cap \mathbb {Z}=p\mathbb {Z}\) and therefore \(p\) divides the discriminant. </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="cor: p unram if norm of blah">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.6.10</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#cor: p unram if norm of blah">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000464"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> Let \(K\) be a number field with \(K=\mathbb {Q}(\alpha )\) for \(\alpha \) a primitive element and let \(f \in \mathbb {Z}[x]\) be any monic polynomial such that \(f(\alpha )=0\). If \(p\) is a prime number such that \(p \nmid N_{K/\mathbb {Q}}(f'(\alpha ))\) then \(p\) is unramified. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000464">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Since every monic polynomial with \(\alpha \) as a root is divisible by \(m_\alpha \) (see Proposition <a href="sect0005.html#prop: min pol">1.3.10</a>), its enough to check this for \(m_\alpha \). But then Proposition <a href="sect0013.html#prop: num field disc in terms of norm">2.2.19</a> gives the result. </p>
+
+  </div>
+</div>
+<p><div class="cor_thmwrapper" id="a0000000465">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.6.11</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000465">#</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p>There are only finitely many primes of  \(\mathbb {Z}\) which ramify in a number field \(K\). </p>
+
+  </div>
+</div> </p>
+<p><div class="cor_thmwrapper" id="cor: ids are disc">
+  <div class="cor_thmheading">
+    <span class="cor_thmcaption">
+    Corollary
+    </span>
+    <span class="cor_thmlabel">3.6.12</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#cor: ids are disc">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000466"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="cor_thmcontent">
+  <p> In (3.4) and (3.6) of Theorem <a href="sect0021.html#thm: splitting in quad ext">3.5.17</a> the ideals appearing are distinct. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000466">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Using Exercise <a href="sect0014.html#ques: disc of quad">2.2.28</a> and Theorem <a href="sect0022.html#thm: ram primes div disc">3.6.9</a> we see that since in each case the prime does not divide the discriminant, the prime cannot be ramified and therefore the ideals are distinct. </p>
+
+  </div>
+</div>
+<p>Going back to the cyclotomic example, one can determine the ramification and the inertial degree completely in this case. </p>
+<p><div class="thm_thmwrapper" id="a0000000467">
+  <div class="thm_thmheading">
+    <span class="thm_thmcaption">
+    Theorem
+    </span>
+    <span class="thm_thmlabel">3.6.13</span>
+    <span class="thm_thmtitle">Decomposition theorem for cyclotomic fields</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000467">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000468"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="thm_thmcontent">
+  <p> Let \(n\) be a positive integer and \(\zeta _n\) an \(n\)-th root of unity. Let \(K=\mathbb {Q}(\zeta _n)\) and \(p\) a prime number. Write \(n=p^km\) with \(p \nmid m\) and set \(e=\varphi (p^k)\) (where \(\varphi \) is Euler’s Totient function). Lastly, let \(f\) be the (multiplicative) order of \(p\) modulo \(m\). </p>
+<p>Then </p>
+<div class="displaymath" id="a0000000469">
+  \[ (p)=(\mathfrak {p}_1 \mathfrak {p}_2\cdots \mathfrak {p}_r)^e \]
+</div>
+<p> (so \(e=e_{\mathfrak {p}_i|p}\)) and moreover \(f=f_{\mathfrak {p}_i|p}\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000468">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>We start by letting \(\alpha =\zeta ^m\) and \(\beta =\zeta ^{p^k}\). So \(\alpha \) is a \(p^k\)-th root of unity and \(\beta \) is a \(m\)-th root of unity. We will prove the theorem by seeing how \((p)\) factorizes in \(\mathbb {Q}(\alpha )\) and in \(\mathbb {Q}(\beta )\) and then combining the result. </p>
+<p><div class="lem_thmwrapper" id="lem: lem1">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">3.6.14</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#lem: lem1">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000470"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> With the above notation. In \(\mathbb {Q}(\alpha )\) we have </p>
+<div class="displaymath" id="a0000000471">
+  \[ (p)=(1-\alpha )^{\varphi (p^k)} \]
+</div>
+<p> with \((1-\alpha )\) a prime ideal. </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000470">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>First note that \([\mathbb {Q}(\alpha ):\mathbb {Q}]=\varphi (p^k)\) since this is the degree of the \(p^k\) cyclotomic polynomial (See Lemma <a href="sect0015.html#lem: cyclo poly">2.3.1</a>). </p>
+<p>Next, from Exercise <a href="sect0015.html#ques: fac of p in p-th root">2.3.6</a> we have \(p=u(1-\alpha )^{\varphi (p^k)}\), this tells us that (as ideals in \(\mathbb {Z}[\alpha ]\)) </p>
+<div class="displaymath" id="a0000000472">
+  \[ (p)=(1-\alpha )^{\varphi (p^k)}. \]
+</div>
+<p> Theorem <a href="sect0021.html#thm: ram-rel">3.5.7</a> then gives the result. </p>
+
+  </div>
+</div>
+<p><div class="lem_thmwrapper" id="lem: lem2">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">3.6.15</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#lem: lem2">#</a>
+    <a class="icon proof" href="sect0022.html#a0000000473"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p> In \(\mathbb {Q}(\beta )\), \(p\) is unramified and for each \(\mathfrak {p}\) over \(p\), we have \(f_{\mathfrak {p}|p}=f\). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000473">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Using Corollary <a href="sect0022.html#cor: p unram if norm of blah">3.6.10</a> with \(f(x)=x^m-1\), we need to check if \(p\) divides </p>
+<div class="displaymath" id="a0000000474">
+  \[ m^{[\mathbb {Q}(\beta ):\mathbb {Q}]}N_{\mathbb {Q}(\beta )/\mathbb {Q}}(\beta ^{m-1}). \]
+</div>
+<p> But \(p \nmid m\) and \(\beta \) is a unit, so its norm is \(\{ \pm 1\} \) therefore \(p\) is unramified. </p>
+<p>So in \(\mathbb {Z}[\beta ]\) we have </p>
+<div class="displaymath" id="a0000000475">
+  \[ (p)=\mathfrak {p}_1\dots \mathfrak {p}_s. \]
+</div>
+<p> Moreover, since \(\mathbb {Q}(\beta )/\mathbb {Q}\) is normal we know that \(f_{\mathfrak {p}_i|p}=f_{\mathfrak {p}_j|p}\). So let \(\mathfrak {p}:=\mathfrak {p}_1\). Its enough to check that \(f_{\mathfrak {p}|p}=f\) (where \(f\) is as above- the multiplicative order of \(p\) modulo \(m\)). </p>
+<p>Let \(\mathbb {F}_{\mathfrak {p}}:=\mathbb {Z}[\beta ]/\mathfrak {p}\). First, recall that \(f_{\mathfrak {p}|p}=[\mathbb {F}_\mathfrak {p}: \mathbb {F}_p]\). So \(f_{\mathfrak {p}|p}=h\) for some \(h\). We want to show that \(h=f\). We will do this in two steps, by first showing \(h \geq f\) and then \(h \leq f\). </p>
+<p>(\(h \geq f\)): Let \(\overline{\beta }\) denote the image of \(\beta \) in \(\mathbb {F}_{\mathfrak {p}}\). We will first show that \(\overline{\beta }\) has order \(m\) in \(\mathbb {F}_{\mathfrak {p}}\). Assume for contradiction this is not the case, then \(\overline{\beta }^{m/l} \equiv 1 \pmod\mathfrak {p}\) (i.e. \(\mathfrak {p}\mid (\beta ^{m/l}-1)\)) for some prime factor \(l\) of \(m\). Now, \(\beta ^{m/l}\) is an \(l\)-th root of unity. Then, by Exercise <a href="sect0015.html#ques: fac of p in p-th root">2.3.6</a> we see that \(\beta ^{m/l}-1\) divides \(l\) and \(l\) is a factor of \(m\). Thus \(\mathfrak {p}\mid m\). This gives a contradiction as \(\mathfrak {p}\mid p\) and \(\gcd (m,p)=1\). </p>
+<p>So \(\overline{\beta }\) has order \(m\) in \(\mathbb {F}_{\mathfrak {p}}\). By Lagrange’s theorem this means \(m\mid N(\mathfrak {p})-1\) and note that since \(\mathfrak {p}\) is a prime ideal over \(p\), we have \(N(\mathfrak {p})=p^h\). Thus \(p^h \equiv 1 \pmod m\). But the order of \(p\) modulo \(m\) is \(f\), so we have \(h \geq f\). </p>
+<p>(\(h \leq f\)): Since \(p^f \equiv 1 \pmod m\) it follows that \(\beta ^{p^f} = \beta \). Now, note that </p>
+<div class="displaymath" id="a0000000476">
+  \[ (x+y)^{p^f} \equiv x^{p^f}+y^{p^f} \mod p\mathbb {Z}[\beta ]. \]
+</div>
+<p> This means that for all \(\gamma \in \mathbb {Z}[\beta ]\) we have </p>
+<div class="displaymath" id="a0000000477">
+  \[ \gamma ^{p^f} \equiv \gamma \mod p\mathbb {Z}[\beta ] \]
+</div>
+<p> (also using FLT). Now since \((p) \subset \mathfrak {p}\) we see that </p>
+<div class="displaymath" id="a0000000478">
+  \[ \gamma ^{p^f} \equiv \gamma \pmod\mathfrak {p}. \]
+</div>
+<p> Therefore every non-zero element of \(\mathbb {F}_{\mathfrak {p}}\) is a root of \(x^{p^f}-x\). Now, since we are in a field, any polynomial of degree \(d\) has at most \(d\) roots. This polynomial has \(p^h\) roots (as this is the size of \(\mathbb {F}_{\mathfrak {p}}\)) therefore \(p^h \leq p^f \implies h \leq f\). This gives the result. </p>
+
+  </div>
+</div>
+<p>Lets now put these two lemmas together and finish proving the theorem. </p>
+<p>Lemma <a href="sect0022.html#lem: lem1">3.6.14</a> and Theorem <a href="sect0021.html#thm: ram-rel">3.5.7</a> tells us that </p>
+<div class="displaymath" id="a0000000479">
+  \[ e_{(1-\alpha )|p} \cdot f_{(1-\alpha )|p}=e \cdot 1=[\mathbb {Q}(\alpha ):\mathbb {Q}]=\varphi (p^k) \]
+</div>
+<p> Similarly, Lemma <a href="sect0022.html#lem: lem2">3.6.15</a> gives </p>
+<div class="displaymath" id="a0000000480">
+  \[ s \cdot e_{\mathfrak {p}|p}\cdot f_{\mathfrak {p}|p}=s \cdot 1\cdot f=[\mathbb {Q}(\beta ):\mathbb {Q}]=\varphi (m) \]
+</div>
+<p>Now, if \(\mathfrak {P}_i\) denote the prime ideals of \(\mathbb {Z}[\zeta _n]\) over \(p\), then we know that </p>
+<div class="displaymath" id="a0000000481">
+  \[ \sum _i e_{\mathfrak {P}_i|p}f_{\mathfrak {P}_i|p}=[\mathbb {Q}(\zeta _n):\mathbb {Q}]=\varphi (n)=\varphi (p^k)\varphi (m) \]
+</div>
+<p>Lastly, using Proposition <a href="sect0021.html#prop: tow law for ram rel">3.5.6</a> together with </p>
+<div class="displaymath" id="a0000000482">
+  \[ [\mathbb {Q}(\zeta _n):\mathbb {Q}(\alpha )][\mathbb {Q}(\alpha ):\mathbb {Q}]=[\mathbb {Q}(\zeta _n):\mathbb {Q}]=[\mathbb {Q}(\zeta _n):\mathbb {Q}(\beta )][\mathbb {Q}(\beta ):\mathbb {Q}] \]
+</div>
+<p> gives </p>
+<div class="displaymath" id="a0000000483">
+  \[ s \cdot e \cdot f=[\mathbb {Q}(\zeta _n):\mathbb {Q}] \]
+</div>
+<p> from which the result follows. </p>
+
+  </div>
+</div>
+<p>This theorem is sometimes called the cyclotomic reciprocity law, since it allows us to quickly find out how primes factor in cyclotomic fields, just like quadratic reciprocity is used for quadratic fields. For general number fields, we know of no such simple description. </p>
+<p><div class="exmp_thmwrapper" id="a0000000484">
+  <div class="exmp_thmheading">
+    <span class="exmp_thmcaption">
+    Example
+    </span>
+    <span class="exmp_thmlabel">3.6.16</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000484">#</a>
+
+  </div>
+  </div>
+  <div class="exmp_thmcontent">
+  <p>Lets use this theorem to see how primes factorize in \(\mathbb {Q}(\zeta _5)\). </p>
+<div class="centered"> <table class="tabular">
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      
+<p>\(p \mod 5\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> Order of \(p \mod m\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> Factorization of \((p)\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> Norms </p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(0\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> - </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \((p)=\mathfrak {p}^4\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \(N(\mathfrak {p})=p\) </p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(1\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \(1\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \((p)=\mathfrak {p}_1\mathfrak {p}_2\mathfrak {p}_3\mathfrak {p}_4\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \(N(\mathfrak {p}_i)=p\) </p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(2\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \(4\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \((p)\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \(N((p))=p^4\) </p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(3\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \(4\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \((p)\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> \(N((p))=p^4\) </p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\(4\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p> \(2\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p> \((p)=\mathfrak {p}_{1}\mathfrak {p}_2\)</p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p> \(N(\mathfrak {p}_i)=p^2\) </p>
+
+    </td>
+  </tr>
+</table> </div>
+<p>We can use this to say things about how primes factor in extensions of \(\mathbb {Q}(\zeta _5)\). For example, in \(\mathbb {Q}(\zeta _{55})\) we see that </p>
+<div class="displaymath" id="a0000000485">
+  \[ (11)=(\mathfrak {p}_1\mathfrak {p}_2\mathfrak {p}_3\mathfrak {p}_4)^{10} \]
+</div>
+<p> with \(f_{\mathfrak {p}_i|p}=1\). </p>
+
+  </div>
+</div> </p>
+<p><div class="question_thmwrapper" id="a0000000486">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">3.6.17</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000486">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Describe the factorization of the following ideals into prime ideals in \(\mathbb {Q}(\zeta _{55})\): </p>
+<div class="displaymath" id="a0000000487">
+  \[ (13) \qquad (14) \qquad (5)  \]
+</div>
+
+  </div>
+</div> </p>
+<p><div class="question_thmwrapper" id="a0000000488">
+  <div class="question_thmheading">
+    <span class="question_thmcaption">
+    Exercise
+    </span>
+    <span class="question_thmlabel">3.6.18</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0022.html#a0000000488">#</a>
+
+  </div>
+  </div>
+  <div class="question_thmcontent">
+  <p>Let \(\zeta _7\) be a \(7\)-th root of unity and \(K=\mathbb {Q}(\zeta _7)\). Complete the following table describing the decomposition of ideals \((p)\) (with \(p\) a prime number) in \(\mathcal{O}_K\). </p>
+<div class="centered"> <table class="tabular">
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      
+<p>\(p \mod 7\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> Order of \(p \mod m\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> Factorization of \((p)\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p> Norms </p>
+
+    </td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(0\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(1\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(2\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(3\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(4\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black" 
+        rowspan=""
+        colspan="">
+      <p>\(5\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+  </tr>
+  <tr>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">
+      <p>\(6\) </p>
+
+    </td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px" 
+        rowspan=""
+        colspan="">&nbsp;</td>
+  </tr>
+</table> </div>
+
+  </div>
+</div> </p>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0021.html" title="Splitting of prime ideals"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0016.html" title="Factorization in rings of integers"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0023.html" title="The ideal class group"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
