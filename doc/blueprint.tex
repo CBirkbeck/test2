@@ -1420,7 +1420,7 @@
 	So, lets try to find a basis for $\OO_K$. 
 	
 	\begin{defn}\label{defn: int basis}
-		Let $K$ be a number field and let $\{b_1,\dots,b_n\}$ be a basis for $K/\QQ$. We call this an integral basis if $\OO_K=\ZZ[b_1,\dots,b_n]=\{x_1b_1+\cdots x_nb_n \mid x_i \in \ZZ\}$ as an additive group.  In practice, the set $\{b_i\}$ will be some thing like $\{1,\a,\a^2,\dots,\a^{n-1}\}$ in which case, as rings, we have $\ZZ[\a]=\ZZ[1,\a,\a^2,\dots,\a^{n-1}]$}
+		Let $K$ be a number field and let $\{b_1,\dots,b_n\}$ be a basis for $K/\QQ$. We call this an integral basis if $\OO_K=\ZZ[b_1,\dots,b_n]=\{x_1b_1+\cdots x_nb_n \mid x_i \in \ZZ\}$ as an additive group.  In practice, the set $\{b_i\}$ will be some thing like $\{1,\a,\a^2,\dots,\a^{n-1}\}$ in which case, as rings, we have $\ZZ[\a]=\ZZ[1,\a,\a^2,\dots,\a^{n-1}]$
 \end{defn}
 
 Ok, so we know what we are looking for, so how are we going to make such a basis. For this we will study the discriminant.
@@ -1651,7 +1651,7 @@ How do we use this? well let me show you one use.
 	
 	%	\textcolor{purple}{Alternatively here is a slicker proof by Alexandros Groutides: 
 	
-	Note that $\QQ(\a)=\QQ(\beta)$ (just do double inclusion). Then since $\deg(m_\beta)=[\QQ(\beta):\QQ]=[\QQ(\a):\QQ]=\deg(m_\a)$  (by Cor. \ref{cor: min pol simple ext}) we get the result.       }	
+	Note that $\QQ(\a)=\QQ(\beta)$ (just do double inclusion). Then since $\deg(m_\beta)=[\QQ(\beta):\QQ]=[\QQ(\a):\QQ]=\deg(m_\a)$  (by Cor. \ref{cor: min pol simple ext}) we get the result.       
 
 \end{proof}
 
@@ -2584,18 +2584,18 @@ Note that if $n$ is a square-free integer, then in $\QQ(\sqrt{n})$ there are thr
 \begin{thm}\label{thm: splitting in quad ext}
 Let $n$ be a square-free integer, $K:=\QQ(\sqrt{n})$ and $p$ a prime number. 
 \begin{enumerate}
-	\item[\faShip] If $p\mid n$ then $(p)=(p,\sqrt{n})^2$.
+	\item[(1)] If $p\mid n$ then $(p)=(p,\sqrt{n})^2$.
 	
-	\item[\faLeaf] If $n$ is odd then 
+	\item[(2)] If $n$ is odd then 
 	\[
-	{(2)= \begin{cases}
+	(2)= \begin{cases}
 			(2,1+\sqrt{n})^2, & \text{if } n \equiv 3 \pmod 4   \hspace{0.5cm} (3.3) \\
 			\left(2,\frac{1+\sqrt{n}}{2}\right)\left(2,\frac{1-\sqrt{n}}{2}\right) & \text{if } n \equiv 1 \pmod 8 \hspace{0.5cm} (3.4)\\
 			(2) &\text{if } n \equiv 5 \pmod 8 \hspace{0.5cm} (3.5)
 		\end{cases}
 		\]
 		
-		\item[\faKey] If $p$ is odd and $p \nmid n$, then
+		\item[(3)] If $p$ is odd and $p \nmid n$, then
 		\[(p)=\begin{cases}
 			(p,a+\sqrt{n})	(p,a-\sqrt{n}) & \text{if } n \equiv a^2 \pmod p  \hspace{0.5cm} (3.6)\\
 			(p) &\text{if }  \left( \frac{n}{p}\right)=-1
@@ -2611,15 +2611,15 @@ Let $n$ be a square-free integer, $K:=\QQ(\sqrt{n})$ and $p$ a prime number.
 	
 	We will defer the proof that the ideals in  (3.4) and (3.6)	are distinct to Corollary \ref{cor: ids are disc}.
 	
-	For \faShip, note that $(p,\sqrt{n})^2=(p^2,p\sqrt{n},n)$, which if $p \mid n$ is contained in $(p)$. Conversely,	$(p^2,p\sqrt{n},n)$ contains the GCD of $p^2$ and $n$, which is $p$, so we get $(p) \subset (p,\sqrt{n})^2$, therefore we get the equality we are after.
+	For (1), note that $(p,\sqrt{n})^2=(p^2,p\sqrt{n},n)$, which if $p \mid n$ is contained in $(p)$. Conversely,	$(p^2,p\sqrt{n},n)$ contains the GCD of $p^2$ and $n$, which is $p$, so we get $(p) \subset (p,\sqrt{n})^2$, therefore we get the equality we are after.
 	
 	We will split the rest of proof into two cases, which together give the result. The first is if $n \equiv 2,3 \pmod 4$ and the second if $n \equiv 1 \pmod 4$.	
 	
-	From Theorem \ref{thm: int quad field} we know that if $n \equiv 2,3 \pmod 4$ then $\OO_K=\ZZ[\sqrt{n}]$. In this case Theorem \ref{thm: ded-kum} (using $\a=\sqrt{n}$ and $m_\a=x^2-n$) gives \faKey and (3.3) (which is the only one that applies in this case).
+	From Theorem \ref{thm: int quad field} we know that if $n \equiv 2,3 \pmod 4$ then $\OO_K=\ZZ[\sqrt{n}]$. In this case Theorem \ref{thm: ded-kum} (using $\a=\sqrt{n}$ and $m_\a=x^2-n$) gives (3) and (3.3) (which is the only one that applies in this case).
 	
-	Now, we look at the case $n \equiv 1 \pmod 4$. In this case, Theorem \ref{thm: int quad field} tells us that $\OO_K=\ZZ[\frac{1+\sqrt{n}}{2}]$. Note that this means the index $[\OO_K:\ZZ[\sqrt{n}]]=2$ but $p$ is odd, so it doesn't divide this index. So Theorem \ref{thm: ded-kum}  gives \faKey.
+	Now, we look at the case $n \equiv 1 \pmod 4$. In this case, Theorem \ref{thm: int quad field} tells us that $\OO_K=\ZZ[\frac{1+\sqrt{n}}{2}]$. Note that this means the index $[\OO_K:\ZZ[\sqrt{n}]]=2$ but $p$ is odd, so it doesn't divide this index. So Theorem \ref{thm: ded-kum}  gives (3).
 	
-	So, we are left with (3.4) and (3.5) of \faLeaf. Here we cannot apply Theorem \ref{thm: ded-kum}. So lets assume $n \equiv 1 \pmod 8$, then  \[ 	\left (2,\frac{1+\sqrt{n}}{2}\right )\left (2,\frac{1-\sqrt{n}}{2}\right )=\left(4,1-\sqrt{n},1+\sqrt{n},\frac{1-n}{4}\right).\]  Now, since each of these generators is divisible by $2$, we get that  	\[\left(2,\frac{1+\sqrt{n}}{2}\right)\left(2,\frac{1-\sqrt{n}}{2}\right) \subset (2).\] Conversely, $\left(4,1-\sqrt{n},1+\sqrt{n},\frac{1-n}{4}\right)$ contains the $\gcd(4,1-\sqrt{n})=2$ which gives the reverse inclusion. 
+	So, we are left with (3.4) and (3.5) of (2). Here we cannot apply Theorem \ref{thm: ded-kum}. So lets assume $n \equiv 1 \pmod 8$, then  \[ 	\left (2,\frac{1+\sqrt{n}}{2}\right )\left (2,\frac{1-\sqrt{n}}{2}\right )=\left(4,1-\sqrt{n},1+\sqrt{n},\frac{1-n}{4}\right).\]  Now, since each of these generators is divisible by $2$, we get that  	\[\left(2,\frac{1+\sqrt{n}}{2}\right)\left(2,\frac{1-\sqrt{n}}{2}\right) \subset (2).\] Conversely, $\left(4,1-\sqrt{n},1+\sqrt{n},\frac{1-n}{4}\right)$ contains the $\gcd(4,1-\sqrt{n})=2$ which gives the reverse inclusion. 
 	
 	Finally, lets assume $n \equiv 5 \pmod 8$. In this case lets consider $\OO_K/(2)$. By Theorem \ref{thm: ram-rel} its enough to show that $\OO_K/(2)$ is a field not isomorphic to $\ZZ/2\ZZ$ (since this means the residue degree is $2$ and therefore, since we are in a quadratic field, it must be inert). To show they are not isomorphic, consider \[m_\a(x)=x^2-x+\frac{1-n}{4}.\] By construction, this has a root in $\OO_K$ and therefore has a root in $\OO_K/(2)$ (just reduce your root modulo $2$). On the other hand, since $n \equiv 5 \pmod 8$ we have $m_\a(x)=x^2+x+1 \pmod 2$ which by  Exercise \ref{ques: irr pol mod 2} we know is irreducible in $\ZZ/2\ZZ$ and therefore has no root in $\ZZ/2\ZZ$. So $\OO_K/(2)$ is an extension of $\FF_2$ by a root of $x^2+x+1$, so its a field, which also goes by the name $\FF_4$. 
 	
