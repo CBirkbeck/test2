@@ -244,11 +244,28 @@
     <span class="cor_thmlabel">1.3.12</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0005.html#cor: min pol simple ext">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0004.html#thm: field iso">Theorem 1.3.4</a></li>
+          <li><a href="sect0004.html#prop: dim of field ext">Proposition 1.3.2</a></li>
+          <li><a href="sect0005.html#prop: min pol">Proposition 1.3.10</a></li>
+        </ul>
+
+      </div>
+    </div>
 
   </div>
   </div>
   <div class="cor_thmcontent">
-  <p> Let \(K/F\) be a field extension and \(\alpha \in K\) algebraic over \(F\). Then </p>
+  <p>  Let \(K/F\) be a field extension and \(\alpha \in K\) algebraic over \(F\). Then </p>
 <div class="displaymath" id="a0000000097">
   \[ F[x]/(m_{\alpha ,F}(x)) \cong F(\alpha ) \]
 </div>
@@ -293,25 +310,40 @@
 
   </div>
 </div> </p>
-<p><div class="prop_thmwrapper" id="a0000000100">
+<p><div class="prop_thmwrapper" id="prop : alg_iff_fin">
   <div class="prop_thmheading">
     <span class="prop_thmcaption">
     Proposition
     </span>
     <span class="prop_thmlabel">1.3.15</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#a0000000100">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000101"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#prop : alg_iff_fin">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000100"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#cor: min pol simple ext">Corollary 1.3.12</a></li>
+        </ul>
+
+      </div>
+    </div>
 
   </div>
   </div>
   <div class="prop_thmcontent">
-  <p>Let \(K/F\) be a field extension. Then \(\alpha \in K\) is algebriac over \(F\) if and only if there is a finite extension of \(F\) (inside \(K\)) containing \(\alpha \). </p>
+  <p>  Let \(K/F\) be a field extension. Then \(\alpha \in K\) is algebriac over \(F\) if and only if there is a finite extension of \(F\) (inside \(K\)) containing \(\alpha \). </p>
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000101">
+<div class="proof_wrapper" id="a0000000100">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -321,7 +353,7 @@
   <div class="proof_content">
   <p>If \(\alpha \) is algebraic over \(F\), then we know that \(F(\alpha )\) is a field isomorphic to \(F[x]/(m_{\alpha ,K}(x))\). Moreover, \([F(\alpha ):F]=\deg (m_{\alpha ,F}(x))\) by Corollary <a href="sect0005.html#cor: min pol simple ext">1.3.12</a> and by definition of \(F(\alpha )\) is is the the smallest such field, so \(F(\alpha )\) is contained in \(K\). </p>
 <p>Conversely, if \(\alpha \) is in a finite extension \(L/F\) of degree \(n\). Then consider \(1,\alpha ,\alpha ^2,\dots ,\alpha ^n\). These \(n+1\) elements must be linearly dependent over \(F\), so there exist \(b_i\) such that </p>
-<div class="displaymath" id="a0000000102">
+<div class="displaymath" id="a0000000101">
   \[ b_0+b_1\alpha +\cdots +b_n\alpha ^n=0 \]
 </div>
 <p> which proves that \(\alpha \) is algebraic over \(F\) since its a root of \(b_0+b_1x+\cdots +b_n x^n\). </p>
@@ -336,21 +368,36 @@
     <span class="cor_thmlabel">1.3.16</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0005.html#cor: fin ext is alg">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#prop : alg_iff_fin">Proposition 1.3.15</a></li>
+        </ul>
+
+      </div>
+    </div>
 
   </div>
   </div>
   <div class="cor_thmcontent">
-  <p> If \(K/F\) is a finite extension, then is it algebraic. </p>
+  <p>  If \(K/F\) is a finite extension, then is it algebraic. </p>
 
   </div>
-</div> <div class="question_thmwrapper" id="a0000000103">
+</div> <div class="question_thmwrapper" id="a0000000102">
   <div class="question_thmheading">
     <span class="question_thmcaption">
     Exercise
     </span>
     <span class="question_thmlabel">1.3.17</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#a0000000103">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000102">#</a>
 
   </div>
   </div>
@@ -359,14 +406,14 @@
 
   </div>
 </div> </p>
-<p><div class="defn_thmwrapper" id="a0000000104">
+<p><div class="defn_thmwrapper" id="a0000000103">
   <div class="defn_thmheading">
     <span class="defn_thmcaption">
     Definition
     </span>
     <span class="defn_thmlabel">1.3.18</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#a0000000104">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000103">#</a>
 
   </div>
   </div>
@@ -408,23 +455,39 @@
     <span class="thm_thmlabel">1.3.20</span>
     <div class="thm_icons">
     <a class="icon proof" href="sect0005.html#thm: fin ext iff alg">#</a>
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="sect0005.html#prop: tower law">Proposition 1.3.19</a></li>
+          <li><a href="sect0005.html#cor: fin ext is alg">Corollary 1.3.16</a></li>
+        </ul>
+
+      </div>
+    </div>
 
   </div>
   </div>
   <div class="thm_thmcontent">
-  <p> A field extension \(K/F\) is finite if and only if \(K\) is generated by a finite number of algebraic elements over \(F\). </p>
+  <p>  A field extension \(K/F\) is finite if and only if \(K\) is generated by a finite number of algebraic elements over \(F\). </p>
 
   </div>
 </div> </p>
-<p><div class="cor_thmwrapper" id="a0000000105">
+<p><div class="cor_thmwrapper" id="a0000000104">
   <div class="cor_thmheading">
     <span class="cor_thmcaption">
     Corollary
     </span>
     <span class="cor_thmlabel">1.3.21</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0005.html#a0000000105">#</a>
-    <a class="icon proof" href="sect0005.html#a0000000106"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000104">#</a>
+    <a class="icon proof" href="sect0005.html#a0000000105"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
 
   </div>
@@ -434,7 +497,7 @@
 
   </div>
 </div> </p>
-<div class="proof_wrapper" id="a0000000106">
+<div class="proof_wrapper" id="a0000000105">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof

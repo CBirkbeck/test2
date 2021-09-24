@@ -128,28 +128,28 @@
 <div class="main-text">
 <h1 id="a0000000026">5 Solving Diophantine equations</h1>
 <p> Now, one of the big problems we have is that in general \(\mathcal{O}_K\) isn’t a unique factorization domain, but in the cases when it is, we can use this to solve Diophantine equations. For example, consider </p>
-<div class="displaymath" id="a0000000521">
+<div class="displaymath" id="a0000000520">
   \[ x^3=y^2+2. \]
 </div>
 <p> Lets try and find its integer solutions, without using any of the machinery we have developed. This will serve as an example going forwards. </p>
 <p>To do this, lets factorize this equation in the ring \(\mathbb {Z}[\sqrt{-2}]\) which is a UFD. We then get </p>
-<div class="displaymath" id="a0000000522">
+<div class="displaymath" id="a0000000521">
   \[ x^3=(y+\sqrt{-2})(y-\sqrt{-2}). \]
 </div>
 <p>Next, we see that the factors on the right hand side must be coprime: any common factor would be a factor of \(2\sqrt{-2}\), meaning that \(x\) is even, so \(x^3\) is divisible by \(8\). But \(y^2+2\) is never a multiple of \(4\) so this cannot happen. So, up to a unit we have </p>
-<div class="displaymath" id="a0000000523">
+<div class="displaymath" id="a0000000522">
   \[ y+\sqrt{-2}=\pm \beta ^3, \]
 </div>
 <p> since \(-1\) is a cube, wlog we take the \(+\) sign. If we let \(\beta =u+v\sqrt{-2}\) then </p>
-<div class="displaymath" id="a0000000524">
+<div class="displaymath" id="a0000000523">
   \[ y+\sqrt{-2}=u^3+3u^2v\sqrt{-2}-6uv^2-2v^3\sqrt{-2}. \]
 </div>
 <p> Now, lets equate coefficients, to get </p>
-<div class="displaymath" id="a0000000525">
+<div class="displaymath" id="a0000000524">
   \[ y=u^3-6uv^2 \qquad 1=3u^2v-2v^3. \]
 </div>
 <p>This implies that \(v|1\), so \(v=\pm 1\), which in turn means </p>
-<div class="displaymath" id="a0000000526">
+<div class="displaymath" id="a0000000525">
   \[ y=u^3-6u \qquad 1=v(3u^2-2). \]
 </div>
 <p> Again the second equation implies \(u=\pm 1\) and \(v=1\), which we can use to see that \(y=\pm 5\). Therefore the solutions are \((x,y)=(3,5)\) or \((3,-5)\). </p>
@@ -183,25 +183,25 @@
   </div>
   <div class="lem_thmcontent">
   <p> Let \(R\) be a Dedekind domain and \(\mathfrak {a},\mathfrak {b},\mathfrak {c}\) ideals such that </p>
-<div class="displaymath" id="a0000000527">
+<div class="displaymath" id="a0000000526">
   \[ \mathfrak {a}\mathfrak {b}=\mathfrak {c}^3 \]
 </div>
 <p> and suppose \(\mathfrak {a},\mathfrak {b}\) are coprime. Then there exist ideals \(\mathfrak {e},\mathfrak {d}\) such that </p>
-<div class="displaymath" id="a0000000528">
+<div class="displaymath" id="a0000000527">
   \[ \mathfrak {a}=\mathfrak {e}^3 \qquad \mathfrak {b}=\mathfrak {d}^3 \qquad \mathfrak {e}\mathfrak {d}=\mathfrak {c} \]
 </div>
 
   </div>
 </div> </p>
 <p>Using this we can prove the following: </p>
-<p><div class="exmp_thmwrapper" id="a0000000529">
+<p><div class="exmp_thmwrapper" id="a0000000528">
   <div class="exmp_thmheading">
     <span class="exmp_thmcaption">
     Example
     </span>
     <span class="exmp_thmlabel">5.0.3</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0025.html#a0000000529">#</a>
+    <a class="icon proof" href="sect0025.html#a0000000528">#</a>
 
   </div>
   </div>
@@ -209,40 +209,40 @@
   <p>Lets find all the integral solutions to \(x^3=y^2+74\) assuming that \(h_K=10\) where \(K=\mathbb {Q}(\sqrt{-74})\). The trick here is to factor this expression in \(\mathcal{O}_K=\mathbb {Z}[\sqrt{-74}]\), but before that, note the following: </p>
 <p>Assume \(x,y \in \mathbb {Z}\) are solutions. First thing to note is that \(y\) cannot be even, since this would mean \(x\) is even. But then \(x^3 -y^2 \equiv 0 \pmod4\) but \(4\nmid 74\). So \(x,y\) must be odd. Similarly, we see that \(x,y\) must be coprime, since if \(p\) divides both then \(p^2\) divided \(x^3-y^2=74\) but \(74\) is square-free. </p>
 <p>Now lets look at the ideals. We have </p>
-<div class="displaymath" id="a0000000530">
+<div class="displaymath" id="a0000000529">
   \[ (x)^3=(y-\sqrt{-74})(y+\sqrt{-74}) \]
 </div>
 <p> as ideals. Now, are the two ideals on the right hand side coprime? </p>
 <p>If \(\mathfrak {p}\) divided them both, we would have </p>
-<div class="displaymath" id="a0000000531">
+<div class="displaymath" id="a0000000530">
   \[ y-\sqrt{-74} \equiv 0 \mod \mathfrak {p}\qquad y+\sqrt{-74} \equiv 0 \mod \mathfrak {p} \]
 </div>
 <p> and therefore \(\mathfrak {p}\) divides their sum, so \(\mathfrak {p}| (2y)\). Looking at the other side of the equation, we see that \(\mathfrak {p}|(x)\). We know \(x\) is odd, so \(\mathfrak {p}\) cannot divide \((2)\) (if it did, then we would have \((x)=\mathfrak {p}_2 \mathfrak {a}\) where \(\mathfrak {a}\) is some ideal and \(\mathfrak {p}_2^2=(2)\) (as can be seen from Theorem <a href="sect0021.html#cor: ded-kum for K/Q">3.5.11</a>), but this means \(N(\mathfrak {p}_2)=2\) which would mean \(N((x))=|N_{K/\mathbb {Q}}(x)|=x^2\) is even, which can’t happen as \(x\) is odd). So we have \(\mathfrak {p}\mid (y)\) and \(\mathfrak {p}|(x)\) but we know \(x,y\) are coprime (as integers, which means their ideals are also coprime). Therefore we cannot have a \(\mathfrak {p}\) dividing both factors on the right, so they are coprime. </p>
 <p>Now, using Lemma <a href="sect0025.html#lem: ideals mult to power">5.0.2</a> we must have \((y-\sqrt{-74})=\mathfrak {a}^3\) and \((y+\sqrt{-74})=\mathfrak {b}^3\) with \(\mathfrak {a}\mathfrak {b}=(x)\). Note this means \([\mathfrak {a}^3]=[1]=[\mathfrak {b}^3]\). But note the class group has size \(10\) so we cant have ideal classes of order \(3\). Therefore \(\mathfrak {a},\mathfrak {b}\) are principal. So let \(\mathfrak {a}=(a+b\sqrt{-74})\). </p>
 <p>Then we have </p>
-<div class="displaymath" id="a0000000532">
+<div class="displaymath" id="a0000000531">
   \[ (y-\sqrt{-74})=(a+b\sqrt{-74})^3. \]
 </div>
 <p> Using Lemma <a href="sect0025.html#lem: princ ideals being eq">5.0.1</a> and Exercise <a href="sect0017.html#ques: units in img quad">3.1.5</a> we see that up to \(\pm 1\) we have </p>
-<div class="displaymath" id="a0000000533">
+<div class="displaymath" id="a0000000532">
   \[ y-\sqrt{-74}=a^3+3a^2b\sqrt{-74}-3\cdot 74b^2a-b^3 74 \sqrt{-74}. \]
 </div>
 <p> Equating each side we have </p>
-<div class="displaymath" id="a0000000534">
+<div class="displaymath" id="a0000000533">
   \[ y=a^3-3b^2a74 \qquad 3a^2b-b^3 74=-1. \]
 </div>
 <p> The second equation implies \(b \mid -1\) and therefore \(b=\pm 1\). This then gives \(a=\pm 5\). Substituting, it then follows that \(y=\pm 985\) and \(x=99\) are the only solutions. </p>
 
   </div>
 </div> </p>
-<p><div class="exmp_thmwrapper" id="a0000000535">
+<p><div class="exmp_thmwrapper" id="a0000000534">
   <div class="exmp_thmheading">
     <span class="exmp_thmcaption">
     Example
     </span>
     <span class="exmp_thmlabel">5.0.4</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0025.html#a0000000535">#</a>
+    <a class="icon proof" href="sect0025.html#a0000000534">#</a>
 
   </div>
   </div>
@@ -250,39 +250,39 @@
   <p>Lets do another example. Lets show that \(x^3=y^2+5\) has no integral solutions. We saw in Example <a href="sect0024.html#exmp: class group -5">4.1.3</a> that the class group in this case has size \(2\). </p>
 <p>Now, as we did before, lets start by assuming \(x,y\) are integer solutions to this equation. If \(x\) was even then \(y^2+5 \equiv 0 \mod 4\) which would make \(-1\) a square modulo \(4\) which can’t happen, so \(x\) cannot be even. Similarly, \(x,y\) must be coprime since if \(p\) divided both of them, \(p^2| (x^3-y^2)\) meaning \(p^2 \mid 5\) which is a contradiction. </p>
 <p>Ok, with this done, lets now factor this in \(\mathcal{O}_K\) as ideals where \(K=\mathbb {Q}(\sqrt{-5})\). We have </p>
-<div class="displaymath" id="a0000000536">
+<div class="displaymath" id="a0000000535">
   \[ (x)^3=(y-\sqrt{-5})(y+\sqrt{-5}). \]
 </div>
 <p> Next, lets see if the terms on the right are coprime. If a prime ideal \(\mathfrak {p}\) divided both of them, then \(\mathfrak {p}\) would divide their sum \((2y)\) so \(\mathfrak {p}\mid (2y)\). Looking at the left of the equation we see \(\mathfrak {p}\) divides \((x)\) and therefore as in the previous example, since \(x\) is odd, we cant have \(\mathfrak {p}\) dividing \((2)\). But then \(\mathfrak {p}\mid (y)\) and \(\mathfrak {p}\mid (x)\) but this also cant happen as \(x,y\) are coprime. </p>
 <p>So, using Lemma <a href="sect0025.html#lem: ideals mult to power">5.0.2</a> we see that we must have \(\mathfrak {a}^3=(y-\sqrt{-5})\) and \(\mathfrak {b}^3=(y+\sqrt{-5})\) for some ideals \(\mathfrak {a},\mathfrak {b}\). Now, if we think of what the class group having size \(2\) says, it means that in particular, we cannot have any non-principal ideals whose cube is principal, since this would give an element of order \(3\) in the class group. Therefore, both \(\mathfrak {a}\) and \(\mathfrak {b}\) must be themselves principal. </p>
 <p>So lets just look as \(\mathfrak {a}=a+b\sqrt{-5}\). We must have </p>
-<div class="displaymath" id="a0000000537">
+<div class="displaymath" id="a0000000536">
   \[ (a+b\sqrt{-5})^3=(y-\sqrt{-5}) \]
 </div>
 <p> which means there is some unit \(u \in \mathcal{O}_K^\times \) such that </p>
-<div class="displaymath" id="a0000000538">
+<div class="displaymath" id="a0000000537">
   \[ u(a+b\sqrt{-5})^3=y-\sqrt{-5} \]
 </div>
 <p> now as elements, ot just ideals. Since \(\mathcal{O}_K^\times =\{ \pm 1\} \) as we saw in sheet 6, wlog we can assume </p>
-<div class="displaymath" id="a0000000539">
+<div class="displaymath" id="a0000000538">
   \[ (a+b\sqrt{-5})^3=y-\sqrt{-5} \]
 </div>
 <p> (since \(-1\) is a cube). If we expand out we get </p>
-<div class="displaymath" id="a0000000540">
+<div class="displaymath" id="a0000000539">
   \[ a^3+3a^2b\sqrt{-5}-15b^2a-b^3 5 \sqrt{-5}=y-\sqrt{-5}. \]
 </div>
 <p> Now, equating each side we have \(y=a^3-15ab^2\) and \(-1=3a^2b-5b^3\). The second equation tells us \(b \mid -1\) so \(b=\pm 1\). If we now, substitute this back into the first equation we get \(-1=3a^2-5\) which has no solution for \(a \in \mathbb {Z}\). So \(x^3=y^2+5\) has no integer solutions. </p>
 
   </div>
 </div> </p>
-<p><div class="question_thmwrapper" id="a0000000541">
+<p><div class="question_thmwrapper" id="a0000000540">
   <div class="question_thmheading">
     <span class="question_thmcaption">
     Exercise
     </span>
     <span class="question_thmlabel">5.0.5</span>
     <div class="thm_icons">
-    <a class="icon proof" href="sect0025.html#a0000000541">#</a>
+    <a class="icon proof" href="sect0025.html#a0000000540">#</a>
 
   </div>
   </div>
